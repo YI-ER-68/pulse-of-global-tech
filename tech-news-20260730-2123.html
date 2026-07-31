@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>时讯 · 第20期 夜间版 | 2026-07-30 21:23</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2d333b;
+    --txt:#e6edf3; --sub:#9da7b3; --acc:#58a6ff; --up:#f85149; --down:#3fb950;
+    --gold:#e3b341; --purple:#bc8cff; --teal:#39d2c0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.75;padding:24px 16px 60px;}
+  .wrap{max-width:1080px;margin:0 auto;}
+  header{border-bottom:2px solid var(--acc);padding-bottom:18px;margin-bottom:26px;}
+  header h1{font-size:25px;letter-spacing:1px;}
+  header h1 span{color:var(--up);}
+  header .meta{color:var(--sub);font-size:13px;margin-top:6px;}
+  .tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;margin-right:6px;border:1px solid var(--border);color:var(--sub);}
+  .tag.hot{color:var(--up);border-color:var(--up);}
+  .tag.new{color:var(--teal);border-color:var(--teal);}
+  .tag.p0{color:var(--up);border-color:var(--up);}
+  .tag.p1{color:var(--gold);border-color:var(--gold);}
+  .tag.p2{color:var(--acc);border-color:var(--acc);}
+  .tag.p3{color:var(--sub);border-color:var(--border);}
+  .t{display:inline-block;font-size:12px;padding:0 8px;border-radius:10px;margin-left:8px;background:#22304a;color:var(--gold);border:1px solid #3a4a6b;font-weight:normal;vertical-align:middle;}
+  section{margin-bottom:34px;}
+  h2{font-size:19px;margin-bottom:14px;padding-left:10px;border-left:4px solid var(--acc);}
+  h2.alert{border-left-color:var(--up);}
+  h2 .en{color:var(--sub);font-size:12px;font-weight:normal;margin-left:8px;}
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
+  .kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+  .kpi .lab{font-size:12px;color:var(--sub);}
+  .kpi .val{font-size:21px;font-weight:bold;margin:3px 0;}
+  .kpi .note{font-size:12px;color:var(--sub);}
+  .red{color:var(--up);} .green{color:var(--down);} .gold{color:var(--gold);} .blue{color:var(--acc);} .purple{color:var(--purple);} .teal{color:var(--teal);}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:14px;}
+  .card.focus{border-color:var(--up);background:linear-gradient(180deg,#1d1418,#161b22 60%);}
+  .card h3{font-size:15.5px;margin-bottom:8px;color:var(--acc);}
+  .card.focus h3{color:var(--up);}
+  .card p{font-size:14px;color:#c9d3dd;margin-bottom:6px;}
+  .card p b{color:var(--txt);}
+  .card .src{font-size:12px;color:var(--sub);margin-top:4px;}
+  ul.compact{padding-left:20px;font-size:14px;color:#c9d3dd;}
+  ul.compact li{margin-bottom:7px;}
+  ul.compact b{color:var(--txt);}
+  .tl{position:relative;padding-left:30px;}
+  .tl::before{content:"";position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--border);}
+  .tl-item{position:relative;margin-bottom:16px;}
+  .tl-item::before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg);}
+  .tl-item.hot::before{background:var(--up);}
+  .tl-item .tm{font-size:12.5px;color:var(--gold);font-weight:bold;}
+  .tl-item .tx{font-size:14px;color:#c9d3dd;}
+  .tl-item .tx b{color:var(--txt);}
+  .logic{background:var(--panel2);border:1px dashed var(--acc);border-radius:10px;padding:16px 20px;font-size:14px;color:#c9d3dd;margin-top:16px;}
+  .logic b{color:var(--gold);}
+  footer{border-top:1px solid var(--border);padding-top:14px;color:var(--sub);font-size:12px;line-height:1.9;}
+
+  /* ===== 全屏动态背景（时讯统一视觉） ===== */
+  .dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+  @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+  .dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+  @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+  @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+  @keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+  .dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+  body>*:not(.dynamic-bg){position:relative;z-index:1;}
+</style>
+</head>
+<body>
+<div class="dynamic-bg">
+  <div class="bg-gradient"></div>
+  <div class="bg-glow a"></div>
+  <div class="bg-glow b"></div>
+  <div class="bg-glow c"></div>
+  <canvas id="net"></canvas>
+</div>
+
+<div class="wrap">
+
+<header>
+  <h1>时讯 · 第20期 夜间版 <span>｜6月PCE环比转负（2020年来首次）→ 9月加息定价松了一口气 → 费半盘前暴涨5%、纳指期货涨超1%，AI硬件五连杀迎来第一剂"宏观解药"</span></h1>
+  <div class="meta">生成时间：2026-07-30 21:23 BJT ｜ 覆盖窗口：第19期（7/30 19:18）以来增量，重点过去 12 小时 ｜ 预告：今晚 21:30 BJT 美股开盘 · 明晨 04:00 BJT 前后 苹果/亚马逊财报（特别版已预排 7/31 05:30）</div>
+  <div class="meta" style="margin-top:8px;">
+    <span class="tag hot">🔥 6月PCE环比 -0.1%，2020年疫情以来首次月度下降</span>
+    <span class="tag hot">🔥 Q2 GDP 仅 1.5% 不及预期，但私人内需 +3.9% 创2023年初来最高</span>
+    <span class="tag hot">🔥 费城半导体指数盘前涨超 5%（此前5连跌累计近16%）</span>
+    <span class="tag new">🆕 月之暗面 F轮 35亿美元落定，G轮投前估值 500亿美元</span>
+    <span class="tag new">🆕 Claude 全球宕机 1.5 小时（529 Overloaded）</span>
+  </div>
+</header>
+
+<!-- ============ 速览 KPI ============ -->
+<section>
+  <h2>📊 本期速览 <span class="en">SNAPSHOT · 7/30 20:30 BJT 美国数据 + 21:00 前后盘前快照</span></h2>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="lab">美国Q2 GDP初值（年化环比）</div><div class="val green">+1.5%</div><div class="note">预期 2.1% / 前值 2.1%；净出口拖累为主因</div></div>
+    <div class="kpi"><div class="lab">私人国内最终销售（Q2）</div><div class="val red">+3.9%</div><div class="note">上季 1.7%，增速翻倍以上、2023年初以来最高；消费 +3.2%</div></div>
+    <div class="kpi"><div class="lab">6月核心PCE 同比</div><div class="val green">3.3%</div><div class="note">前值 3.4%；环比 +0.1%（预期 +0.2%）；连续第六年高于2%目标</div></div>
+    <div class="kpi"><div class="lab">6月PCE 环比</div><div class="val green">-0.1%</div><div class="note">2020年疫情爆发以来首次月度下降；同比由5月4.1%降至 3.7%</div></div>
+    <div class="kpi"><div class="lab">纳指100期货（7/30 盘前·时段级）</div><div class="val red">+1%以上</div><div class="note">微软绩后大涨 + 半导体全面反弹；欧洲主要指数全线上涨</div></div>
+    <div class="kpi"><div class="lab">费城半导体指数（盘前·时段级）</div><div class="val red">+5%</div><div class="note">7/29 收跌5.33%、连跌5日累计近16%后的首次强反弹</div></div>
+  </div>
+</section>
+
+<!-- ============ 头条：美国宏观数据 ============ -->
+<section>
+  <h2 class="alert">🧭 头条 · 美国二季度GDP与6月PCE同步出炉 <span class="en">HEADLINE · MACRO PRINT</span></h2>
+
+  <div class="card focus">
+    <h3>①数据本身：增长"表弱里强"，通胀"意外转负" <span class="tag new">本期新增</span><span class="t">🕒 7/30 20:30 BJT（8:30 ET，BEA 官方发布，分钟级可核验）</span></h3>
+    <p><b>GDP：</b>二季度实际GDP年化增长 <b class="green">1.5%</b>，低于市场预期的 2.1%，也低于一季度的 2.1%。拖累项是净出口（进口增加、出口减速）与政府支出下降；但剔除净出口、库存与政府支出的<b>私人国内最终销售增长 3.9%</b>（一季度 1.7%），为 2023 年初以来最高——<b>"表头弱、内里强"</b>是本次数据的核心特征。占经济活动约三分之二的消费支出增长 <b>3.2%</b>（一季度仅 0.5%）。</p>
+    <p><b>通胀：</b>6月 PCE 物价指数<b class="green">环比 -0.1%</b>，这是<b>自 2020 年疫情爆发以来的首次月度下降</b>；同比由 5 月的三年高点 4.1% 回落至 3.7%（预期 3.7%）。<b>核心PCE 环比 +0.1%</b>（预期 +0.2%），同比由 3.4% 降至 <b>3.3%</b>——但仍连续第六年高于美联储 2% 目标。二季度整体 PCE 价格指数年化 5.1%（上季 4.6%），核心PCE 年化 3.4%（上季 4.4%）。</p>
+    <p><b>为什么降温：</b>报道口径一致指向<b>季末汽油价格回落</b>（美伊脆弱停火期油价短暂下行）+ 高于往年的退税与促销。AAA 数据显示二季度普通汽油均价 4.22 美元/加仑，冲突前不到 3 美元、5 月峰值曾超 4.50 美元，本月又回升至 4.10 美元上方——<b>这意味着 6 月的通胀"喘息"很可能是一次性的</b>。</p>
+    <p class="src">来源：美国经济分析局 BEA 官方发布 / 财联社 / 腾讯新闻财经 ｜ 关联：第15期 FOMC"鹰派按兵不动"9:3、第19期"今晚通胀数据"前瞻</p>
+  </div>
+
+  <div class="card focus">
+    <h3>②市场反应：AI硬件"五连杀"迎来第一剂宏观解药 <span class="tag new">本期新增</span><span class="t">🕒 7/30 20:30–21:20 BJT（盘前，时段级）</span></h3>
+    <p>数据落地后风险偏好明显修复：<b>纳斯达克100指数期货涨超 1%</b>，道指与标普期货同步走高，<b>欧洲主要指数全线上涨</b>。<b>费城半导体指数盘前涨幅超过 5%</b>——对照 7/29 收盘费半重挫 5.33%、连续 5 个交易日下跌累计近 16%，这是本轮 AI 硬件杀估值以来的第一次成建制反弹。</p>
+    <p>个股维持第15期确立的<b>"资本纪律分层审判"</b>格局并进一步放大：<b>微软盘前大涨近 10%</b>（第19期快照为 +8%），<b>Meta 盘前跌约 10%</b>（第19期为 -9%）。富国银行投资研究院 Sameer Samana 定调："美联储仍处观望模式……9 月会议仍存在行动可能，如果数据支持。"Pave Finance 首席投资官 Stephen Evans 则把微软与 Meta 的分化概括为<b>"两种 AI 投资策略的故事"</b>。</p>
+    <p class="src">来源：财联社（英为财情行情口径）/ 每日经济新闻 ｜ 关联：第15期"冰火裁决"、第19期盘前快照</p>
+  </div>
+
+  <div class="card">
+    <h3>③政策含义：9月加息压力短期缓释，但决定权仍在油价 <span class="tag new">本期新增</span><span class="t">🕒 7/30 20:30 BJT 后（解读，时段级）</span></h3>
+    <p>7/30 凌晨 02:00 BJT 的 FOMC 以 <b>9:3</b> 维持 3.50%–3.75%，三名票委主张加息 25bp（2016 年以来首次三票同向反对）；沃什称"如通胀继续高企将毫不犹豫采取行动"。<b>本次 PCE 环比转负、核心同比下行 0.1pct，为鹰派阵营暂时"抽掉了一块砖"</b>，但经济学家普遍提示：<b>能源价格冲击是下半年主要风险</b>——汽油已重回 4.10 美元上方，若中东继续升级，通胀二次抬头将把 9 月加息重新推上台面。二季度 GDP 报告本身也点名"AI 投资热潮"是商业投资强劲扩张的核心动力，构成供给侧的额外支撑。</p>
+    <p class="src">来源：BEA / 腾讯新闻财经 / 证券时报 ｜ 关联：第15期 FOMC 决议、第18期特别版·美军空袭伊朗</p>
+  </div>
+</section>
+
+<!-- ============ 模型与产品 ============ -->
+<section>
+  <h2>🤖 模型与产品 <span class="en">MODELS &amp; PRODUCTS</span></h2>
+
+  <div class="card">
+    <h3>Claude 全球宕机约 1.5 小时：529 Overloaded 打穿"AI 即基础设施"叙事 <span class="tag new">本期新增·补录</span><span class="t">🕒 7/30 03:49 → 06:36 BJT（对应 UTC 7/29 19:49→22:36，官方状态页时间线，分钟级可核验）</span></h3>
+    <p>Anthropic 确认 Claude 发生<b>全球性服务中断</b>，网页版、App 及所有依赖其 API 的第三方工具统一返回 <b>"529 Overloaded"</b>（服务端过载）。官方时间线：UTC 19:49 开始调查 → 20:33 定位问题 → 21:38 多数模型开始恢复 → 22:36 事件解决。Downdetector 美国区报告峰值 3639 起。Anthropic 未公布根因（是否为配置变更、流量冲击或基础设施故障）。</p>
+    <p><b>行业含义：</b>开发者社区讨论迅速从"故障"转向"依赖"——有人用 DeepSeek + MCP 搭自动化脚本监控恢复，有人坦言习惯 Vibecoding 后"忘了怎么写循环"，更多人开始讨论<b>混合订阅多家 SOTA 模型 / 本地部署 LLM 来对冲停机风险</b>。当 AI 变成像电力一样的基础设施，可靠性的衡量标准正从 Uptime 百分比，转向<b>断供瞬间开发者的生存能力</b>——这与本期"开源权重"叙事形成呼应。</p>
+    <p class="src">来源：status.claude.com 官方状态页 / BleepingComputer / Cyber Daily / 网易科技 ｜ 关联：第19期 Claude Cowork 漏洞待跟进项</p>
+  </div>
+
+  <div class="card">
+    <h3>OpenAI 7/30 密集发布：身份层、代码安全与语音三线并进 <span class="tag new">本期新增</span><span class="t">🕒 7/30（日级，官方博客发布未标注精确时刻）</span></h3>
+    <p><b>① Sign in with ChatGPT（Beta）</b>：用户可用 ChatGPT 账号登录第三方站点，首批集成 Airtable、GitLab、HubSpot、Notion、Supabase、Vercel——OpenAI 正式把自己放到<b>开发者生态的身份提供方（IdP）</b>位置上。<b>② Codex Security CLI 开源</b>：终端里发现并修复代码漏洞，官方称已协助修复超 <b>3000 个关键安全缺陷</b>，直接对位专业代码安全厂商。<b>③ 语音双模型</b>：GPT Transcribe 与 GPT Live Transcribe 上线 API，后者主打低延迟流式（实时字幕、语音智能体）；第三方测试显示词错率仍落后 ElevenLabs / Google / Mistral。<b>④</b> 此外官方复盘"两个 API 参数把 GPT-5.6 的 ARC-AGI-3 得分提升约 3 倍"（第18期已录），并披露 Sol 将上 Cerebras、目标 <b>750 tokens/s</b>。</p>
+    <p class="src">来源：OpenAI 官方 / my2cents.ai 汇编 / AGI HUNT 日报 ｜ 关联：第18期 GPT-5.6 Sol 四连发、第19期 OpenAI 7月ARR</p>
+  </div>
+
+  <div class="card">
+    <h3>阿里双线：Qwen3-30B-A3B 更新 + 通义万相 Wan2.2 电影级视频模型开源 <span class="tag new">本期新增</span><span class="t">🕒 7/30（日级）</span></h3>
+    <p>通义千问发布 <b>Qwen3-30B-A3B-Instruct-2507</b> 非思考模式更新版：<b>仅激活 3B 参数即接近 GPT-4o 水平</b>，原生支持 <b>26.2 万 tokens</b> 上下文。同日<b>通义万相 Wan2.2 电影级视频生成模型正式开源</b>；阿里云轻量应用服务器新增 10 个中国内地地域节点。叠加 7/27 阿里云真武 M890 超节点 Day0 适配 Kimi K3（国内首个跑通近 3 万亿参数模型的超节点，首 Token 时延 -35%、单卡解码吞吐 +1.8 倍），<b>"国产算力 + 开源权重"的闭环正在被反复验证</b>。</p>
+    <p class="src">来源：腾讯新闻《AI大模型动态》/ 公有云计算 / 澎湃新闻 ｜ 关联：第19期国产AI芯片认证、本期 APEC 开源共识</p>
+  </div>
+
+  <div class="card">
+    <h3>火山引擎 FORCE Link 厦门站：SeedEdit 3.0 + 同传 2.0，延迟压到 2–3 秒 <span class="tag new">本期新增</span><span class="t">🕒 7/30（日级）</span></h3>
+    <p>发布<b>豆包·图像编辑模型 3.0（SeedEdit 3.0）</b>与<b>豆包·同声传译模型 2.0（Seed-LiveInterpret 2.0）</b>，同传延迟<b>从 8–10 秒降至 2–3 秒</b>并支持零样本声音复刻；豆包大模型 1.6 极速版首 Token 输出低至 <b>10ms</b>，每百万 tokens 输入仅 <b>0.15 元</b>。截至 6 月豆包日均 Token 调用量突破 <b>180 万亿</b>，按 7 月口径字节大模型业务 <b>ARR 达 40 亿美元</b>，超过国内其他模型公司总和——这是第19期"字节整合豆包+飞书"组织调整的产品面注脚。</p>
+    <p class="src">来源：火山引擎 / 腾讯新闻 ｜ 关联：第19期 字节 AI 业务整合</p>
+  </div>
+</section>
+
+<!-- ============ 资本与产业 ============ -->
+<section>
+  <h2>💰 资本与产业 <span class="en">CAPITAL &amp; INDUSTRY</span></h2>
+
+  <div class="card">
+    <h3>月之暗面 F 轮超 35 亿美元落定，G 轮投前 500 亿美元；同日完成股改冲 IPO <span class="tag new">本期新增·补录</span><span class="t">🕒 7/29 工商变更登记 + 7/29 融资确认（日级）；7/30 天眼查页面可见（日级）</span></h3>
+    <p><b>融资：</b>F 轮融资金额<b>超 35 亿美元，投后估值 350 亿美元</b>；因认购金额超原计划 3 倍以上<b>提前关闭</b>，原定 8 月启动的 <b>G 轮（Pre-IPO）已提前开启，投前估值升至 500 亿美元</b>。从 2025 年 12 月的 43 亿美元到 F 轮后 350 亿美元，<b>半年估值翻约 7 倍</b>；若 G 轮以 500 亿落地，成立仅三年的月之暗面估值将超越已在港上市的智谱与 MiniMax。</p>
+    <p><b>股改：</b>7/29 完成工商变更，"北京月之暗面科技有限公司"改制为<b>股份有限公司</b>；杨植麟由董事变更为<b>董事长兼经理</b>，新增张予彤为董事、宋思嘉为财务负责人——股份制改造是境内企业赴港上市的前置硬性条件。市场消息称最快 6 个月内完成港股上市。</p>
+    <p><b>基本面支撑：</b>7/16 发布 2.8 万亿参数 Kimi K3（Frontend Code Arena 1679 分登顶，超 Claude Fable 5 的 1631 与 GPT-5.6 Sol 的 1618）→ 7/19 因算力紧缺暂停 C 端新用户订阅 → 7/27 深夜全量开源权重+技术报告+MoonEP/FlashKDA/AgentEnv 三项 Infra。6 月中旬 ARR 已破 3 亿美元，张予彤称 K3 后 ARR"数倍快速增长"，公司口径单日销售额至少环比增长 6 倍。</p>
+    <p class="src">来源：科创板日报 / 澎湃新闻 / 每日经济新闻 / 上海证券报 / 天眼查 ｜ 关联：第19期待跟进"月之暗面 Pre-IPO"（本期兑现）</p>
+  </div>
+
+  <div class="card">
+    <h3>AI 暴跌的杠杆账单：对冲基金"史诗级"亏损，高盛、摩根大通率先追保 <span class="tag new">本期新增·补录</span><span class="t">🕒 7/30 早间见报（日级，具体追保时点未公开）</span></h3>
+    <p>报道称 AI 板块本轮急跌导致对冲基金出现"史诗级"亏损，<b>高盛、摩根大通率先发出 Margin Call 追加保证金</b>。这为第17–19期反复观察到的现象提供了机制解释：<b>A 股创业板 -5.89% 的踩踏、中际旭创 AH 双杀、费半 5 连跌近 16%——卖压很大程度来自杠杆强平而非基本面重定价</b>，也解释了为何盘中屡屡出现"尾盘绝地收复"（如中际旭创 H 股从 -8% 收复至 -2.04%）。</p>
+    <p class="src">来源：华尔街见闻早餐（7/30）｜ 关联：第17期 A股算力链踩踏、第19期中际旭创 H 股尾盘收复</p>
+  </div>
+</section>
+
+<!-- ============ 政策与治理 ============ -->
+<section>
+  <h2>🏛 政策与治理 <span class="en">POLICY &amp; GOVERNANCE</span></h2>
+
+  <div class="card">
+    <h3>APEC《成都声明》：首次把"开源"提升到部长级合作层面 <span class="tag new">本期新增·补录</span><span class="t">🕒 7/23 部长会议通过声明；7/29 APEC 数字周落幕（日级）</span></h3>
+    <p>2026 年 APEC 数字和人工智能部长会议在成都通过<b>《2026年APEC数字和人工智能部长声明》（成都声明）</b>，会议主席、工信部部长李乐成介绍五大成果，其中第五项<b>首次将"开源"提升到 APEC 部长级合作层面</b>——在承认尊重知识产权的同时，鼓励各经济体支持开源实践、参与国际开源社区协作。7/24 的 APEC 人工智能高级别论坛进一步发布《促进亚太地区人工智能发展的声明》。CNBC 报道称"APEC 经济体发布共同声明支持开源 AI"；纽约大学法学院兼职教授马文彦评价：亚太"正从封闭模型转向与能源、电信和数字基础设施结合的开源系统"。</p>
+    <p><b>为何此刻重要：</b>与本周<b>英伟达、微软、Meta、OpenAI、谷歌等 50 家科技企业联署支持开放权重模型</b>、Kimi K3 全量开源、8/1 白宫框架"开源豁免"悬念叠加，<b>"开源"已从技术路线之争升格为国际规则议程</b>。7/29 APEC 数字周落幕，成都交出接力棒。</p>
+    <p class="src">来源：工信部 / 中国日报网 / 中国信息化周报 / 每日经济新闻 ｜ 关联：第12期 OSAA 联盟、第19期"六张网"与"人工智能+"</p>
+  </div>
+
+  <div class="card">
+    <h3>国家知识产权局：将完善"人工智能+"具身智能、脑机接口专利审查标准 <span class="tag new">本期新增</span><span class="t">🕒 7/29 国新办发布会（日级），7/30 央视网见报</span></h3>
+    <p>截至 6 月底，我国高价值发明专利拥有量 <b>236 万件</b>，<b>战略性新兴产业发明专利有效量 174.6 万件</b>（较上年底 +4.3%）；公开接受的商品服务项目中涉及人工智能、大数据等新产业新业态的已有 900 余项。下一步将<b>完善"人工智能+"具身智能、脑机接口等新兴与未来产业的专利审查标准</b>。数据显示我国拥有全球约 60%（另一口径近 70%）的人工智能专利。</p>
+    <p class="src">来源：国新办 / 央视网 ｜ 关联：第13期揭榜挂帅具身智能专题、第19期"人工智能+"行动</p>
+  </div>
+
+  <div class="card">
+    <h3>农业农村部：完善农业 AI 顶层设计，突破农业传感器与专用芯片 <span class="tag new">本期新增</span><span class="t">🕒 7/30 党组扩大会议（日级）</span></h3>
+    <p>会议强调完善农业人工智能顶层设计、健全农情调度系统、整合打通多方数据、研发农业农村专业模型，<b>加快突破农业传感器、专用芯片等关键核心技术</b>；同时要健全农业 AI 标准体系，逐步建立<b>风险监测、行业审查、安全管理</b>制度机制。这是 7/30 顶层会议"深入实施人工智能+行动、完善人工智能治理体系"定调后，<b>首个部委级落地动作</b>。</p>
+    <p class="src">来源：人民财讯 ｜ 关联：第19期 中央政治局会议"六张网"+"人工智能+"</p>
+  </div>
+
+  <div class="card">
+    <h3>8/1 白宫 AI 监管框架倒计时约 27 小时 <span class="t">🕒 截至 7/30 21:00 BJT（时段级）</span></h3>
+    <p>三大悬念仍未揭晓：<b>前沿模型定义、开源豁免范围（Meta 与中国开源模型如何覆盖）、约束力</b>（白宫此前拒答"不遵守的后果"）。奥特曼华盛顿行程收官，与白宫幕僚长苏西·怀尔斯的会面结果仍待确认（第16–19期连续追踪，本期无新进展）。在 APEC 已把开源写入部长级共识、50 家企业联署支持开放权重的背景下，<b>"开源豁免"条款的写法将直接决定这份框架是产业加速器还是紧箍咒</b>。</p>
+    <p class="src">来源：FT / Axios / 综合 ｜ 关联：第9期四方博弈图谱、第19期倒计时30小时</p>
+  </div>
+</section>
+
+<!-- ============ 中东与油价 ============ -->
+<section>
+  <h2>🛢 中东与油价 <span class="en">MIDDLE EAST &amp; OIL · 持续追踪，本窗口无新升级</span></h2>
+  <div class="card">
+    <h3>"扬言反制"与"谈判仍在"僵持不变，油价高位等周日 OPEC <span class="t">🕒 7/30 白天至傍晚（日级/时段级），本期截稿前无新军事动作</span></h3>
+    <p>第18期特别版记录的<b>美军 7/29 20:00–22:00 ET（7/30 08:00–10:00 BJT）对伊朗本土两小时空袭</b>之后，格局维持在"三个并行"：<b>①伊朗革命卫队扬言采取反制措施</b>（形式与烈度未出牌）；<b>②沙特（国防大臣哈立德 7/29 在华盛顿见万斯）与巴基斯坦（7/30 证实美伊谈判仍在进行）双线斡旋</b>；<b>③油价高位僵持</b>——布伦特近月 92 美元一线（7/30 傍晚 +1.5% 报 92.10）、WTI 85.23。交易员焦点转向 <b>周日 8/2 OPEC 会议，普遍预期宣布 9 月增产 18.8 万桶/日</b>，这是对冲地缘溢价的关键变量；ING 提示 2027 年最大变数仍是 OPEC 成员国的配额执行力。</p>
+    <p><b>与本期头条的接口：</b>6 月 PCE 之所以能环比转负，靠的正是停火期汽油价格回落；而本月汽油已重回 4.10 美元上方。<b>油价既是本次通胀降温的功臣，也是 7 月数据翻脸的最大风险源</b>——这条线把地缘与美联储 9 月决策直接焊在了一起。</p>
+    <p class="src">来源：新浪财经 / 财联社 / 央广网 / ING 研报 ｜ 关联：第18期特别版·美军空袭伊朗本土、第19期斡旋线并行</p>
+  </div>
+</section>
+
+<!-- ============ 今夜前瞻 ============ -->
+<section>
+  <h2>🔭 今夜-明晨前瞻 <span class="en">TONIGHT &amp; TOMORROW</span></h2>
+  <ul class="compact">
+    <li><b>美股开盘</b>：验证 PCE 降温能否把盘前的费半 +5%、纳指期货 +1% 兑现为正式盘；<b>纳指六连跌能否终结</b>（纳斯达克100 已较 6 月高点回撤逾 11%、踏入回调区间）；30Y 美债能否退出 5.2% 上方（7/29 创 2007 年 6 月以来新高）。<span class="t">🕒 7/30 21:30 BJT（分钟级可核验）</span></li>
+    <li><b>亚马逊 Q2 财报</b>：预期营收约 1970 亿（+17%）/EPS 1.82；<b>AWS 预计首破 400 亿美元（约 403 亿、+31%）</b>，Jefferies 预计约 32%；全年 CapEx 约 2000 亿（+50% 创新高）。"资本纪律审判"的下一位受审者。<span class="t">🕒 7/31 04:00 BJT 前后（时段级）</span></li>
+    <li><b>苹果 FY26Q3 财报</b>：预期营收约 1089 亿（+16%）/EPS 约 1.89（+20%），有望创 2021 年以来 6 月季度最快收入增速；iPhone 收入预期约 537 亿（+21%）。摩根士丹利财报前上调目标价 360→364 美元、高盛维持买入 370 美元 vs KeyBanc 卖出 250 美元；关注 HBM/DRAM 涨价下的毛利率指引与提价能力。库克任内最后一次财报会。<span class="t">🕒 7/31 04:00 BJT 前后（时段级）</span></li>
+    <li><b>日央行决议</b>（52 位经济学家全数预测维持 1%）；<b>韩国杠杆 ETF 新政正式实施</b>——强平潮与稳市效果的第一个检验日。<span class="t">🕒 7/31（日级）</span></li>
+    <li><b>白宫 AI 监管框架 deadline</b>：前沿模型定义 / 开源豁免 / 约束力三大悬念。<span class="t">🕒 8/1（日级）</span></li>
+    <li><b>OPEC 会议</b>：预期宣布 9 月增产 18.8 万桶/日，油价地缘溢价的对冲变量，直接影响 7 月通胀读数。<span class="t">🕒 8/2 周日（日级）</span></li>
+  </ul>
+</section>
+
+<!-- ============ 事件时间线 ============ -->
+<section>
+  <h2>⏳ 事件时间线 <span class="en">TIMELINE · 跨模块因果串联</span></h2>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="tm">7/30 02:00 BJT（分钟级可核验）</div>
+      <div class="tx"><b>FOMC 9:3 维持 3.50%–3.75%</b>，三票委主张加息 25bp（2016年来首次三票同向反对）；沃什"通胀高企将毫不犹豫行动"——本期数据的<b>提问者</b>。</div>
+    </div>
+    <div class="tl-item">
+      <div class="tm">7/30 03:49 → 06:36 BJT（官方状态页，分钟级可核验）</div>
+      <div class="tx"><b>Claude 全球宕机 529 Overloaded</b>，约 1.5 小时；开发者社区转向讨论多模型混合订阅与本地部署对冲——"AI 即基础设施"的可靠性第一次被公开定价。</div>
+    </div>
+    <div class="tl-item hot">
+      <div class="tm">7/30 08:00–10:00 BJT（第18期特别版，分钟级可核验）</div>
+      <div class="tx"><b>美军对伊朗本土两小时空袭</b>，7/24 停火终结；此后伊朗"扬言反制"、沙特与巴基斯坦斡旋并行——<b>油价 92 美元僵持的源头</b>。</div>
+    </div>
+    <div class="tl-item">
+      <div class="tm">7/30 白天（日级）</div>
+      <div class="tx"><b>阿里 Qwen3-30B-A3B 更新 + 通义万相 Wan2.2 开源</b>；<b>火山引擎 SeedEdit 3.0 与同传 2.0（延迟 2–3 秒）</b>；<b>月之暗面 F 轮 35 亿美元、股改完成</b>见报——中国开源与商业化同频加速。</div>
+    </div>
+    <div class="tl-item">
+      <div class="tm">7/30 日间（日级）</div>
+      <div class="tx"><b>农业农村部部署农业 AI 顶层设计与专用芯片攻关</b>；国家知识产权局将完善具身智能/脑机接口专利审查标准——7/30 顶层会议"人工智能+"定调后的首批部委落地。</div>
+    </div>
+    <div class="tl-item hot">
+      <div class="tm">7/30 20:30 BJT（8:30 ET，BEA 官方，分钟级可核验）</div>
+      <div class="tx"><b>Q2 GDP 1.5% 不及预期，但私人内需 +3.9%；6月 PCE 环比 -0.1% 为 2020 年来首次月度下降，核心 PCE 同比降至 3.3%</b>——鹰派被抽走一块砖。</div>
+    </div>
+    <div class="tl-item hot">
+      <div class="tm">7/30 20:30–21:20 BJT（盘前，时段级）</div>
+      <div class="tx"><b>费半盘前 +5%、纳指100期货 +1%、欧股全线上涨</b>；微软盘前近 +10% vs Meta 约 -10%——宏观解药与分层审判同时生效。</div>
+    </div>
+    <div class="tl-item">
+      <div class="tm">7/30 21:30 BJT（分钟级可核验，本期截稿时点）</div>
+      <div class="tx"><b>美股正式开盘</b>——纳指六连跌与费半五连跌能否同日终结，是本期留给下一期的第一道题。</div>
+    </div>
+  </div>
+
+  <div class="logic">
+    <b>一条线索看本期：</b>今晚 20:30 的那一行"PCE 环比 -0.1%"，把过去五天所有故事临时接到了一起。<b>它是地缘的产物</b>——6 月通胀之所以降温，靠的是美伊短暂停火期汽油价格回落，而本月汽油已重回 4.10 美元上方，8/2 的 OPEC 增产因此不只是油市事件，而是美联储 9 月的输入变量。<b>它是杠杆的解药</b>——费半 5 连跌近 16%、A 股算力链踩踏、中际旭创 AH 双杀，其真实机制在今天被"高盛/摩根大通率先追保、对冲基金史诗级亏损"这条补录点破：卖压来自 Margin Call 而非基本面，所以只要贴现率预期一松，费半就能盘前弹 5%。<b>但它不改判分层审判</b>——微软盘前近 +10%、Meta 约 -10% 说明市场惩罚的从来不是"花钱"，而是"花钱换不回自由现金流"；明晨 04:00 亚马逊（2000 亿 CapEx）与苹果（克制型 AI）将在同一把尺子下受审。而在这条宏观主线之外，另一条线索安静但更长：Kimi K3 开源后月之暗面半年估值翻 7 倍冲向 500 亿美元、APEC 首次把"开源"写进部长级声明、50 家巨头联署支持开放权重、Claude 宕机 1.5 小时让开发者集体讨论本地部署——<b>"谁掌握权重"正在取代"谁的分数高"，成为下一阶段的真正题眼</b>。
+  </div>
+</section>
+
+<!-- ============ 待跟进 ============ -->
+<section>
+  <h2>🔖 待跟进标注 <span class="en">WATCHLIST · 按优先级</span></h2>
+  <ul class="compact">
+    <li><span class="tag p0">最优先</span>今晚 21:30 美股正式盘：费半 +5%/纳指期货 +1% 的盘前反弹能否守到收盘；<b>纳指六连跌与费半五连跌能否同日终结</b>；30Y 美债能否退回 5.2% 下方、金价方向。</li>
+    <li><span class="tag p0">最优先</span>明晨 04:00 苹果/亚马逊财报（AWS 能否站上 31%+、苹果毛利率与提价指引、库克谢幕）——<b>特别版已预排 7/31 05:30</b>。</li>
+    <li><span class="tag p0">最优先</span><b>本期新增</b>：6 月 PCE 降温的可持续性——7 月汽油已回到 4.10 美元上方，8/2 OPEC 增产决定 7 月读数；9 月加息定价（FedWatch 曲线）如何重定价。</li>
+    <li><span class="tag p0">最优先</span>伊朗反制是否兑现、形式与烈度；布伦特能否站稳 90；霍尔木兹通行状态；8/2 OPEC 增产落地与否。</li>
+    <li><span class="tag p1">高</span>8/1 白宫 AI 框架落地：前沿模型定义、开源豁免（在 APEC 成都声明与 50 家联署背景下尤为关键）、约束力；奥特曼见怀尔斯结果。</li>
+    <li><span class="tag p1">高</span>7/31 韩国杠杆 ETF 新政生效日：强平潮规模与 KOSPI 承压测试；平准基金是否被迫启动。</li>
+    <li><span class="tag p1">高</span><b>本期新增</b>：月之暗面 G 轮（Pre-IPO，投前 500 亿美元）何时关闭、港股上市时间表；估值是否超越智谱/MiniMax。</li>
+    <li><span class="tag p2">中</span><b>本期新增</b>：Claude 宕机根因是否公布；AI 服务可用性是否催生"多模型冗余"采购标准。</li>
+    <li><span class="tag p2">中</span>A 股算力链：创业板 -3.97% 后是否止跌；中际旭创 A/H 锚定效应（H 股 960 vs A 股 864）；对冲基金追保是否引发第二波强平。</li>
+    <li><span class="tag p2">中</span>OpenAI 7 月 ARR 披露后的融资/IPO 动向（已秘密递交 SEC）；Sign in with ChatGPT 生态扩张速度。</li>
+    <li><span class="tag p3">低</span>DeepMind 人才流失连锁（哈萨比斯去留）；HF 完整技术时间线与 GPT-6 训练恢复；DeepSeek V4 GA（8/10–20）；智元港股 IPO；FCC 机器人禁令后续；HAWK 被攻破后 NIST 回应。</li>
+  </ul>
+</section>
+
+<footer>
+  <p><b>时间颗粒度说明</b>：本期<b>分钟级可核验时点</b>——美国 Q2 GDP 与 6 月 PCE 数据发布 7/30 20:30 BJT（8:30 ET，BEA 官方）、FOMC 决议 7/30 02:00 BJT、Claude 宕机官方状态页时间线（UTC 7/29 19:49 调查 / 20:33 定位 / 21:38 恢复中 / 22:36 解决，即 BJT 7/30 03:49–06:36）、美军空袭窗口 7/29 20:00–22:00 ET、美股开盘 7/30 21:30 BJT。<b>日级/时段级时点</b>（公开报道未给出精确分钟，未编造）——盘前行情快照（费半 +5%、纳指期货 +1%、微软近 +10%、Meta 约 -10%，均为 7/30 20:30–21:20 BJT 发稿口径）、布伦特/WTI 傍晚报价、OpenAI 7/30 系列发布（官方博客未标时刻）、阿里与火山引擎 7/30 发布、月之暗面 7/29 工商变更与融资确认、对冲基金追保（7/30 见报）、APEC 成都声明 7/23 通过与 7/29 数字周落幕、国家知识产权局 7/29 国新办发布会、农业农村部 7/30 党组扩大会议、苹果/亚马逊财报 7/31 04:00 BJT 前后（惯例时段）。</p>
+  <p><b>数据来源</b>：美国经济分析局（BEA）官方发布、财联社、每日经济新闻、腾讯新闻财经、证券时报、新浪财经、澎湃新闻、上海证券报、科创板日报、华尔街见闻、央视网、人民财讯、中国日报网、工信部、status.claude.com 官方状态页、BleepingComputer、Cyber Daily、OpenAI 官方、AGI HUNT、my2cents.ai 等公开报道；行情数据以交易所与主流财经终端口径为准。</p>
+  <p><b>免责声明</b>：本简报仅为信息聚合与梳理，不构成任何投资建议。行情涨跌颜色遵循中国市场惯例（<span class="red">红涨</span>/<span class="green">绿跌</span>）。部分盘前/盘中数据为快照值，以收盘官方数据为准。</p>
+</footer>
+
+</div>
+
+<script>(function(){var c=document.getElementById('net');if(!c)return;var ctx=c.getContext('2d'),w,h,pts;function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}addEventListener('resize',resize);resize();tick();})();</script>
+</body>
+</html>
