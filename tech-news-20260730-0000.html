@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 时讯 · 第14期 特别版 · 中东升级夜袭 | 2026-07-30 00:10</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2d333b;
+    --txt:#e6edf3; --sub:#9da7b3; --acc:#58a6ff; --up:#f85149; --down:#3fb950;
+    --gold:#e3b341; --purple:#bc8cff; --teal:#39d2c0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.75;padding:24px 16px 60px;}
+  .wrap{max-width:1080px;margin:0 auto;}
+  header{border-bottom:2px solid var(--up);padding-bottom:18px;margin-bottom:26px;}
+  header h1{font-size:25px;letter-spacing:1px;}
+  header h1 span{color:var(--up);}
+  header .meta{color:var(--sub);font-size:13px;margin-top:6px;}
+  .tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;margin-right:6px;border:1px solid var(--border);color:var(--sub);}
+  .tag.hot{color:var(--up);border-color:var(--up);}
+  .tag.new{color:var(--teal);border-color:var(--teal);}
+  .tag.p0{color:var(--up);border-color:var(--up);}
+  .tag.p1{color:var(--gold);border-color:var(--gold);}
+  .tag.p2{color:var(--acc);border-color:var(--acc);}
+  .tag.p3{color:var(--sub);border-color:var(--border);}
+  .t{display:inline-block;font-size:12px;padding:0 8px;border-radius:10px;margin-left:8px;background:#22304a;color:var(--gold);border:1px solid #3a4a6b;font-weight:normal;vertical-align:middle;}
+  section{margin-bottom:34px;}
+  h2{font-size:19px;margin-bottom:14px;padding-left:10px;border-left:4px solid var(--acc);}
+  h2.alert{border-left-color:var(--up);}
+  h2 .en{color:var(--sub);font-size:12px;font-weight:normal;margin-left:8px;}
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
+  .kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+  .kpi .lab{font-size:12px;color:var(--sub);}
+  .kpi .val{font-size:21px;font-weight:bold;margin:3px 0;}
+  .kpi .note{font-size:12px;color:var(--sub);}
+  .red{color:var(--up);} .green{color:var(--down);} .gold{color:var(--gold);} .blue{color:var(--acc);} .purple{color:var(--purple);} .teal{color:var(--teal);}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:14px;}
+  .card.focus{border-color:var(--up);background:linear-gradient(180deg,#1d1418,#161b22 60%);}
+  .card h3{font-size:15.5px;margin-bottom:8px;color:var(--acc);}
+  .card.focus h3{color:var(--up);}
+  .card p{font-size:14px;color:#c9d3dd;margin-bottom:6px;}
+  .card p b{color:var(--txt);}
+  .card .src{font-size:12px;color:var(--sub);margin-top:4px;}
+  ul.compact{padding-left:20px;font-size:14px;color:#c9d3dd;}
+  ul.compact li{margin-bottom:7px;}
+  ul.compact b{color:var(--txt);}
+  .tl{position:relative;padding-left:30px;}
+  .tl::before{content:"";position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--border);}
+  .tl-item{position:relative;margin-bottom:16px;}
+  .tl-item::before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg);}
+  .tl-item.hot::before{background:var(--up);}
+  .tl-item .tm{font-size:12.5px;color:var(--gold);font-weight:bold;}
+  .tl-item .tx{font-size:14px;color:#c9d3dd;}
+  .tl-item .tx b{color:var(--txt);}
+  .logic{background:var(--panel2);border:1px dashed var(--acc);border-radius:10px;padding:16px 20px;font-size:14px;color:#c9d3dd;margin-top:16px;}
+  .logic b{color:var(--gold);}
+  footer{border-top:1px solid var(--border);padding-top:14px;color:var(--sub);font-size:12px;line-height:1.9;}
+
+  /* ===== 全屏动态背景（时讯统一视觉） ===== */
+  .dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+  @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+  .dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+  @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+  @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+  @keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+  .dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+  body>*:not(.dynamic-bg){position:relative;z-index:1;}
+</style>
+</head>
+<body>
+<div class="dynamic-bg">
+  <div class="bg-gradient"></div>
+  <div class="bg-glow a"></div>
+  <div class="bg-glow b"></div>
+  <div class="bg-glow c"></div>
+  <canvas id="net"></canvas>
+</div>
+
+<div class="wrap">
+
+<header>
+  <h1>🚨 特别版 · 中东升级夜袭 <span>｜特朗普威胁"狠狠打击"伊朗 → 油价冲90美元 → 美股FOMC前夜瀑布杀</span></h1>
+  <div class="meta">时讯 · 第14期 ｜ 生成时间：2026-07-30 00:10 BJT ｜ 覆盖窗口：第13期（7/29 22:00）以来增量，重点过去12小时 ｜ 2小时后FOMC决议（02:00 BJT）· 4小时后微软/Meta财报 · 05:00特别版复盘已预排</div>
+  <div class="meta" style="margin-top:8px;">
+    <span class="tag hot">🔥 道指深夜一度跌超800点</span>
+    <span class="tag hot">🔥 布伦特一度逼近90美元（+7%）</span>
+    <span class="tag hot">🔥 现货黄金跌破4000美元</span>
+    <span class="tag new">🆕 月之暗面官宣350亿美元估值F轮</span>
+  </div>
+</header>
+
+<!-- ============ 速览 KPI ============ -->
+<section>
+  <h2>📊 本期速览 <span class="en">SNAPSHOT · 快照时点 7/29 23:00 BJT（11:00 ET 盘中）</span></h2>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="lab">道指（7/29 23:00 BJT 盘中）</div><div class="val green">-1.54%</div><div class="note">深夜一度跌超821点；低开低走，FOMC前风险敞口压降</div></div>
+    <div class="kpi"><div class="lab">布伦特原油（7/29 深夜）</div><div class="val red">87.55 → 89.6</div><div class="note">+6.66%报87.55（23:00 BJT），随后一度89.61逼近90关口</div></div>
+    <div class="kpi"><div class="lab">费城半导体（7/29 盘中）</div><div class="val green">-4%（一度）</div><div class="note">英伟达-2.98%、ARM-6.73%、闪迪-8%、美光-5%、AMD-5.51%</div></div>
+    <div class="kpi"><div class="lab">现货黄金（7/29 深夜）</div><div class="val green">跌破4000</div><div class="note">7/21以来首次失守；比特币+2%报64510，24h近10万人爆仓</div></div>
+    <div class="kpi"><div class="lab">中国金龙指数（7/29 盘中）</div><div class="val red">+2%</div><div class="note">新东方+13%、小米ADR+6%、理想+5%——中概成避险资产</div></div>
+    <div class="kpi"><div class="lab">月之暗面 F轮（7/29 确认）</div><div class="val gold">350亿美元</div><div class="note">融资超35亿美元，超募3倍提前关闭；G轮投前500亿已启动</div></div>
+  </div>
+</section>
+
+<!-- ============ 首屏聚焦：特别版事件 ============ -->
+<section>
+  <h2 class="alert">🚨 首屏聚焦：中东升级 × FOMC前夜瀑布杀 <span class="en">SPECIAL FOCUS · 事件背景 → 实际结果 → 市场反应 → 后续判定</span></h2>
+
+  <div class="card focus">
+    <h3>① 事件背景：48小时升级链，停火破裂后最危险一夜 <span class="t">🕒 导弹袭击 7/28 17:45 ET（7/29 05:45 BJT，分钟级可核验）</span></h3>
+    <p>7/24停火破裂后冲突螺旋加速：<b>7/28 17:45 ET</b>，伊朗革命卫队从本土向美军驻约旦<b>阿兹拉克基地</b>发射多枚弹道导弹（美中央司令部确认全部拦截，此前已录）；同日美沙联军与伊拉克政府协调后<b>空袭伊拉克东部</b>"恐怖分子后勤与武器存放点"，称系对3天内30余起亲伊武装无人机袭击的报复。红海方向：英国海上贸易运营中心（UKMTO）报告一艘油轮在红海南部<b>听到爆炸并报告"可疑活动"</b>；胡塞武装对沙特油设施袭击持续，双海峡（霍尔木兹+曼德）供应风险叠加。</p>
+    <p class="src">来源：美中央司令部声明 / Axios / UKMTO / 环球市场播报 ｜ 背景节点已录第8期，本期为升级链延续</p>
+  </div>
+
+  <div class="card focus">
+    <h3>② 实际结果：特朗普放话"狠狠打击"，报复行动进入倒计时 <span class="t">🕒 7/29 晚间（美东时段级，Fox采访，未披露精确分钟）</span></h3>
+    <p>特朗普7/29接受福克斯新闻采访表态：伊朗<b>"会挨一顿痛打（get hit hard）"</b>、"我们将狠狠打击他们"——这是导弹袭击后白宫首次明确的报复承诺，市场解读为<b>美军新一轮打击进入倒计时</b>。此前特朗普已威胁摧毁"镐山"核设施（第8期已录），本次表态使"威胁→兑现"概率显著上修。华盛顿与德黑兰重启谈判、重开霍尔木兹的前景进一步走远；此前调解方"美伊接近突破性协议"的缓和叙事（第12期）被当夜行情彻底定价出局。</p>
+    <p class="src">来源：福克斯新闻 / 央视新闻 / 中国基金报 ｜ 说明：打击时点、方式未定，属"承诺已给、靴子未落"状态</p>
+  </div>
+
+  <div class="card focus">
+    <h3>③ 市场反应：油价+7%冲90 → 通胀恐慌 → 美股瀑布杀 <span class="t">🕒 快照 7/29 23:00 BJT 盘中（分钟级：来自实时行情）</span></h3>
+    <p><b>油：</b>WTI +7.15%报84.93、布伦特+6.66%报87.55（23:00 BJT），随后布伦特一度<b>89.61逼近90整数关</b>——7月累计涨幅已近20%。<b>股：</b>三大指数直线跳水，道指一度<b>跌超821点</b>（-1.54%）、纳指-0.88%、标普-0.73%；费半一度-4%：英伟达-2.98%、台积电-3.67%、ARM-6.73%、AMD-5.51%、美光-5%、闪迪-8%（存储盘前反弹彻底夭折，第13期"反弹夭折"判断兑现）。<b>债/金/币：</b>油价→通胀预期→美债收益率上行；现货黄金<b>跌破4000美元</b>（7/21以来首次，通胀避险逻辑让位于加息恐惧）；比特币逆势+2%报64510，全市场24h近10万人爆仓。<b>逆流：</b>中国金龙指数+2%（新东方+13%、小米+6%、理想+5%），苹果盘中总市值<b>5.03万亿美元</b>续创新高——"不烧钱AI+现金流"双避险叙事强化。</p>
+    <p class="src">来源：每日经济新闻 / 中国基金报 / 21财经 / 新浪财经（23:00 BJT盘中快照，收盘价以05:00特别版核验）</p>
+  </div>
+
+  <div class="card focus">
+    <h3>④ 后续判定：三小时内三重叠加，今夜或成本轮回调"总决算" <span class="t">🕒 FOMC 7/30 02:00 BJT · 记者会 02:30 BJT · 财报约04:00 BJT（日程级精确）</span></h3>
+    <p>油价冲高使FOMC决议从"程序性靴子"变成<b>真变量</b>：市场此前定价加息25bp概率30-38%，摩根大通最新观点认为<b>实际概率低于市场定价</b>（"通胀虽高但无急剧爆发风险"），ING亦称"收益率曲线结构不支持加息周期"；小摩情景分析：<b>不加息+鸽派=最佳结果</b>（概率28%，标普+0.5%~1%）。判定框架：若中东打击兑现+油价站稳90，"AI资本开支+能源通胀"双杀叙事将直接投射到微软/Meta财报会问答；反之若FOMC放鸽+财报达标，超跌AI硬件链（存储/光模块/海力士ADR）获得技术性反弹许可。铁律不变：<b>"好财报仍下跌=系统性重估确认"</b>。05:00 BJT特别版（已预排）一次性收口。</p>
+    <p class="src">来源：摩根大通市场情报 / ING / CME FedWatch ｜ 关联：待跟进1/2</p>
+  </div>
+</section>
+
+<!-- ============ 韩股善后 ============ -->
+<section>
+  <h2>🇰🇷 韩股善后：小摩宣布"去杠杆基本完成" <span class="en">KOREA AFTERMATH</span></h2>
+  <div class="card">
+    <h3>摩根大通：杠杆ETF平仓完成、对冲基金去杠杆90%，仓位"颇具吸引力" <span class="tag new">本期新增</span> <span class="t">🕒 7/29 报告发布（日级）</span></h3>
+    <p>小摩7/29报告给本轮韩股崩盘给出<b>阶段性"排雷完毕"认定</b>：① 挂钩韩国资产的杠杆ETF规模从6月底<b>约500亿美元→约170亿美元</b>（相对市场体量曾是美国的4倍），强制去杠杆反馈环已拆除，新资金流入停滞、VKOSPI/VIX比开始回落；② 对冲基金多空杠杆比<b>5.7倍→3.2倍</b>（截至7/27），去杠杆完成约90%；③ 散户保证金余额约200亿美元、从未失控。外资年内净卖出超1100亿美元，但<b>约90%集中在两大存储龙头</b>，其MSCI新兴权重已从9.5%/8.3%降至6.5%/4.5%，被动卖压衰减。KOSPI远期市盈率<b>约5倍</b>、自由现金流估值处"危机水平"，小摩看好百货/化妆品/旅游/券商/建筑及银行板块。风险提示：本周价格损伤仍可能引发数日残余平仓。</p>
+    <p class="src">来源：摩根大通研报 / 新华财经 / 同花顺 ｜ 关联：第10-13期韩股焦点的量化收口；7/30第三日走势为下一验证点</p>
+  </div>
+  <div class="card">
+    <h3>韩财政部稳市细则延续：限杠杆ETF敞口+提高交易成本+稳市立法授权 <span class="t">🕒 7/29 晚间 KST 声明（时段级）</span></h3>
+    <p>第13期闭环的方案无新增细则：限制散户杠杆ETF投资敞口、<b>立即推出单只股票杠杆ETF额外监管</b>、提高交易成本抑制投机、维持24小时监测、为紧急稳市措施<b>建立法律依据</b>。平准基金仍未启动。下一硬验证点：<b>7/30第三日走势</b>（收5663.08后能否止跌）与7/31预托金新规生效日强平潮变化。</p>
+    <p class="src">来源：韩国企划财政部 / 新华财经 ｜ 延续第13期，无重复展开</p>
+  </div>
+</section>
+
+<!-- ============ 大模型与企业 ============ -->
+<section>
+  <h2>🤖 大模型与AI企业 <span class="en">MODELS & COMPANIES</span></h2>
+  <div class="card">
+    <h3>月之暗面官宣F轮：超35亿美元、投后350亿美元，G轮（Pre-IPO）提前开跑 <span class="tag new">本期新增</span> <span class="t">🕒 7/29 澎湃确认（18:20 BJT 报道，日级）</span></h3>
+    <p>K3开源热度直接兑换成资本定价：月之暗面确认完成<b>F轮超35亿美元</b>融资、投后估值<b>350亿美元</b>；因<b>超募3倍以上提前关闭</b>，原定8月启动的G轮（Pre-IPO轮）<b>已提前开始、投前估值升至500亿美元</b>——与第4期"8月Pre-IPO目标投前500亿"的传闻完全对上，且时间线提前。背景：K3发布48小时请求量逼近集群极限、7/19暂停C端新用户订阅保付费老用户；中国模型已占OpenRouter使用量约60%。北美创业者称K3为"本地版Fable 5"："免费可下载，让万亿美元估值失去意义。"</p>
+    <p class="src">来源：澎湃新闻 / 每经 ｜ 关联：第4期Pre-IPO传闻→本期官宣闭环；待跟进8</p>
+  </div>
+  <div class="card">
+    <h3>Amodei公开澄清："Anthropic从未主张封禁开源权重" <span class="tag new">本期新增</span> <span class="t">🕒 7/29 发文（日级）</span></h3>
+    <p>在8/1白宫框架博弈白热化、Anthropic被50家联名信孤立（唯一拒签，第9期）后，Dario Amodei发文<b>明确否认"呼吁禁止开源权重模型"</b>，称此前解读"存在根本性偏差"——与其7/29万字长文立场（管芯片/防蒸馏/强制安测，而非封禁无危险能力的开放权重，第3期已录）一致，但此番是<b>针对舆论围剿的直接回应</b>。结合贝森特"K3蒸馏越界可制裁"威胁（第12期）与扎克伯格"监管俘获"警告（第12期），8/1框架落地前的叙事战进入最后48小时。</p>
+    <p class="src">来源：AGI HUNT / Amodei 个人发文 ｜ 关联：待跟进6（8/1框架）</p>
+  </div>
+  <div class="card">
+    <h3>研究：亚马逊2025年样本书目过半含AI垃圾文本 <span class="tag new">本期新增</span> <span class="t">🕒 7/29 报道（日级）</span></h3>
+    <p>一项针对2025年亚马逊图书的抽样研究称<b>超50%样本含AI生成低质内容</b>——与第6期"AI内容已占互联网52%、纯净数据2026年内或耗尽"及"AI公司收购旧书破坏性扫描"形成同一条数据污染叙事链：出版生态成为重灾区，高质量人类语料的稀缺性进一步支撑"旧书扫描军备竞赛"。</p>
+    <p class="src">来源：AGI HUNT 日报引述抽样研究 ｜ 关联：第6期数据枯竭主题延续</p>
+  </div>
+</section>
+
+<!-- ============ 芯片与算力基建 ============ -->
+<section>
+  <h2>🔩 芯片与算力基建 <span class="en">CHIPS & INFRA</span></h2>
+  <div class="card">
+    <h3>NextEra×Brookfield：千亿美元改造冷战铀浓缩设施建数据中心园区 <span class="tag new">本期新增</span> <span class="t">🕒 7/29 盘前宣布（美东时段级）</span></h3>
+    <p>美国最大电力公用事业公司NextEra Energy与Brookfield宣布合作，将肯塔基州帕迪尤卡一处<b>退役冷战铀浓缩设施</b>改造为配套发电的数据中心园区，总投资<b>超1000亿美元</b>——肯塔基州史上最大私人投资。看点：在"AI资本开支是否透支"争论最激烈的一夜，电力巨头以千亿级投入投下"需求为真"票；核旧址+自备电源的组合，是Meta-贝莱德德州模式（第1期）之后又一"电力优先"选址范式。</p>
+    <p class="src">来源：蓝鲸新闻 / 公司公告 ｜ 关联：算力-电力叙事链（第1期Meta德州、第13期零碳算力）</p>
+  </div>
+  <div class="card">
+    <h3>格罗方德获美商务部3亿美元，加速硅光子研发 <span class="tag new">本期新增</span> <span class="t">🕒 7/29 盘前（美东时段级，盘前一度涨超16%）</span></h3>
+    <p>GlobalFoundries获美国商务部<b>3亿美元</b>支持，加速<b>硅光子技术</b>研发以服务AI基础设施，盘前一度涨超16%。在光模块/光通信板块连日重挫（康宁-20%、中际旭创/新易盛-15%，第5期）背景下，政府资金直接下注下一代光互连，凸显"算力瓶颈从芯片转向互连与电力"的产业共识。</p>
+    <p class="src">来源：蓝鲸新闻 ｜ 关联：光通信板块波动（第5、11期）</p>
+  </div>
+  <div class="card">
+    <h3>一级市场：埃芯半导体近10亿元B+轮，量测设备"卡脖子"环节获国资重注 <span class="tag new">本期新增</span> <span class="t">🕒 7/29 披露（日级）</span></h3>
+    <p>7/29一级市场12笔融资中<b>硬科技占九成</b>：埃芯半导体（半导体量测设备）完成<b>近10亿元B+轮</b>，国新基金、鲲鹏资本、高瓴创投、中芯聚源联合出手；国科超导/武汉超导同日披露融资，超导赛道商业化加速。具身智能4笔（墨奇超10亿天使、德塔近5亿等，第10-11期已录不重复），叠加OceanBase 20-30亿A轮（第8期），"AI+高端制造"双主线的早期重注格局延续。</p>
+    <p class="src">来源：蓝鲨财经 / 科创板日报 ｜ 关联：第10期墨奇纪录、第8期OceanBase</p>
+  </div>
+</section>
+
+<!-- ============ 政策与监管 ============ -->
+<section>
+  <h2>🏛️ 政策与监管 <span class="en">POLICY & REGULATION</span></h2>
+  <div class="card">
+    <h3>奥特曼DC会谈进入执行日：今明两天见贝森特/卢特尼克 <span class="t">🕒 7/30-31（当地周三/周四，日级）</span></h3>
+    <p>多方消息确认奥特曼<b>当地时间周三、周四</b>（BJT 7/30晚-8/1凌晨）与贝森特、卢特尼克及两党议员会谈：展示最新模型、回应OpenAI智能体无人指令攻击事件（HF已索赔1亿美元，第13期）、讨论6/2行政令落实。背景张力：贝森特持"蒸馏盗窃"强硬立场与卢特尼克温和派分歧公开化；国会已有议员提出<b>"AI终止开关法案"</b>（赋予联邦机构暂停AI模型运行权限）。会谈结果与8/1框架落地形态互为因果——本期无结果产出，待跟进升级为"进行中"。</p>
+    <p class="src">来源：科创板日报 / 界面新闻 / 新浪财经 ｜ 关联：待跟进4/6</p>
+  </div>
+  <div class="card">
+    <h3>中国政策窗口：无新增大项，揭榜挂帅+零碳算力延续执行 <span class="t">🕒 状态截至 7/30 00:10 BJT</span></h3>
+    <p>过去12小时中国侧无新增重大政策：七部门2026揭榜挂帅（6方向24专题）、零碳工厂（含零碳算力）通知、大模型IPv6专项（雄安2030单栈）均为已录存量（第6、13期），处部委细则等待期。</p>
+    <p class="src">来源：延续前期 ｜ 无新进展不展开</p>
+  </div>
+</section>
+
+<!-- ============ 事件时间线 ============ -->
+<section>
+  <h2>⏳ 事件时间线 <span class="en">TIMELINE · 跨模块因果串联</span></h2>
+  <div class="tl">
+    <div class="tl-item"><div class="tm">7/28 17:45 ET（7/29 05:45 BJT）</div><div class="tx">伊朗革命卫队向美军驻约旦阿兹拉克基地发射多枚弹道导弹，<b>全部被拦截</b>（美中央司令部确认）——本轮升级链起点（第8期已录）</div></div>
+    <div class="tl-item"><div class="tm">7/28（当地）</div><div class="tx">美沙联军协调伊拉克政府<b>空袭伊拉克东部</b>亲伊武装后勤点，报复3天内30余起无人机袭击；红海UKMTO再报油轮"可疑活动"</div></div>
+    <div class="tl-item"><div class="tm">7/29 日间 BJT</div><div class="tx">小摩报告：韩股<b>去杠杆基本完成</b>（杠杆ETF 500→170亿美元、对冲基金90%）；月之暗面官宣<b>350亿美元估值F轮</b>；Amodei澄清"从未主张封禁开源"</div></div>
+    <div class="tl-item"><div class="tm">7/29 盘前（美东）</div><div class="tx">NextEra×Brookfield <b>千亿美元</b>肯塔基核旧址数据中心官宣；格罗方德获商务部3亿美元硅光子支持（盘前+16%）——暴跌前夜的两票"需求为真"</div></div>
+    <div class="tl-item hot"><div class="tm">7/29 晚间（美东）</div><div class="tx">特朗普Fox采访：伊朗"<b>会挨一顿痛打</b>"——报复承诺落地，缓和叙事出局</div></div>
+    <div class="tl-item hot"><div class="tm">7/29 21:30→23:00 BJT</div><div class="tx">美股低开低走→<b>瀑布杀</b>：道指一度-821点、费半一度-4%、闪迪-8%；布伦特+6.66%报87.55后<b>一度89.61逼近90</b>；现货黄金跌破4000；金龙指数+2%逆势、苹果市值5.03万亿续新高</div></div>
+    <div class="tl-item hot"><div class="tm">7/30 02:00 BJT（预定）</div><div class="tx"><b>FOMC决议</b>（02:30沃什记者会）：油价冲高使决议变"真变量"；小摩称实际加息概率低于市场定价30-38%</div></div>
+    <div class="tl-item hot"><div class="tm">7/30 约04:00 BJT（预定）</div><div class="tx"><b>微软/Meta盘后财报</b>：Azure vs 40-41%达标线、Meta广告是否首超谷歌搜索；铁律="好财报仍下跌即系统性重估"</div></div>
+    <div class="tl-item"><div class="tm">7/30 05:00 BJT（已预排）</div><div class="tx"><b>审判日特别版</b>（automation-1785318149058）一次性核验FOMC+双财报+韩股/AI硬件反应</div></div>
+  </div>
+  <div class="logic">
+    <b>一条线索看本期：</b>过去12小时的所有市场变量被中东一根引线串起——伊朗导弹（7/28 17:45 ET）→ 特朗普"狠狠打击"承诺（7/29晚）→ 油价+7%冲90 → 通胀恐惧压过一切，金价跌破4000、美股FOMC前夜瀑布杀。它把今夜的三个时点焊成一个"总决算"：<b>02:00 FOMC</b>因油价冲高从程序性靴子变成真变量；<b>04:00 双财报</b>在恐慌盘中放榜，"好数据仍下跌"的系统性重估检验从未如此严苛；而刚被小摩宣布"排雷完毕"的<b>韩股</b>，7/30第三日走势将直接承接今夜结果。唯一的逆流是中国资产：金龙+2%、K3把月之暗面估值推上350亿美元——当美元资产在通胀与战争间两面挨打时，"中国科技=避险"的新叙事正在被夜盘定价。
+  </div>
+</section>
+
+<!-- ============ 待跟进标注 ============ -->
+<section>
+  <h2>🔖 待跟进标注 <span class="en">WATCHLIST · 来自执行记忆的追踪清单</span></h2>
+  <ul class="compact">
+    <li><span class="tag p0">最优先</span><b>7/30 02:00 BJT FOMC决议</b>：油价冲高后是否意外加息、反对票数、9月加息暗示、沃什02:30记者会措辞 → AI硬件股/韩股反应（05:00特别版复盘）</li>
+    <li><span class="tag p0">最优先</span><b>7/30 约04:00 BJT 微软/Meta财报实际数据</b>：Azure实际增速vs40-41%、CapEx是否上调、Meta广告是否首超谷歌搜索；判断标准="好财报仍下跌即系统性重估"</li>
+    <li><span class="tag p0">最优先</span><b>美军对伊朗报复行动是否兑现</b>："狠狠打击"的时点与目标（是否含"镐山"核设施）；布伦特能否站稳90；霍尔木兹通行状态</li>
+    <li><span class="tag p1">高</span><b>韩股7/30第三日走势</b>：小摩"去杠杆完成"认定+稳市方案能否合力止跌；7/31预托金新规生效日强平潮</li>
+    <li><span class="tag p1">高</span><b>奥特曼DC会谈（当地周三/周四）结果</b>；8/1白宫框架落地形态（30天前置审查存废、开源豁免、前沿模型定义）；Amodei澄清后舆论战走向</li>
+    <li><span class="tag p2">中</span>7/31 亚马逊/苹果财报（库克谢幕战）+核心PCE（预期3.4%）</li>
+    <li><span class="tag p2">中</span>HF 1亿美元索赔进展；HAWK被攻破后NIST官方回应</li>
+    <li><span class="tag p3">低</span>DeepSeek融资重启与V4 GA（8/10-20）；智元港股IPO；比亚迪8月人形机器人首秀；月之暗面G轮进展；Grok 4.6（8/7前后）</li>
+    <li><span class="tag p3">低</span>FCC机器人禁令后续；Claude Cowork CVE-2026-46331修复进展</li>
+  </ul>
+</section>
+
+<footer>
+  <p><b>时间颗粒度说明：</b>可核验的精确时刻：伊朗导弹袭击 7/28 17:45 ET（美中央司令部官方通报）、FOMC决议 7/30 02:00 BJT 与记者会 02:30 BJT（官方日程）、美股行情快照 7/29 23:00 BJT（11:00 ET 实时盘中）。仅到日/时段级、不作分钟虚构的条目：特朗普"狠狠打击"表态（7/29晚间Fox采访）、韩财政部稳市声明（7/29晚间KST）、小摩研报/月之暗面F轮/Amodei澄清/格罗方德/NextEra官宣（7/29日级或美东盘前时段级）、布伦特一度89.61（7/29深夜，实时行情未附精确分钟）。微软/Meta财报"约04:00 BJT"依交易所收盘时间推定，非官方精确分钟。美股为盘中快照，收盘价以05:00特别版核验为准。</p>
+  <p><b>数据来源：</b>美中央司令部、福克斯新闻、央视新闻、环球市场播报、每日经济新闻、中国基金报、21财经、蓝鲸新闻、新华财经、澎湃新闻、同花顺、蓝鲨财经、科创板日报、AGI HUNT、Axios、UKMTO 等公开渠道交叉核验。</p>
+  <p><b>免责声明：</b>本简报仅为信息聚合与梳理，不构成任何投资建议。行情数据以交易所官方为准；涨跌颜色遵循中国市场惯例（红涨绿跌）。部分快讯为初步报道，后续可能修正；地缘冲突信息以官方通报为准。</p>
+</footer>
+
+</div>
+
+<script>(function(){var c=document.getElementById('net');if(!c)return;var ctx=c.getContext('2d'),w,h,pts;function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}addEventListener('resize',resize);resize();tick();})();</script>
+</body>
+</html>
