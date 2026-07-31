@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 时讯 · 第15期 特别版 · 审判日双重决 | 2026-07-30 09:01</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2d333b;
+    --txt:#e6edf3; --sub:#9da7b3; --acc:#58a6ff; --up:#f85149; --down:#3fb950;
+    --gold:#e3b341; --purple:#bc8cff; --teal:#39d2c0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.75;padding:24px 16px 60px;}
+  .wrap{max-width:1080px;margin:0 auto;}
+  header{border-bottom:2px solid var(--up);padding-bottom:18px;margin-bottom:26px;}
+  header h1{font-size:25px;letter-spacing:1px;}
+  header h1 span{color:var(--up);}
+  header .meta{color:var(--sub);font-size:13px;margin-top:6px;}
+  .tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;margin-right:6px;border:1px solid var(--border);color:var(--sub);}
+  .tag.hot{color:var(--up);border-color:var(--up);}
+  .tag.new{color:var(--teal);border-color:var(--teal);}
+  .tag.p0{color:var(--up);border-color:var(--up);}
+  .tag.p1{color:var(--gold);border-color:var(--gold);}
+  .tag.p2{color:var(--acc);border-color:var(--acc);}
+  .tag.p3{color:var(--sub);border-color:var(--border);}
+  .t{display:inline-block;font-size:12px;padding:0 8px;border-radius:10px;margin-left:8px;background:#22304a;color:var(--gold);border:1px solid #3a4a6b;font-weight:normal;vertical-align:middle;}
+  section{margin-bottom:34px;}
+  h2{font-size:19px;margin-bottom:14px;padding-left:10px;border-left:4px solid var(--acc);}
+  h2.alert{border-left-color:var(--up);}
+  h2 .en{color:var(--sub);font-size:12px;font-weight:normal;margin-left:8px;}
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
+  .kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+  .kpi .lab{font-size:12px;color:var(--sub);}
+  .kpi .val{font-size:21px;font-weight:bold;margin:3px 0;}
+  .kpi .note{font-size:12px;color:var(--sub);}
+  .red{color:var(--up);} .green{color:var(--down);} .gold{color:var(--gold);} .blue{color:var(--acc);} .purple{color:var(--purple);} .teal{color:var(--teal);}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:14px;}
+  .card.focus{border-color:var(--up);background:linear-gradient(180deg,#1d1418,#161b22 60%);}
+  .card h3{font-size:15.5px;margin-bottom:8px;color:var(--acc);}
+  .card.focus h3{color:var(--up);}
+  .card p{font-size:14px;color:#c9d3dd;margin-bottom:6px;}
+  .card p b{color:var(--txt);}
+  .card .src{font-size:12px;color:var(--sub);margin-top:4px;}
+  ul.compact{padding-left:20px;font-size:14px;color:#c9d3dd;}
+  ul.compact li{margin-bottom:7px;}
+  ul.compact b{color:var(--txt);}
+  .tl{position:relative;padding-left:30px;}
+  .tl::before{content:"";position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--border);}
+  .tl-item{position:relative;margin-bottom:16px;}
+  .tl-item::before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg);}
+  .tl-item.hot::before{background:var(--up);}
+  .tl-item .tm{font-size:12.5px;color:var(--gold);font-weight:bold;}
+  .tl-item .tx{font-size:14px;color:#c9d3dd;}
+  .tl-item .tx b{color:var(--txt);}
+  .logic{background:var(--panel2);border:1px dashed var(--acc);border-radius:10px;padding:16px 20px;font-size:14px;color:#c9d3dd;margin-top:16px;}
+  .logic b{color:var(--gold);}
+  footer{border-top:1px solid var(--border);padding-top:14px;color:var(--sub);font-size:12px;line-height:1.9;}
+
+  /* ===== 全屏动态背景（时讯统一视觉） ===== */
+  .dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+  @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+  .dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+  @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+  @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+  @keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+  .dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+  body>*:not(.dynamic-bg){position:relative;z-index:1;}
+</style>
+</head>
+<body>
+<div class="dynamic-bg">
+  <div class="bg-gradient"></div>
+  <div class="bg-glow a"></div>
+  <div class="bg-glow b"></div>
+  <div class="bg-glow c"></div>
+  <canvas id="net"></canvas>
+</div>
+
+<div class="wrap">
+
+<header>
+  <h1>🚨 特别版 · 审判日双重决 <span>｜FOMC"鹰派按兵不动"(9:3) → 微软+9% vs Meta-10%冰火 → "系统性重估"精确化为"资本纪律审判"</span></h1>
+  <div class="meta">时讯 · 第15期 ｜ 生成时间：2026-07-30 09:01 BJT ｜ 覆盖窗口：第14期（7/30 00:10）以来，聚焦 02:00 FOMC 决议 + 盘后微软/Meta 财报实际结果 ｜ 下一节点：7/31 亚马逊/苹果财报 + 核心PCE</div>
+  <div class="meta" style="margin-top:8px;">
+    <span class="tag hot">🔥 道指-1153点创15个月最大单日点数跌幅</span>
+    <span class="tag hot">🔥 FOMC三张加息反对票=2016年来首次</span>
+    <span class="tag hot">🔥 微软盘后+9% / Meta盘后一度-10%</span>
+    <span class="tag new">🆕 三星营业利润+1813.8%创历史新高仍翻跌</span>
+  </div>
+</header>
+
+<!-- ============ 速览 KPI ============ -->
+<section>
+  <h2>📊 本期速览 <span class="en">SNAPSHOT · 快照时点 7/30 04:00 BJT 收盘 + 07:36/08:44 BJT 盘后与亚市</span></h2>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="lab">道指（7/30 04:00 BJT 收盘）</div><div class="val green">-2.19%</div><div class="note">收51594.14，狂泻1153点，创15个月最大单日点数跌幅</div></div>
+    <div class="kpi"><div class="lab">纳指（7/30 04:00 BJT 收盘）</div><div class="val green">-1.74%</div><div class="note">收24442.94六连跌；纳指100较6月高点-11%入回调区间</div></div>
+    <div class="kpi"><div class="lab">费城半导体（7/30 收盘）</div><div class="val green">-5.33%</div><div class="note">五连跌累计近16%；美光-9.94%、英伟达-3.55%、ARM-8%</div></div>
+    <div class="kpi"><div class="lab">微软盘后（7/30 07:36 BJT）</div><div class="val red">+8.98%</div><div class="note">报425.6美元；Azure+43%超指引 + FY27 CapEx下调至1750亿</div></div>
+    <div class="kpi"><div class="lab">Meta盘后（7/30 07:36 BJT）</div><div class="val green">-6.31%</div><div class="note">一度-10.03%报526.88创年内新低；已连跌10日累计-14%</div></div>
+    <div class="kpi"><div class="lab">KOSPI 第三日（7/30 08:44 BJT）</div><div class="val green">-2%附近</div><div class="note">开盘+0.3%→翻绿震荡；SK海力士-7%（5日-30%）、三星+4%→-4%</div></div>
+  </div>
+</section>
+
+<!-- ============ 首屏聚焦：特别版事件 ============ -->
+<section>
+  <h2 class="alert">🚨 首屏聚焦：FOMC × 微软/Meta 审判日 <span class="en">SPECIAL FOCUS · 事件背景 → 实际结果 → 市场反应 → 后续判定</span></h2>
+
+  <div class="card focus">
+    <h3>① 事件背景：韩股双熔断后的"全球AI估值审判夜" <span class="t">🕒 背景跨 7/28–7/29（日级，节点续前期）</span></h3>
+    <p>本审判日为第10期（7/29 15:46）预排：韩股 7/28-29 <b>史上首次连续两日熔断</b>（KOSPI较峰值一度-43%）后，全球AI交易链条极度脆弱，市场容忍度降至冰点。三大悬念进入今夜验证——① FOMC是否加息（会前 FedWatch：不变64.2% / 加息35.8%，一周前仅13%）；② 微软 CapEx 与 Azure 增速（指引39-40%，期权隐含波动6.4%）；③ Meta 广告能否首超谷歌搜索、CapEx 是否再上调（隐含波动7.4%）。判定标准提前锁定：<b>"好财报股价仍跌 = AI估值系统性重估确认"</b>。</p>
+    <p class="src">关联：第10期（前瞻预排）、第13期（韩股善后）、第14期（中东夜袭+FOMC前夜瀑布杀）</p>
+  </div>
+
+  <div class="card focus">
+    <h3>② 实际结果A · FOMC："鹰派按兵不动"，三张反对票创十年之最 <span class="t">🕒 决议 7/30 02:00 BJT · 沃什记者会 02:30 BJT（分钟级可核验）</span></h3>
+    <p><b>利率维持 3.50%-3.75% 不变（五连停）</b>，但投票 <b>9:3</b> ——达拉斯联储洛根、克利夫兰联储哈马克、明尼阿波利斯联储卡什卡利均主张<b>加息25bp</b>。"美联储传声筒" Timiraos：这是<b>2016年以来首次</b>在同一决议出现三张方向一致的反对票。声明正文仅115词，创近二十年最短，措辞与6月几乎一致（继续强调中东冲突不确定性高企但经济稳健扩张）。<b>无点阵图</b>（沃什任内已弃用）。</p>
+    <p><b>沃什记者会基调=鹰派</b>：①"2%通胀目标<b>没有任何弹性空间</b>，不存在软通胀目标"；②宣布<b>实质性退出前瞻指引</b>（"若市场只是把我们的话反射回来，等于对最重要信息来源视而不见"）；③回避"为何本月不加息"，解释为"市场利率已自行攀升，投资者做了央行的部分工作"；④"如果通胀过高且不回落，<b>最好的补救措施就是提高利率</b>，若有必要将毫不犹豫行动"。特朗普当日回应："凯文非常优秀，但他受委员会制约。"</p>
+    <p><b>9月加息暗示：市场已完全定价9月首次加息25bp</b>，并预计其后9个月内再加1-2次；丹斯克银行预计12月与2027年3月各加25bp、风险偏向更早。</p>
+    <p class="src">来源：券商中国 / 中新经纬 / 腾讯新闻·华尔街见闻 / FedWatch ｜ 关联：第4期FOMC前瞻、第8期加息概率38%、第14期小摩情景推演</p>
+  </div>
+
+  <div class="card focus">
+    <h3>③ 实际结果B · 微软/Meta财报冰火两重天 <span class="t">🕒 美股盘后发布（约 7/30 04:0x–04:30 BJT，时段级）；盘后报价快照 07:36 BJT（分钟级）</span></h3>
+    <p><b>微软（FY26Q4，截至6/30）——全面超预期 + CapEx下调，盘后一度+10%</b>：营收<b>900.1亿美元（+18%）</b>超预期876亿；Non-GAAP EPS <b>4.74美元（+23%）</b>大超预期4.24；<b>Azure +43%</b>——不仅超39-40%指引与39.6%一致预期，还创2022年初以来最快增速，<b>Azure 全年收入首破1000亿美元</b>；M365 Copilot 付费席位<b>超3000万</b>（上季2000万、预期2690万）。CapEx：Q4总资本开支<b>410亿美元（+70%）低于预期3.5%</b>（此前市场担忧+74%）；更关键的是电话会把 <b>FY27 CapEx 指引定为1750亿美元，较此前预估1900亿下调近8%</b>——股价闻声从+4.9%加速至+9%。净利357.66亿（+31%，含 Anthropic 投资收益32亿）；商业RPO +84%至6780亿；新签未执行数据中心租约超1300亿、总额3291亿（环比+67%）。</p>
+    <p><b>Meta（Q2）——营收超预期但利润脱靶 + CapEx上调，盘后一度-10.03%创年内新低</b>：营收<b>608亿（+28%）</b>略超预期602.4亿；广告收入<b>593.6亿（+27%）</b>——<b>未能首超谷歌搜索</b>（谷歌Q2搜索及其他收入632.7亿，差39亿，大摩预判落空）；EPS <b>6.18美元</b>不及预期（去年同期7.14），净利<b>158.5亿（-14%）</b>远低于预期185亿（含24亿法律费+11.8亿遣散费，剔除后营业利润+9%）；Q3营收指引610-640亿，中值低于预期631.7亿；<b>全年CapEx指引由1250-1450亿上调下限至1300-1450亿</b>；<b>自由现金流仅7.84亿美元，创近四年最低</b>（去年同期85.49亿）。扎克伯格AI表述：约900万企业在用Meta AI广告工具、Advantage+ 年化营收超750亿；"<b>不会为短期收益出售算力</b>，销售智能的长期价值高于直接卖算力"；重申反对封禁中国AI模型。</p>
+    <p class="src">来源：新华财经 / 每经全球科技早参 / 澎湃 / 21财经 / 凤凰网科技 / 华尔街见闻 ｜ 关联：第4期财报前瞻、第12期预期细化（Azure达标线40-41%、Meta广告首超预判）</p>
+  </div>
+
+  <div class="card focus">
+    <h3>④ 市场反应与判定："系统性重估"部分确认，精确化为"资本纪律分层审判" <span class="t">🕒 判定基于 7/30 04:00 BJT 收盘 + 07:36/08:44 BJT 盘后与亚市快照</span></h3>
+    <p><b>时序还原</b>：02:00 决议公布后美股短线拉升（纳指一度转涨、金价拉至4081、10Y下探4.61%）→ 02:30 沃什记者会转鹰 → 尾盘瀑布跳水：<b>道指-1153点(-2.19%)、纳指-1.74%六连跌、标普-1.52%</b>；10Y收益率跳涨6bp至4.66%+，<b>30Y盘中5.244%创2007年金融危机前以来最高</b>——长端利率成为AI长久期现金流的直接杀手。</p>
+    <p><b>判定标准逐一应用</b>：❶ 微软=好财报+资本纪律（CapEx下调）→ 盘后<b>+9%</b>，"好财报仍跌"<b>未</b>发生；❷ Meta=营收超预期但CapEx上调+FCF近枯竭 → 盘后<b>-10%</b>；❸ 三星=营业利润+1813.8%史上最佳 → 股价+4%高开后<b>翻跌-4%</b>，"好财报仍跌"在韩股<b>应验</b>。<b>结论：市场没有无差别抛售AI，而是启动"资本纪律分层审判"——CapEx收敛且回报可见者被奖励（微软、此前的希捷），CapEx扩张且现金流恶化者被惩罚（Meta、此前的谷歌/SK海力士）。"AI估值系统性重估"确认成立于"无纪律烧钱"阵营，而非全行业。</b>叠加9月加息完全定价+30Y利率2007年来最高，估值分母端压力将持续放大分化。</p>
+    <p class="src">判定框架：第10期锁定标准 → 本期裁决 ｜ 下一验证点：7/31 亚马逊（AWS+30%+ vs 长债+81%）/ 苹果财报 + 核心PCE</p>
+  </div>
+</section>
+
+<!-- ============ FOMC 深读 ============ -->
+<section>
+  <h2>🏛 FOMC 深读 <span class="en">FED WATCH</span></h2>
+
+  <div class="card">
+    <h3>决议前后的市场"过山车"：先鸽后鹰的2小时 <span class="tag new">本期新增</span> <span class="t">🕒 7/30 02:00–04:00 BJT（分钟级框架可核验）</span></h3>
+    <p>02:00 决议公布：因"维持不变"符合64.2%的主流押注，美股短线拉升、道指标普跌幅收窄、纳指转涨；现货黄金从4040拉升至4081上方（+1.2%）；10Y收益率从4.635%跳水至4.61%下方。02:30 沃什开口后风向逆转："2%无弹性空间"+退出前瞻指引+"必要时毫不犹豫加息"三连击，被解读为为9月加息铺路——美债收益率转向跳涨（10Y+6bp至4.66%、30Y+9bp至5.18%+），美股尾盘全线跳水。华尔街定性：<b>"鹰派的按兵不动"（hawkish pause）</b>。</p>
+    <p class="src">来源：中新经纬 / 券商中国 / 朝鲜日报英文版 ｜ 关联：第14期小摩"不加息+鸽派=最佳情景28%"——实际落在"不加息+鹰派"象限</p>
+  </div>
+
+  <div class="card">
+    <h3>三张反对票的结构含义：沃什的口头鹰派正被内部逼向行动 <span class="tag new">本期新增</span> <span class="t">🕒 7/30 02:00 BJT 决议文本（分钟级）</span></h3>
+    <p>洛根/哈马克/卡什卡利三位地区联储主席同向主张加息25bp，为<b>2016年以来首次</b>；Timiraos点评：沃什"结束通胀持续超标"的承诺连续第二次会议停留在口头层面。通胀已连续五年高于2%目标，若8月数据（核心PCE预期3.4%）不降温，9月加息几成定局。这是<b>AI资本开支首次被写进加息逻辑</b>（第4期已录：生产率与资本投资强劲=声明中的紧缩理由）后的第一次投票分裂。</p>
+    <p class="src">来源：WSJ Timiraos / 券商中国 ｜ 关联：第4期"AI资本开支入加息逻辑"</p>
+  </div>
+</section>
+
+<!-- ============ 财报深读 ============ -->
+<section>
+  <h2>💰 财报深读 <span class="en">EARNINGS AUTOPSY</span></h2>
+
+  <div class="card">
+    <h3>微软的胜负手不在Azure，在"1750亿"：AI叙事从"敢花钱"切换为"会花钱" <span class="tag new">本期新增</span> <span class="t">🕒 电话会披露（7/30 05时段 BJT，时段级）</span></h3>
+    <p>盘后走势精确复盘：财报数字公布后仅+4.9%并回吐——真正引爆点是电话会上 <b>FY27 CapEx 指引1750亿</b>（低于市场预估1900亿近8%），股价随即加速至+9%。市场用真金白银投票：<b>Azure+43%证明"AI投入能变现"，CapEx下调证明"管理层有刹车"</b>——两者同时成立，才有400美元上方的重新定价。风险暗面：新签未执行数据中心租约1300亿+（总额3291亿）意味着支出只是后移而非消失；德银此前警告的 FY27 FCF 压力并未解除。</p>
+    <p class="src">来源：新华财经 / 华尔街见闻 / 每经 ｜ 关联：第12期德银"Azure达标线40-41%"——实际43%越线达标</p>
+  </div>
+
+  <div class="card">
+    <h3>Meta的三重失守：EPS脱靶 × FCF枯竭 × "首超谷歌"落空 <span class="tag new">本期新增</span> <span class="t">🕒 财报 7/30 04时段 BJT；连跌纪录截至 7/29 收盘（日级）</span></h3>
+    <p>大摩"广告首超谷歌搜索"预判被证伪：Meta广告593.6亿 vs 谷歌搜索及其他632.7亿，仍差39亿（但增速27% vs 17%，剪刀差继续收窄，追平点或在未来2-3个季度）。真正的杀伤在现金流：Q2 CapEx 310.8亿吞掉经营现金流318.6亿的97.5%，<b>FCF只剩7.84亿——广告机器产生的现金几乎一分不剩全部灌入数据中心</b>（路易斯安那Hyperion超500亿、得州埃尔帕索140亿、阿尔伯塔90亿）。正式盘已连跌10日累计-14%，盘后一度击穿52周低点520.26附近。Aptus Capital评语："提高CapEx下限、上调中值，却不给营收正面指引——这算不上好故事。"</p>
+    <p class="src">来源：凤凰网科技 / 腾讯新闻·财报见闻 / 每经 ｜ 关联：第5期大摩预判、第12期Evercore预计"维持1250-1450亿"（实际上调下限）</p>
+  </div>
+
+  <div class="card">
+    <h3>同夜配角：高通指引失色、三星利润核爆 <span class="tag new">本期新增</span> <span class="t">🕒 高通盘后 7/30 04时段 BJT；三星 7/30 07:47 BJT 财联社快讯（分钟级）</span></h3>
+    <p><b>高通</b> FY26Q3营收99.5亿（-4%）略超预期但净利-25%、Q4指引双低于预期，手机芯片营收-20%，宣布9/1起提价转嫁供应链成本——盘后-4.49%。<b>三星电子</b> Q2销售额171.5万亿韩元（+130%）、<b>营业利润89.49万亿韩元（+1813.8%）</b>、净利71.27万亿（超预估68.36万亿），DS部门（存储+代工）利润89.2万亿创历史新高——HBM与先进封装吃满AI红利。但股价高开+3%~4%后<b>翻跌至-4%</b>：史上最佳财报在熔断余震中被用作出货窗口，成为本期"好财报仍跌"的最典型样本。</p>
+    <p class="src">来源：每经全球科技早参 / 财联社 / 中国基金报 ｜ 关联：第2期SK海力士"双超预期仍跌"同构剧本</p>
+  </div>
+</section>
+
+<!-- ============ 亚洲市场 ============ -->
+<section>
+  <h2>🌏 韩股第三日与亚市开盘 <span class="en">ASIA SESSION</span></h2>
+
+  <div class="card">
+    <h3>KOSPI第三日：未再熔断，但止跌失败 <span class="tag new">本期新增</span> <span class="t">🕒 开盘 7/30 08:02 BJT(09:02 KST) · 快照 08:03 / 08:44 BJT（分钟级）</span></h3>
+    <p>开盘+0.3%报5681.77（昨收5663.08）→ <b>08:03 翻绿-1%报5593.77</b> → 08:44 跌近2%震荡。个人投资者净卖3613亿韩元、外资与机构合计净买3562亿接盘（09:05 KST 快照）——与前两日"外资砸盘"结构逆转，但散户去杠杆抛压未竭。<b>SK海力士-5%扩至-7%，5个交易日累计-30%</b>，报130万韩元附近；三星财报炸裂仍翻跌-4%。监管新规落地细节：个人杠杆ETF仓位<b>不得超其全部金融资产20%</b>的总量管理+提高交易成本，7/31预托金新规生效。日经+1.7%冲高回落至+0.18%（爱德万测试+11%、东京电子+3%——日本半导体设备反而受微软CapEx叙事提振）。A股/港股 09:30 开盘，承接昨日V反+今夜"微软强/宏观鹰"的混合信号。</p>
+    <p class="src">来源：21世纪经济报道 / 朝鲜日报英文版 / 每经 / 中国基金报 ｜ 关联：第13期韩政府稳市声明、第14期小摩"排雷完毕"论——第三日走势暂不支持乐观判断</p>
+  </div>
+</section>
+
+<!-- ============ 中东与大宗 ============ -->
+<section>
+  <h2>🛢 中东主线延续 <span class="en">GEOPOLITICS &amp; OIL</span></h2>
+
+  <div class="card">
+    <h3>美沙空袭伊拉克民兵后油价再飙，7/30亚市小幅回吐 <span class="t">🕒 7/29 美盘（时段级）· 7/30 亚市开盘快照 08:18 BJT（分钟级）</span></h3>
+    <p>央视新闻：7/29 美国与沙特联合打击伊拉克民兵武装后，供应中断担忧再度点燃油价——<b>WTI盘中涨超7%、布伦特飙涨近8%</b>（延续第14期"布伦特逼近90"动能）；能源股逆市上涨（康菲+3%、西方石油+4%）。7/30 亚市开盘油价小幅回落、现货黄金重回4070上方（决议夜曾拉至4081）。中东风险与"9月加息"共同构成通胀-利率双螺旋：油价每站稳90一天，9月加息就多一分确定性。</p>
+    <p class="src">来源：央视新闻 / 中国基金报 / 21世纪经济报道 ｜ 关联：第14期特别版（中东升级夜袭）——美军"狠狠打击"威胁尚未升级为对伊朗本土行动</p>
+  </div>
+</section>
+
+<!-- ============ 事件时间线 ============ -->
+<section>
+  <h2>⏱ 事件时间线 <span class="en">TIMELINE · 韩股双熔断 → 政策响应 → 审判夜裁决</span></h2>
+  <div class="tl">
+    <div class="tl-item"><div class="tm">7/28–7/29（日级，前期已录）</div><div class="tx">韩股<b>史上首次连续两日熔断</b>，SK海力士较高点-57%；韩政府晚间声明限散户杠杆ETF+紧急稳市立法授权。</div></div>
+    <div class="tl-item"><div class="tm">7/29 深夜（第14期，时段级）</div><div class="tx">特朗普威胁"狠狠打击"伊朗、美沙空袭伊拉克，布伦特逼近90美元，美股FOMC前夜瀑布杀，道指一度-821点。</div></div>
+    <div class="tl-item hot"><div class="tm">7/30 02:00 BJT（分钟级）</div><div class="tx"><b>FOMC决议：维持3.50-3.75%，9:3三张加息反对票</b>（2016年来首次），声明115词近二十年最短；美股短线拉升。</div></div>
+    <div class="tl-item hot"><div class="tm">7/30 02:30 BJT（分钟级）</div><div class="tx"><b>沃什记者会转鹰</b>："2%无弹性空间"+退出前瞻指引+"必要时毫不犹豫加息"；美债收益率跳涨、美股掉头向下。</div></div>
+    <div class="tl-item hot"><div class="tm">7/30 04:00 BJT（分钟级）</div><div class="tx"><b>美股收盘：道指-1153点(-2.19%)创15个月最大单日点数跌幅</b>，纳指六连跌，费半-5.33%五连跌近16%，30Y收益率盘中5.244%创2007年来最高。</div></div>
+    <div class="tl-item hot"><div class="tm">7/30 04:0x–05时段 BJT（时段级）</div><div class="tx"><b>微软/Meta盘后财报：微软Azure+43%+FY27 CapEx下调至1750亿→+9%；Meta EPS脱靶+CapEx上调+FCF仅7.84亿→一度-10%</b>。审判裁决：资本纪律分层。</div></div>
+    <div class="tl-item"><div class="tm">7/30 07:47 BJT（分钟级）</div><div class="tx">三星Q2营业利润89.49万亿韩元（<b>+1813.8%</b>）创历史新高。</div></div>
+    <div class="tl-item"><div class="tm">7/30 08:02–08:44 BJT（分钟级）</div><div class="tx">KOSPI第三日开盘+0.3%→翻绿跌近2%；三星+4%→-4%（"好财报仍跌"应验）；SK海力士-7%五日-30%；日经+1.7%回落至+0.18%。</div></div>
+  </div>
+  <div class="logic"><b>一条线索看本期：</b>韩股双熔断把"AI估值是否过高"变成全球性拷问 → 审判夜给出裁决：宏观端，美联储"鹰派按兵不动"+9月加息完全定价+30Y利率2007年来最高，<b>估值分母全面收紧</b>；微观端，微软证明AI投入可以变现且可以刹车（+9%），Meta证明烧钱无纪律会被即刻惩罚（-10%），三星证明史上最佳利润也救不了脆弱的市场结构（翻跌）。<b>"系统性重估"没有以无差别崩盘的形式出现，而是以"资本纪律"为刀，把AI阵营切成了赢家与献祭品两层。</b>下一刀落在7/31：亚马逊（AWS增速 vs 1190亿长债）与苹果（不烧钱AI叙事的终极对照组）。</div>
+</section>
+
+<!-- ============ 待跟进标注 ============ -->
+<section>
+  <h2>🔖 待跟进标注 <span class="en">WATCHLIST · 承接自执行记忆，按优先级排序</span></h2>
+  <ul class="compact">
+    <li><span class="tag p0">最优先</span><b>7/30 美股正式盘</b>：微软+9%/Meta-10%的盘后分化能否延续到正式盘；纳指100回调区间内是否现"微软独木撑市"。</li>
+    <li><span class="tag p0">最优先</span><b>7/31 亚马逊/苹果财报 + 核心PCE（预期3.4%）</b>：AWS增速 vs 长债+81%至1190亿；库克最后一次CEO财报会；PCE直接决定9月加息成色。</li>
+    <li><span class="tag p0">最优先</span><b>韩股7/30全日收盘</b>：三日累计跌幅、7/31预托金新规生效后强平潮变化、平准基金是否被迫启动；三星财报翻跌能否日内修复。</li>
+    <li><span class="tag p1">高</span><b>9月加息定价演变</b>：三张反对票后FedWatch概率曲线、30Y能否站稳5.2%上方、美元与金价方向。</li>
+    <li><span class="tag p1">高</span><b>8/1 白宫AI监管框架落地</b>：30天前置审查存废、开源豁免、前沿模型定义（四方博弈：50家开源联名/OpenAI+Anthropic普惠游说/三巨头仅审最高性能/1178人控速联署）。</li>
+    <li><span class="tag p1">高</span><b>中东</b>：美军对伊朗"狠狠打击"是否兑现（含"镐山"核设施）；布伦特能否站稳90；霍尔木兹通行状态。</li>
+    <li><span class="tag p2">中</span><b>奥特曼DC会谈结果</b>（7/30当地时间见贝森特/卢特尼克）；扎克伯格财报会开源表态后OpenAI/Anthropic是否回应。</li>
+    <li><span class="tag p2">中</span>微软3291亿未执行数据中心租约的确认节奏（CapEx"下调"是否只是后移）；Meta算力出租商业化进展。</li>
+    <li><span class="tag p3">低</span>DeepSeek V4 GA（8/10-20窗口）；智元港股IPO；月之暗面G轮Pre-IPO；FCC机器人禁令后续；HAWK被攻破后NIST回应。</li>
+  </ul>
+</section>
+
+<footer>
+  <p><b>⏱ 时间颗粒度说明：</b>本期分钟级可核验时点——FOMC决议 7/30 02:00 BJT、沃什记者会 02:30 BJT、美股收盘 7/30 04:00 BJT（=7/29 16:00 ET）、微软/Meta盘后报价快照 7/30 07:36 BJT（21财经）、三星财报快讯 7/30 07:47 BJT（财联社）、KOSPI开盘 08:02 BJT 与快照 08:03/08:18/08:44 BJT、韩股资金面快照 08:05 BJT（09:05 KST）。以下仅到日/时段级、未编造具体分钟——微软/Meta/高通财报发布与电话会（美股盘后约 04:0x–05 时段 BJT）、7/29美盘油价盘中涨幅、Meta十连跌纪录（按日收盘）、韩政府监管细则（7/29晚间声明）。</p>
+  <p><b>📚 数据来源：</b>券商中国、中新经纬、中国基金报、21世纪经济报道、每日经济新闻（全球科技早参）、新华财经/中国金融信息网、澎湃新闻、凤凰网科技、华尔街见闻、财联社、央视新闻、朝鲜日报英文版（ChosunBiz）、Alphabet SEC文件、WSJ（Nick Timiraos）、CME FedWatch。</p>
+  <p><b>⚠️ 免责声明：</b>本简报仅为信息聚合与逻辑梳理，不构成任何投资建议。行情数据存在快照时差，请以交易所与官方披露为准。全文遵循中国市场惯例：<span class="red">红涨</span>／<span class="green">绿跌</span>。</p>
+</footer>
+
+</div>
+
+<script>(function(){var c=document.getElementById('net');if(!c)return;var ctx=c.getContext('2d'),w,h,pts;function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}addEventListener('resize',resize);resize();tick();})();</script>
+</body>
+</html>
