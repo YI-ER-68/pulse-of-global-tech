@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球科技时讯 · 第3期 | 2026-07-29 08:03</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card2:#1c2330; --border:#2d3646;
+    --text:#e6edf3; --muted:#8b98a9; --accent:#58a6ff; --accent2:#7ee787;
+    --red:#ff6b6b; --green:#3fb950; --gold:#e3b341; --purple:#bc8cff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:"PingFang SC","Microsoft YaHei",-apple-system,sans-serif;line-height:1.75;padding-bottom:60px;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px;}
+  header{background:linear-gradient(135deg,#0f1c33 0%,#16213a 60%,#1a1a2e 100%);border-bottom:1px solid var(--border);padding:38px 0 30px;}
+  header h1{font-size:26px;letter-spacing:1px;}
+  header h1 span{color:var(--accent);}
+  .meta{color:var(--muted);font-size:13px;margin-top:8px;}
+  .badge{display:inline-block;background:rgba(88,166,255,.15);color:var(--accent);border:1px solid rgba(88,166,255,.35);border-radius:20px;padding:1px 12px;font-size:12px;margin-right:8px;}
+  .lead{margin-top:14px;color:#b9c4d1;font-size:14.5px;background:rgba(88,166,255,.07);border-left:3px solid var(--accent);padding:10px 14px;border-radius:0 8px 8px 0;}
+  h2{font-size:19px;margin:38px 0 16px;padding-left:12px;border-left:4px solid var(--accent);display:flex;align-items:center;gap:8px;}
+  h2 .tag{font-size:11px;font-weight:normal;color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:0 6px;}
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;}
+  .kpi .num{font-size:20px;font-weight:700;margin:2px 0;}
+  .kpi .lbl{font-size:12.5px;color:var(--muted);}
+  .up{color:var(--red);} .down{color:var(--green);} .neu{color:var(--gold);}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:14px;}
+  .card h3{font-size:15.5px;margin-bottom:6px;color:#dbe6f1;}
+  .card h3 .new{background:rgba(255,107,107,.15);color:var(--red);font-size:11px;border-radius:4px;padding:1px 6px;margin-right:6px;vertical-align:2px;}
+  .card h3 .follow{background:rgba(227,179,65,.15);color:var(--gold);font-size:11px;border-radius:4px;padding:1px 6px;margin-right:6px;vertical-align:2px;}
+  .card p{font-size:14px;color:#aeb9c7;}
+  .card p b{color:#d7e2ee;}
+  .src{font-size:12px;color:#5c6a7d;margin-top:6px;}
+  .note{background:rgba(126,231,135,.06);border:1px solid rgba(126,231,135,.2);border-radius:10px;padding:12px 16px;font-size:13.5px;color:#a9d3ae;margin:10px 0 0;}
+  .timeline{position:relative;margin:10px 0 0 10px;padding-left:28px;border-left:2px solid #31435e;}
+  .tl-item{position:relative;margin-bottom:22px;}
+  .tl-item::before{content:"";position:absolute;left:-35px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(88,166,255,.15);}
+  .tl-item.risk::before{background:var(--red);box-shadow:0 0 0 4px rgba(255,107,107,.15);}
+  .tl-item.future::before{background:var(--card);border:2px solid var(--gold);box-shadow:0 0 0 4px rgba(227,179,65,.12);}
+  .tl-time{font-size:12.5px;color:var(--accent);font-weight:600;letter-spacing:.5px;}
+  .tl-item.risk .tl-time{color:var(--red);}
+  .tl-item.future .tl-time{color:var(--gold);}
+  .tl-title{font-size:14.5px;font-weight:600;margin:2px 0;color:#dbe6f1;}
+  .tl-desc{font-size:13px;color:#93a1b3;}
+  .thread{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-top:18px;font-size:14px;color:#b9c4d1;}
+  .thread b{color:var(--accent);}
+  .thread .r{color:var(--red);} .thread .g2{color:var(--accent2);}
+  footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--border);color:#5c6a7d;font-size:12px;}
+
+  /* ===== 全屏动态背景（时讯统一视觉） ===== */
+  .dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+  @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+  .dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+  @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+  @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+  @keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+  .dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+  body>*:not(.dynamic-bg){position:relative;z-index:1;}
+</style>
+</head>
+<body>
+<div class="dynamic-bg">
+  <div class="bg-gradient"></div>
+  <div class="bg-glow a"></div>
+  <div class="bg-glow b"></div>
+  <div class="bg-glow c"></div>
+  <canvas id="net"></canvas>
+</div>
+
+<header>
+  <div class="wrap">
+    <h1>🌐 全球科技时讯 <span>· 第 3 期</span></h1>
+    <div class="meta">
+      <span class="badge">2026-07-29 星期三 08:03</span>
+      <span class="badge">覆盖：7/29 07:52 上期以来的增量 + 24h 补录</span>
+      <span class="badge">已总结事件不再重复展开</span>
+    </div>
+    <div class="lead">
+      本期两条新主线：① <b>中美"开源攻防战"全面升级</b>——Kimi K3 完整权重正式落地开源并创 Hugging Face 史上最快增长纪录，Amodei 万字长文联手英伟达反对全面封禁开放权重模型，而美国 FCC 突然宣布<b>禁售未上市中国人形机器人与四足机器人（立即生效）</b>；② <b>白宫监管框架关键细节曝光</b>——要求 AI 巨头在发布最先进模型前接受<b>长达 30 天的政府前置审查</b>，8/1 截止日进入倒计时。今晚美联储议息，市场押注 71% 按兵不动。
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2>📊 今日速览 <span class="tag">增量关键数字</span></h2>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="lbl">FCC 对华机器人禁令</div><div class="num down">立即生效</div><div class="lbl">禁售未上市中国人形/四足机器人及联网逆变器</div></div>
+    <div class="kpi"><div class="lbl">白宫框架前置审查</div><div class="num neu">30 天</div><div class="lbl">最先进模型公开发布前需政府审查</div></div>
+    <div class="kpi"><div class="lbl">Kimi K3 开源热度</div><div class="num up">30 分钟 4000+ 赞</div><div class="lbl">登顶 HF 趋势榜，史上最快增长纪录</div></div>
+    <div class="kpi"><div class="lbl">Claude Cowork 漏洞</div><div class="num down">波及 ~50 万 Mac 用户</div><div class="lbl">CVE-2026-46331 沙箱逃逸，CVSS 7.8</div></div>
+    <div class="kpi"><div class="lbl">美联储 7 月议息（今晚）</div><div class="num neu">71% 不变</div><div class="lbl">FedWatch：29% 概率加息 25bp，关注反对票</div></div>
+    <div class="kpi"><div class="lbl">苹果收盘市值</div><div class="num up">$4.99 万亿</div><div class="lbl">收涨 0.94% 报 $340.8，盘中曾破 $5.036 万亿</div></div>
+  </div>
+
+  <h2>🤖 大模型与前沿技术</h2>
+  <div class="card">
+    <h3><span class="follow">新进展</span>Kimi K3 完整权重正式落地：全球首个 3 万亿级参数开源模型</h3>
+    <p>继上期人民日报定调后，月之暗面 7/27 深夜正式发布 <b>K3 完整模型权重 + 技术报告</b>，并同步开源三项关键 Infra：<b>MoonEP、FlashKDA、AgentEnv</b>。K3 为 2.8 万亿参数 MoE，原生视觉理解 + 100 万 token 上下文。开源仅 30 分钟即以 4000+ 赞登顶 Hugging Face 趋势榜（史上最快）。第三方 Artificial Analysis 数据：BrowseComp 单任务成本仅为 GPT-5.6 Sol 的一半、较 Claude Fable 5 便宜近一个数量级。海外开发者称其为"本地版 Fable 5"，直言"让 Anthropic 的万亿美元估值失去意义"。</p>
+    <div class="src">来源：钛媒体 / 华尔街见闻 / 每经 7-29</div>
+  </div>
+  <div class="card">
+    <h3><span class="new">NEW</span>Anthropic 又出安全事故：Claude Cowork 沙箱逃逸漏洞波及 ~50 万 Mac 用户</h3>
+    <p>AI 智能体 Claude Cowork 被曝高危漏洞 <b>CVE-2026-46331</b>：攻击者可借 Linux 内核提权漏洞（CVSS 7.8）突破虚拟机隔离，获取 macOS 任意文件读写权限，影响约 50 万用户。这是继 OpenAI 失控智能体入侵 HF/Modal、Claude 分享链接泄露私钥后，两周内第三起智能体安全事件——"沙箱信任假设"正在系统性失效。</p>
+    <div class="src">来源：钛媒体 Edge AI Daily 7-29</div>
+  </div>
+  <div class="card">
+    <h3><span class="new">NEW</span>OpenAI 印度版权初裁胜诉，全球 AI 版权治理"三元割裂"</h3>
+    <p>印度德里高等法院初步裁定 OpenAI 用新闻内容训练大模型<b>不构成侵权</b>（适用版权法第 52 条合理使用），强调禁令将损害本土 AI 产业。同日美国纽约时报等 17 家媒体指控 OpenAI"藏匿证据"——其建立 7800 万条对话数据库评估侵权却拒绝提交，NYT 诉讼成本已超 2800 万美元。全球版权治理呈现美国收紧型 / 欧英模糊型 / 印度开放型三元格局。</p>
+    <div class="src">来源：钛媒体 7-29</div>
+  </div>
+  <div class="card">
+    <h3><span class="new">NEW</span>国内 AI 产品密集上新：360 纳米Work、豆包搜索</h3>
+    <p>① 周鸿祎发布企业智能体平台<b>"纳米Work"</b>：多智能体引擎 + 16 家顶级模型切换 + 5 万技能生态，首批用户每人送 1 亿 Token，目标先帮 1000 家小企业 AI 落地；② 火山引擎上线<b>豆包搜索</b>服务，面向企业/开发者提供跨语言多模态联网查询，每月 500 次免费额度。③ 补录：DeepSeek 梁文锋近日罕见发声，称中美 AI 差距"在算力不在人才"，<b>华为一年内可摆脱英伟达依赖</b>，国产芯片替代出现历史性窗口期。</p>
+    <div class="src">来源：钛媒体 / TechNews 7-24~29</div>
+  </div>
+
+  <h2>💾 芯片与算力基建</h2>
+  <div class="card">
+    <h3><span class="follow">收盘确认</span>纳指五连跌，苹果"不烧钱 AI"叙事登顶：盘中 $5.036 万亿、收盘差一步</h3>
+    <p>7/28 美股收盘（北京时间 7/29 凌晨 4 点）：道指 <b class="up">+1.03%</b>、标普 +0.21%、纳指 <b class="down">-0.22%</b>（五连跌）。苹果盘中最高 $342.89、市值一度 $5.036 万亿，收涨 0.94% 报 $340.8（$4.99 万亿）。市场逻辑反转：苹果因<b>克制的 AI 资本开支</b>（近三季 capex 持续下降、以租赁算力为主）被重新定价为"避险资产"，年内涨 25%，而英伟达同期仅 +7%。存储延续暴跌：闪迪 -14%、SK 海力士 ADR -9%、美光 -9%、康宁因 Q3 指引不及预期收跌近 20%。分析指出韩国 KOSPI 与纳指100 的 60 天相关性升至 2021 年以来最高，"韩股跌完美股跌"的下跌循环成新风险。</p>
+    <div class="src">来源：中新经纬 / 证券时报 / 新浪科技 7-29</div>
+  </div>
+  <div class="card">
+    <h3><span class="new">NEW</span>花絮：比亚迪 6 年前以 198 亿投前估值参投长鑫首轮</h3>
+    <p>长鑫科技上市引爆汽车圈——比亚迪董秘李黔披露，2020 年 12 月比亚迪以 <b>198 亿元投前估值</b>（经私募基金间接）参与长鑫首轮融资；如今长鑫市值一度 3.66 万亿元，账面回报超百倍量级。"这是时代的馈赠，也是对耐心资本的奖赏。"另：Meta-贝莱德 140 亿美元得州数据中心被解读为"算力金融化"样本——Meta 仅担 20% 股权风险，120 亿美元债务移至表外，锁定 20 年算力使用权；贝莱德正转型 AI 基建"包租公"。</p>
+    <div class="src">来源：钛媒体 7-29</div>
+  </div>
+
+  <h2>🏛️ 政策与监管</h2>
+  <div class="card">
+    <h3><span class="new">NEW</span>重磅：美国 FCC 禁售未上市中国人形机器人、四足机器人及联网逆变器</h3>
+    <p>FCC 当地时间 7/29 宣布，禁止<b>新的中国人形机器人、四足机器人及联网电力逆变器型号</b>进入美国市场，<b>措施立即生效</b>，理由是"降低 AI 基础设施与关键供应链安全风险"。宇树科技等预计承压——Counterpoint 数据显示其全球人形机器人份额近 1/5。这是对华科技管制首次从芯片/模型延伸到<b>具身智能整机</b>。</p>
+    <div class="src">来源：凤凰网 / 机器人行业日报 7-29</div>
+  </div>
+  <div class="card">
+    <h3><span class="follow">新细节</span>白宫 AI 监管框架曝光核心条款：最先进模型发布前须接受 30 天政府审查</h3>
+    <p>陆家嘴财经等披露：白宫框架草案要求 AI 巨头在<b>公开发布最先进模型前接受长达 30 天的政府审查</b>——即"前置审批制"，OpenAI/Anthropic/谷歌已联合提交修改意见，8/1 为完成期限。叠加员工请愿（最快本周公开）与 7/30 奥特曼 DC 会谈，本周为美 AI 监管定调关键窗口。另据 Axios：美商务部/NSA/白宫网络办公室考虑将部分中国 AI 开发商列入<b>特别许可名单</b>，列入者须审批方可在美开展业务。</p>
+    <div class="src">来源：陆家嘴财经早餐 / 环球时报 7-29</div>
+  </div>
+  <div class="card">
+    <h3><span class="new">NEW</span>Amodei 立场"精细化"：万字长文联手英伟达反对全面封禁开放权重模型</h3>
+    <p>在美政策圈酝酿封禁开放权重模型之际，Amodei 发万字长文澄清"Anthropic 从未主张禁止开源"——<b>"不具备危险能力的开放权重模型是公共品"</b>，主张火力集中于三点：芯片出口管控、防止工业级蒸馏、强制安全测试，而非一刀切禁模型。英伟达同步反对全面禁令。注意与其 7/27 呼吁收紧对华芯片出口的公开信互为表里：<b>管制算力、放开模型</b>成为 Anthropic-英伟达共同话术，与 200 家初创 + 25 家巨头此前的反封禁阵营形成微妙合流。</p>
+    <div class="src">来源：网易科技 7-29</div>
+  </div>
+  <div class="card">
+    <h3><span class="new">NEW</span>商务部发布《关于所谓"产能过剩"问题的中方立场》</h3>
+    <p>文件强调产能问题是产业迭代的正常现象，搞保护主义只会扰乱全球经贸秩序。商务部副部长鄢东同日回应"中国冲击 2.0"论调不符合事实：中国对世界经济增长贡献率保持约 30%，2012-2025 年中企在 24 个发展中经济体带动当地出口增加值增长近 5 倍。与 7/27 回应"蒸馏"指控一脉相承，构成对美系统性反制话语。</p>
+    <div class="src">来源：新华社 / 华尔街见闻 7-29</div>
+  </div>
+
+  <h2>🏢 企业与市场</h2>
+  <div class="card">
+    <h3><span class="new">NEW</span>苹果双线出击：iPhone 租赁计划上线 + 三款智能家居新品在路上</h3>
+    <p>① 苹果在美推出 <b>"Apple Upgrade"</b> 设备租赁（Klarna 支持），iPhone 月租 <b>$17.99 起</b>，覆盖 iPhone/Mac/Watch/iPad，租期结束可升级/购买/归还，原 iPhone 升级计划停止新注册——从"卖硬件"转向"硬件订阅"；② 消息称苹果已接近完成三款智能家居新品：以<b>全新 Siri AI 为核心的智能家居中枢</b>、新一代 Apple TV 和 HomePod mini。</p>
+    <div class="src">来源：IT之家 / 陆家嘴财经早餐 7-29</div>
+  </div>
+  <div class="card">
+    <h3><span class="new">NEW</span>车企"造人"浪潮提速：比亚迪人形机器人 8 月郑州首秀</h3>
+    <p>比亚迪官方确认人形机器人 <b>8 月在郑州"迪空间"亮相</b>，首发实体样机，后续入驻门店做迎宾/讲解；小鹏 IRON 广州工厂已小批量试产，理想双路并进。逻辑：智能汽车与人形机器人技术重合度超 70%、供应链高度共享。配套动向：京东启动 <b>70 万蓝领"涅槃计划"</b>——分批送入 120 余所职业院校培训机器人维修，已布局 8 大维修中心，3 年招 1 万+ 维修人才。注意与今晨 FCC 禁令对照：中国机器人产业链上半年营收已破 900 亿元。</p>
+    <div class="src">来源：华尔街见闻 / 机器人行业日报 7-29</div>
+  </div>
+  <div class="card">
+    <h3><span class="follow">新细节</span>亚马逊 AI 重组细节：Nova 旗舰模型遭"降级维护"</h3>
+    <p>上期已报亚马逊重组 AI 组织，新披露：多款 <b>Nova 旗舰模型被降级至"维持运营"状态</b>不再获研发资源，部分 AI 团队裁撤，工程资源与算力集中投入下一代前沿基础模型——从多线布局转向单点突破，对标 OpenAI/Anthropic。</p>
+    <div class="src">来源：陆家嘴财经早餐 7-29</div>
+  </div>
+  <div class="card">
+    <h3><span class="new">NEW</span>杂讯快报：小米昆仑增程器 / 安徽卫视首播 AI 剧</h3>
+    <p>① 明天（7/30）小米澎程发布会前瞻：全系搭载全新<b>"昆仑增程器"</b>，92/95/98 号汽油通吃，WLTC 亏电油耗最低 5.7L/100km，三电 8 年 16 万公里质保；② 安徽卫视成国内首个播出 AI 剧集的上星卫视——AI 短剧《桃花潭记》20 集每集 10 分钟已开播，正值 7/1 AI 微短剧标注新规执行满月。</p>
+    <div class="src">来源：IT之家 7-29</div>
+  </div>
+
+  <h2>🕒 事件时间线 <span class="tag">串联近期关键事件</span></h2>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-time">7/22-24</div><div class="tl-title">伏笔：美官员指控 Kimi K3"蒸馏"，梁文锋放话"华为一年摆脱英伟达"</div><div class="tl-desc">贝森特警告可能制裁中企；DeepSeek 创始人称中美差距在算力不在人才——中美 AI 叙事对撞开场。</div></div>
+    <div class="tl-item"><div class="tl-time">7/27 深夜</div><div class="tl-title">月之暗面正式开源 K3 完整权重 + 三项 Infra</div><div class="tl-desc">全球首个 3 万亿级开源模型落地，30 分钟登顶 HF 趋势榜创纪录，成本仅为 Claude Fable 5 十分之一。</div></div>
+    <div class="tl-item risk"><div class="tl-time">7/28 日间</div><div class="tl-title">韩股率先崩塌：SK 海力士/三星跌超 13%，KOSPI 重挫</div><div class="tl-desc">SK 海力士 Q2 双失预期 + 英伟达循环融资担忧，AI 资本开支质疑从美股传导至韩股再回传美股，"下跌循环"成形。</div></div>
+    <div class="tl-item"><div class="tl-time">7/28 美东</div><div class="tl-title">Amodei 万字长文 + 英伟达：反对全面封禁开放权重模型</div><div class="tl-desc">K3 开源引爆压力下，"管算力、放模型"成头部厂商共同立场；黄仁勋同日宣布赴国会山谈开源主导权。</div></div>
+    <div class="tl-item risk"><div class="tl-time">7/29 凌晨（美股收盘）</div><div class="tl-title">纳指五连跌，苹果盘中破 $5 万亿后收 $4.99 万亿</div><div class="tl-desc">费半 -4.49%、闪迪 -14%、康宁 -20%；资金涌向"不烧钱 AI"的苹果避险——AI 投入叙事发生结构性重估。</div></div>
+    <div class="tl-item risk"><div class="tl-time">7/29</div><div class="tl-title">FCC 禁售未上市中国人形/四足机器人，立即生效</div><div class="tl-desc">对华管制首次延伸至具身智能整机；同日商务部发布"产能过剩"立场文件反制，中国机器人链上半年营收破 900 亿。</div></div>
+    <div class="tl-item"><div class="tl-time">7/29</div><div class="tl-title">白宫框架核心条款曝光：发布前 30 天政府审查</div><div class="tl-desc">前置审批制浮出水面；三巨头已联合提交修改意见；OpenAI/Anthropic 员工请愿最快本周公开。</div></div>
+    <div class="tl-item future"><div class="tl-time">7/29 晚→7/30 凌晨</div><div class="tl-title">⏳ 美联储 7 月议息结果</div><div class="tl-desc">FedWatch：71% 不变 / 29% 加息 25bp，焦点在洛根、哈马克两张鹰派反对票；AI 硬件股企稳与否看今晚。</div></div>
+    <div class="tl-item future"><div class="tl-time">7/30</div><div class="tl-title">⏳ 奥特曼会见贝森特/卢特尼克/沃纳；小米澎程发布会</div><div class="tl-desc">DC 会谈结果将直接影响 8/1 框架落地形态（前沿模型定义、开源例外、30 天审查存废）。</div></div>
+    <div class="tl-item future"><div class="tl-time">8/1 → 8月</div><div class="tl-title">⏳ 白宫 AI 监管框架截止；比亚迪人形机器人郑州首秀</div><div class="tl-desc">监管靴子落地 + 中国具身智能亮相，在 FCC 禁令背景下双线交锋进入下一幕。</div></div>
+  </div>
+
+  <div class="thread">
+    <b>逻辑串联 ①「开源攻防战」：</b>Kimi K3 完整开源（7/27）以<span class="g2">十分之一成本对标 Claude Fable 5</span>，直接冲击美国闭源厂商估值逻辑 → 美方反应分裂：政策圈酝酿封禁开放权重 + FCC 禁售中国机器人（<span class="r">硬管制扩围</span>），而 Amodei/黄仁勋主张"管算力、放模型"（利益话术）→ 中方以人民日报技术定调 + 商务部立场文件回击。7/30 奥特曼 DC 会谈与 8/1 框架截止，是这场攻防的第一个制度性节点。
+  </div>
+  <div class="thread">
+    <b>逻辑串联 ②「AI 资本开支大重估」：</b>谷歌 2050 亿 capex/FCF 转负（上周）埋雷 → 英伟达循环融资质疑 → SK 海力士财报双失（7/28）引爆韩股 → 韩美股市 60 天相关性升至 2021 年来最高，形成<span class="r">跨市场下跌循环</span> → 资金逃向"不烧钱 AI"的苹果（盘中 $5.036 万亿）。市场正从"谁投入最多"转向"谁回报最实"定价，今晚美联储决议是本轮重估的下一个催化剂。
+  </div>
+
+  <footer>
+    <div>🌐 全球科技时讯 · 第 3 期 | 生成时间：2026-07-29 08:03 | 数据截至发布时点，覆盖上期（07:52）以来增量及 24h 内补录要点</div>
+    <div>去重说明：员工请愿、SK 海力士财报、苹果盘中破 5 万亿、Meta-贝莱德合资、黄仁勋赴国会等已在第 1-2 期总结的事件，本期仅报增量进展。</div>
+  </footer>
+</div>
+
+  <script>
+  (function(){
+    var c=document.getElementById('net'); if(!c) return;
+    var ctx=c.getContext('2d'); var w,h,pts;
+    function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}
+    function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}
+    function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}
+    addEventListener('resize',resize);resize();tick();
+  })();
+  </script>
+</body>
+</html>
