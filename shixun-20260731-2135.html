@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>时讯 · 晚间版 🚨 特别版 · 市场极端 | 2026-07-31 21:35</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2d333b;
+  --txt:#e6edf3; --sub:#9da7b3; --acc:#58a6ff; --up:#f85149; --down:#3fb950;
+  --gold:#e3b341; --purple:#bc8cff; --teal:#39d2c0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.75;padding:24px 16px 60px;}
+.wrap{max-width:1080px;margin:0 auto;}
+header{border-bottom:2px solid var(--up);padding-bottom:18px;margin-bottom:26px;}
+header h1{font-size:25px;letter-spacing:1px;}
+header h1 span{color:var(--up);}
+header .meta{color:var(--sub);font-size:13px;margin-top:6px;}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;margin-right:6px;border:1px solid var(--border);color:var(--sub);}
+.tag.hot{color:var(--up);border-color:var(--up);}
+.tag.new{color:var(--teal);border-color:var(--teal);}
+.tag.p0{color:var(--up);border-color:var(--up);}
+.tag.p1{color:var(--gold);border-color:var(--gold);}
+.tag.p2{color:var(--acc);border-color:var(--acc);}
+.tag.p3{color:var(--sub);border-color:var(--border);}
+.t{display:inline-block;font-size:12px;padding:0 8px;border-radius:10px;margin-left:8px;background:#22304a;color:var(--gold);border:1px solid #3a4a6b;font-weight:normal;vertical-align:middle;}
+section{margin-bottom:34px;}
+h2{font-size:19px;margin-bottom:14px;padding-left:10px;border-left:4px solid var(--acc);}
+h2.alert{border-left-color:var(--up);}
+h2 .en{color:var(--sub);font-size:12px;font-weight:normal;margin-left:8px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
+.kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.kpi .lab{font-size:12px;color:var(--sub);}
+.kpi .val{font-size:21px;font-weight:bold;margin:3px 0;}
+.kpi .note{font-size:12px;color:var(--sub);}
+.red{color:var(--up);} .green{color:var(--down);} .gold{color:var(--gold);} .blue{color:var(--acc);} .purple{color:var(--purple);} .teal{color:var(--teal);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:14px;}
+.card.focus{border-color:var(--up);background:linear-gradient(180deg,#1d1418,#161b22 60%);}
+.card h3{font-size:15.5px;margin-bottom:8px;color:var(--acc);}
+.card.focus h3{color:var(--up);}
+.card p{font-size:14px;color:#c9d3dd;margin-bottom:6px;}
+.card p b{color:var(--txt);}
+.card .src{font-size:12px;color:var(--sub);margin-top:4px;}
+ul.compact{padding-left:20px;font-size:14px;color:#c9d3dd;}
+ul.compact li{margin-bottom:7px;}
+ul.compact b{color:var(--txt);}
+.tl{position:relative;padding-left:30px;}
+.tl::before{content:"";position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:16px;}
+.tl-item::before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg);}
+.tl-item.hot::before{background:var(--up);}
+.tl-item .tm{font-size:12.5px;color:var(--gold);font-weight:bold;}
+.tl-item .tx{font-size:14px;color:#c9d3dd;}
+.tl-item .tx b{color:var(--txt);}
+.logic{background:var(--panel2);border:1px dashed var(--acc);border-radius:10px;padding:16px 20px;font-size:14px;color:#c9d3dd;margin-top:16px;}
+.logic b{color:var(--gold);}
+footer{border-top:1px solid var(--border);padding-top:14px;color:var(--sub);font-size:12px;line-height:1.9;}
+.dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+@keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+.dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+.dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+.dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+@keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+.dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+body>*:not(.dynamic-bg){position:relative;z-index:1;}</style></head>
+<body>
+<div class="dynamic-bg"><div class="bg-gradient"></div><div class="bg-glow a"></div><div class="bg-glow b"></div><div class="bg-glow c"></div><canvas id="net"></canvas></div>
+<div class="wrap">
+  <div class="wrap">
+<header>
+  <h1>时讯 · 第22期 <span>🚨 特别版 · 市场极端</span> <span>国资委加码"AI+"专项行动 → 欧盟AI透明度新规落地 → 油价高企推升欧元区通胀 → 美股盘前科技股分化加剧</span></h1>
+  <div class="meta">时讯 · 第22期 ｜ 生成时间：2026-07-31 21:34 BJT ｜ 覆盖窗口：上期以来增量，重点过去2小时 ｜ 预告：8/1白宫AI监管框架落地 · 8/2 OPEC会议 · 8/4 ST交昂复牌</div>
+  <div class="meta" style="margin-top:8px;">
+    <span class="tag hot">🔥 国资委深化央企"AI+"专项行动</span> <span class="tag hot">🔥 欧盟AI透明度新规8/2生效</span> <span class="tag new">🆕 美股盘前科技股分化：亚马逊+10% vs 苹果-8%</span>
+  </div>
+</header>
+
+<section>
+  <h2>📊 本期速览 <span class="en">SNAPSHOT · 快照时点 2026-07-31 21:34 BJT</span></h2>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="lab">欧元区7月通胀率（年率）</div><div class="val red">2.9%</div><div class="note">高于6月的2.8%，能源价格同比+10.0%为主因</div></div>
+    <div class="kpi"><div class="lab">雪佛龙Q2净利润</div><div class="val red">122亿美元</div><div class="note">同比激增四倍，创历史最高季度利润</div></div>
+    <div class="kpi"><div class="lab">埃克森美孚Q2净利润</div><div class="val red">145亿美元</div><div class="note">同比翻倍，2022年以来最佳季度业绩</div></div>
+    <div class="kpi"><div class="lab">亚马逊盘前涨幅</div><div class="val red">+10%</div><div class="note">大型科技股盘前多数上涨，苹果跌近8%</div></div>
+    <div class="kpi"><div class="lab">上海智能车载设备销售增速</div><div class="val red">+61.5%</div><div class="note">上半年增值税发票数据，机器人+17.5%</div></div>
+    <div class="kpi"><div class="lab">深交所本周自律监管</div><div class="val gold">138起</div><div class="note">7/27-7/31，涉及盘中拉抬打压、虚假申报等</div></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="alert">🚨 首屏聚焦：政策与市场双重极端 <span class="en">SPECIAL FOCUS · 政策加码 → 监管落地 → 市场分化 → 后续判定</span></h2>
+  <div class="card focus"><h3>① 事件背景：国资委加码"AI+"，欧盟AI透明度新规进入倒计时 <span class="t">🕒 2026-07-31 12:59 BJT(分钟级可核验)</span></h3><p>国务院国资委党委召开扩大会议，强调深化央企"人工智能+"专项行动，因企制宜培育新兴产业和未来产业。与此同时，欧盟委员会宣布自<b>8月2日</b>起正式执行《人工智能法》相关规定，新增AI透明度要求——聊天机器人须明确表明AI身份，深度伪造内容须标识并添加机器可识别标记。</p><p class="src">来源：36氪（https://36kr.com/newsflashes/3919556554305154?f=rss） ｜ 央视新闻 ｜ 关联：第21期</p></div>
+  <div class="card focus"><h3>② 实际结果：政策信号明确，监管框架落地在即 <span class="t">🕒 2026-07-31 11:45 BJT(分钟级可核验)</span></h3><p>国资委明确"以更大力度加强基础研究"，将AI+专项行动作为央企转型核心抓手；欧盟则给出企业合规的明确路径——<b>减少欺骗和操纵行为</b>，帮助公众作出更知情判断。两条政策线一"进"一"管"，构成全球AI治理的双向张力。</p><p class="src">来源：36氪（https://36kr.com/newsflashes/3919473270812290?f=rss） ｜ 央视新闻</p></div>
+  <div class="card focus"><h3>③ 市场反应：美股盘前科技股剧烈分化 <span class="t">🕒 2026-07-31 12:52 BJT(分钟级可核验)</span></h3><p>盘前数据显示：<b>亚马逊涨超10%</b>、英特尔涨超4%、谷歌涨超1%、英伟达涨0.9%、Meta涨0.89%、特斯拉涨0.67%，而<b>苹果跌近8%</b>、微软跌0.09%。中概股方面，阿里巴巴涨超2%，拼多多涨0.61%，蔚来涨0.6%。市场正在对即将到来的财报季进行极端分化定价。</p><p class="src">来源：36氪（https://36kr.com/newsflashes/3919549841321345?f=rss） ｜ 36氪（https://36kr.com/newsflashes/3919553547038343?f=rss）</p></div>
+  <div class="card focus"><h3>④ 后续判定：政策红利与监管成本将重塑AI产业格局 <span class="t">🕒 2026-07-31 时段级</span></h3><p>国资委"AI+"专项行动将直接利好央企科技子公司与国产算力链；欧盟透明度新规则抬高合规门槛，利好头部合规企业、利空中小模型厂商。叠加8/1白宫AI监管框架落地，<b>全球AI治理三极（中美欧）本周内全部落子</b>，产业将进入政策驱动的重定价周期。</p><p class="src">来源：综合本期资讯 ｜ 关联：第21期</p></div>
+</section>
+
+<section>
+  <h2>🏛️ 政策与监管 <span class="en">POLICY & REGULATION</span></h2>
+  <div class="card"><h3>国资委：深化央企"人工智能+"专项行动 <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 12:59 BJT(分钟级可核验)</span></h3>
+    <p>国务院国资委党委召开扩大会议，强调要着力推进原始创新和关键核心技术攻关，以更大力度加强基础研究，深化央企"人工智能+"专项行动，因企制宜培育新兴产业和未来产业。同时要求持续深化提质增效，做好重点领域内卷治理，推进全产业链、全价值链降本节支。</p>
+    <p class="src">来源：36氪（https://36kr.com/newsflashes/3919556554305154?f=rss）</p>
+  </div>
+  <div class="card"><h3>欧盟8月2日起执行《人工智能法》，新增AI透明度要求 <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 11:45 BJT(分钟级可核验)</span></h3>
+    <p>欧盟委员会宣布，自8月2日起，人工智能办公室将与各成员国主管部门共同执行《人工智能法》。新规要求：聊天机器人等交互式AI系统必须明确表明AI身份；深度伪造内容必须标识；AI生成或修改的内容需添加<b>机器可识别标记</b>以便追踪。</p>
+    <p class="src">来源：央视新闻（https://36kr.com/newsflashes/3919473270812290?f=rss）</p>
+  </div>
+  <div class="card"><h3>深交所：本周对138起异常交易行为采取自律监管 <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 12:01 BJT(分钟级可核验)</span></h3>
+    <p>2026年7月27日至7月31日，深交所共对138起证券异常交易行为采取自律监管措施，涉及盘中拉抬打压、虚假申报等异常交易情形。监管力度维持高位。</p>
+    <p class="src">来源：36氪（https://36kr.com/newsflashes/3919499607748224?f=rss）</p>
+  </div>
+</section>
+
+<section>
+  <h2>🛢️ 能源与大宗 <span class="en">ENERGY & COMMODITIES</span></h2>
+  <div class="card"><h3>油价高企驱动油企利润飙升，特朗普扬言干预 <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 12:26 BJT(分钟级可核验)</span></h3>
+    <p>埃克森美孚与雪佛龙公布二季度业绩，两家合计盈利<b>265亿美元</b>。雪佛龙净利润122亿美元，同比激增四倍创历史新高；埃克森美孚净利润145亿美元，同比翻倍。特朗普此前在"真实社交"发文威胁："汽油零售商必须立刻下调油价！再不降价，麻烦就在眼前！"</p>
+    <p class="src">来源：新浪财经（https://36kr.com/newsflashes/3919514840231556?f=rss）</p>
+  </div>
+  <div class="card"><h3>欧元区7月通胀率升至2.9%，能源涨价为主因 <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 11:40 BJT(分钟级可核验)</span></h3>
+    <p>欧盟统计局初步数据显示，7月欧元区通胀率按年率计算为<b>2.9%</b>，高于6月的2.8%。能源价格同比上涨10.0%，显著高于6月的8.5%，是推高整体物价的主要因素。核心通胀率2.5%，略高于6月的2.4%。</p>
+    <p class="src">来源：新华社（https://36kr.com/newsflashes/3919471244324233?f=rss）</p>
+  </div>
+</section>
+
+<section>
+  <h2>🏭 产业与公司 <span class="en">INDUSTRY & CORPORATE</span></h2>
+  <div class="card"><h3>国务院核准两大核电项目：莱阳+惠州 <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 12:18 BJT(分钟级可核验)</span></h3>
+    <p>电投产融公告，山东莱阳核电项目1、2号机组获国务院常务会议核准，拟建设2台"国和一号"（CAP1400）非能动压水堆核电机组，单台额定功率<b>1543MW</b>。中国广核同步公告，惠州5号及6号机组获核准，采用华龙一号2.0版技术，单台容量1217MW。</p>
+    <p class="src">来源：36氪（https://36kr.com/newsflashes/3919516325949059?f=rss） ｜ 36氪（https://36kr.com/newsflashes/3919487196982915?f=rss）</p>
+  </div>
+  <div class="card"><h3>上海上半年智能车载设备销售同比增长61.5% <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 12:12 BJT(分钟级可核验)</span></h3>
+    <p>上海市税务局增值税发票数据显示，上半年上海智能车载设备、机器人行业销售收入同比分别增长<b>61.5%</b>、17.5%。传统产业中食品制造等销售收入同比增长9.2%，新兴产业加速崛起。</p>
+    <p class="src">来源：上证报（https://36kr.com/newsflashes/3919510952291713?f=rss）</p>
+  </div>
+  <div class="card"><h3>艾伯维Q2净营收169.9亿美元，收购Apogee Therapeutics <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 12:19 BJT(分钟级可核验)</span></h3>
+    <p>艾伯维第二季度净营收169.90亿美元，按报告基准增长10.2%；调整后稀释每股收益3.65美元，同比增长22.9%。同时宣布达成收购Apogee Therapeutics的最终协议，深化免疫学产品组合。</p>
+    <p class="src">来源：界面（https://36kr.com/newsflashes/3919511680609665?f=rss）</p>
+  </div>
+  <div class="card"><h3>万华化学、兴发集团合资公司增资至7.5亿 <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 11:38 BJT(分钟级可核验)</span></h3>
+    <p>远安兴华磷化工有限公司注册资本由2.5亿增至7.5亿人民币，增幅200%。该公司由湖北兴发化工集团、万华化学集团共同持股，经营范围包括化工产品生产与销售。</p>
+    <p class="src">来源：天眼查App（https://36kr.com/newsflashes/3919438329851526?f=rss）</p>
+  </div>
+</section>
+
+<section>
+  <h2>📈 A股与市场动态 <span class="en">A-SHARE & MARKET MOVES</span></h2>
+  <div class="card"><h3>交大昂立将实施其他风险警示，变更为"ST交昂" <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 12:50 BJT(分钟级可核验)</span></h3>
+    <p>交大昂立公告，收到证监会上海监管局《行政处罚事先告知书》，股票将于8月3日停牌，8月4日起实施其他风险警示，简称变更为"ST交昂"。</p>
+    <p class="src">来源：36氪（https://36kr.com/newsflashes/3919547923574152?f=rss）</p>
+  </div>
+  <div class="card"><h3>贝肯能源控股股东将变更为极宁科技 <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 12:39 BJT(分钟级可核验)</span></h3>
+    <p>贝肯能源公告，控股股东陈平贵拟转让11.65%股份给极宁科技，交易对价4.08亿元；完成后极宁科技将持有13.16%股份成为控股股东，实控人变更为潘涛。股票8月3日起复牌。</p>
+    <p class="src">来源：36氪（https://36kr.com/newsflashes/3919527719005827?f=rss）</p>
+  </div>
+  <div class="card"><h3>中国宝安第一大股东异常波动期间增持1.6% <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 12:33 BJT(分钟级可核验)</span></h3>
+    <p>中国宝安连续2个交易日收盘价涨幅偏离值累计超20%，属异常波动。期间第一大股东承兴投资以集中竞价方式增持4127.08万股，占总股本1.6001%。</p>
+    <p class="src">来源：36氪（https://36kr.com/newsflashes/3919520686321287?f=rss）</p>
+  </div>
+  <div class="card"><h3>2026年7月总票房突破50亿 <span class="tag new">本期新增</span> <span class="t">🕒 2026-07-31 12:42 BJT(分钟级可核验)</span></h3>
+    <p>据灯塔专业版，截至7月31日，2026年7月总票房（含预售）突破50亿。《功夫女足》《八仙！》《蜘蛛侠：崭新之日》《小黄人与大怪兽》《四渡》位列前五。</p>
+    <p class="src">来源：灯塔专业版（https://36kr.com/newsflashes/3919538914258311?f=rss）</p>
+  </div>
+</section>
+
+<section>
+  <h2>⏳ 事件时间线 <span class="en">TIMELINE · 跨模块因果串联</span></h2>
+  <div class="tl">
+    <div class="tl-item"><div class="tm">11:38</div><div class="tx">万华化学、兴发集团合资公司增资至7.5亿，<b>化工产业整合</b>信号</div></div>
+    <div class="tl-item"><div class="tm">11:40</div><div class="tx">欧元区7月通胀率升至2.9%，<b>能源涨价</b>为主因</div></div>
+    <div class="tl-item"><div class="tm">11:45</div><div class="tx">欧盟宣布8/2起执行《人工智能法》，<b>AI透明度新规</b>生效</div></div>
+    <div class="tl-item"><div class="tm">11:54</div><div class="tx">中国广核惠州5/6号机组获国务院核准，<b>华龙一号2.0</b></div></div>
+    <div class="tl-item"><div class="tm">12:01</div><div class="tx">深交所本周对138起异常交易采取<b>自律监管</b></div></div>
+    <div class="tl-item"><div class="tm">12:12</div><div class="tx">上海智能车载设备销售同比+61.5%，<b>新兴产业加速</b></div></div>
+    <div class="tl-item"><div class="tm">12:18</div><div class="tx">山东莱阳核电项目获核准，<b>CAP1400</b>机组落地</div></div>
+    <div class="tl-item"><div class="tm">12:26</div><div class="tx">雪佛龙/埃克森美孚Q2合计盈利265亿美元，<b>油价红利</b>兑现</div></div>
+    <div class="tl-item hot"><div class="tm">12:52</div><div class="tx">美股盘前科技股分化：<b>亚马逊+10% vs 苹果-8%</b></div></div>
+    <div class="tl-item hot"><div class="tm">12:59</div><div class="tx">国资委深化央企<b>"AI+"专项行动</b>，政策加码</div></div>
+  </div>
+  <div class="logic"><b>一条线索看本期：</b>国资委"AI+"专项行动与欧盟AI透明度新规同日落地，全球AI治理三极（中美欧）本周全部落子 → 政策红利与合规成本同步抬升，AI产业进入重定价周期 → 油价高企推升欧元区通胀至2.9%，能源-通胀-利率传导链紧绷 → 美股盘前科技股极端分化（亚马逊+10%/苹果-8%），市场正为财报季与政策变局进行剧烈调仓。</div>
+</section>
+
+<section>
+  <h2>🔖 待跟进标注 <span class="en">WATCHLIST</span></h2>
+  <ul class="compact">
+    <li><span class="tag p0">最优先</span><b>美军对伊朗报复是否兑现</b>：时点/目标、是否含"镐山"核设施；布伦特能否站稳90；霍尔木兹通行状态</li>
+    <li><span class="tag p0">最优先</span><b>7/30凌晨 微软/Meta财报实际数据</b>：微软CapEx预期+74%、Azure实际增速vs 39-40%、Meta广告是否首超谷歌搜索——判断标准="好财报仍下跌即系统性重估"</li>
+    <li><span class="tag p0">最优先</span><b>7/30凌晨2点 FOMC决议</b>：加息概率30-38%、反对票、9月加息暗示、沃什02:30记者会 → AI硬件股/韩股反应</li>
+    <li><span class="tag p1">高</span><b>韩国紧急会议结果后续</b>：7/31预托金新规生效后强平潮变化、韩股7/30第三日走势、平准基金是否被迫启动</li>
+    <li><span class="tag p1">高</span><b>韩股7/30第三日走势</b>：收盘5663.08后能否止跌；韩政府稳市措施细则；美股7/29晚存储板块是否续跌</li>
+    <li><span class="tag p1">高</span><b>中东局势</b>：美方是否恢复对伊军事行动、油价能否守82+、"镐山"威胁兑现与否</li>
+    <li><span class="tag p2">中</span><b>扎克伯格檄文后OpenAI/Anthropic是否回应</b>；Meta财报会是否延续开源叙事</li>
+    <li><span class="tag p2">中</span><b>7/30 奥特曼见贝森特/卢特尼克结果</b></li>
+    <li><span class="tag p2">中</span><b>7/31 亚马逊/苹果财报</b>（库克谢幕）+核心PCE（预期3.4%）</li>
+    <li><span class="tag p2">中</span><b>8/1 白宫AI监管框架落地</b>：30天前置审查存废、开源豁免、前沿模型定义</li>
+    <li><span class="tag p2">中</span><b>HAWK被攻破后NIST官方回应</b>、后量子标准是否调整</li>
+    <li><span class="tag p2">中</span><b>DeepSeek融资重启+V4 GA</b>是否落在8/10-20（Harness封测进展）；智元港股IPO；比亚迪8月人形机器人；月之暗面Pre-IPO</li>
+    <li><span class="tag p3">低</span><b>FCC机器人禁令后续</b>；Claude Cowork漏洞修复</li>
+  </ul>
+</section>
+
+<footer>
+  <p><b>时间颗粒度说明：</b>本期分钟级可核验时点包括——国资委会议（12:59 BJT，官方发布）、欧盟AI新规公告（11:45 BJT，官方发布）、欧元区通胀数据（11:40 BJT，欧盟统计局发布）、深交所监管公告（12:01 BJT）、核电核准公告（11:54/12:18 BJT，公司公告）、美股盘前行情（12:52/12:56 BJT，实时行情）、各公司公告（交大昂立/贝肯能源/中国宝安，均为公告时点）。日级/时段级信息包括——上海税务数据（上半年累计，日级）、7月票房（截至7/31，日级）、艾伯维财报（季度数据，日级）、油企财报（季度数据，日级）。</p>
+  <p><b>数据来源：</b>36氪、央视新闻、新华社、上证报、新浪财经、界面、灯塔专业版、天眼查App、欧盟统计局、深交所公告 等公开渠道交叉核验。</p>
+  <p><b>免责声明：</b>本简报仅为信息聚合与梳理，不构成任何投资建议。行情数据以交易所官方为准；涨跌颜色遵循中国市场惯例（红涨绿跌）。</p>
+</footer>
+
+</div>
+</div>
+<script>(function(){var c=document.getElementById('net');if(!c)return;var ctx=c.getContext('2d'),w,h,pts;function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}addEventListener('resize',resize);resize();tick();})();</script>
+</body></html>
