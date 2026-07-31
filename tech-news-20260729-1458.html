@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>时讯 · 第8期 | 2026-07-29 14:58</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2d333b;
+    --txt:#e6edf3; --sub:#9da7b3; --acc:#58a6ff; --up:#f85149; --down:#3fb950;
+    --gold:#e3b341; --purple:#bc8cff; --teal:#39d2c0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.75;padding:24px 16px 60px;}
+  .wrap{max-width:1080px;margin:0 auto;}
+  header{border-bottom:2px solid var(--acc);padding-bottom:18px;margin-bottom:26px;}
+  header h1{font-size:26px;letter-spacing:1px;}
+  header h1 span{color:var(--acc);}
+  header .meta{color:var(--sub);font-size:13px;margin-top:6px;}
+  .tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;margin-right:6px;border:1px solid var(--border);color:var(--sub);}
+  .tag.hot{color:var(--up);border-color:var(--up);}
+  .tag.new{color:var(--teal);border-color:var(--teal);}
+  section{margin-bottom:34px;}
+  h2{font-size:19px;margin-bottom:14px;padding-left:10px;border-left:4px solid var(--acc);}
+  h2 .en{color:var(--sub);font-size:12px;font-weight:normal;margin-left:8px;}
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
+  .kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+  .kpi .lab{font-size:12px;color:var(--sub);}
+  .kpi .val{font-size:21px;font-weight:bold;margin:3px 0;}
+  .kpi .note{font-size:12px;color:var(--sub);}
+  .red{color:var(--up);} .green{color:var(--down);} .gold{color:var(--gold);} .blue{color:var(--acc);} .purple{color:var(--purple);} .teal{color:var(--teal);}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:14px;}
+  .card h3{font-size:15.5px;margin-bottom:8px;color:var(--acc);}
+  .card p{font-size:14px;color:#c9d3dd;margin-bottom:6px;}
+  .card p b{color:var(--txt);}
+  .card .src{font-size:12px;color:var(--sub);margin-top:4px;}
+  ul.compact{padding-left:20px;font-size:14px;color:#c9d3dd;}
+  ul.compact li{margin-bottom:7px;}
+  ul.compact b{color:var(--txt);}
+  .tl{position:relative;padding-left:30px;}
+  .tl::before{content:"";position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--border);}
+  .tl-item{position:relative;margin-bottom:18px;}
+  .tl-item::before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg);}
+  .tl-item.hot::before{background:var(--up);}
+  .tl-item.future::before{background:var(--gold);}
+  .tl-time{font-size:12px;color:var(--gold);font-weight:bold;}
+  .tl-body{font-size:14px;color:#c9d3dd;}
+  .tl-body b{color:var(--txt);}
+  .link-box{background:var(--panel2);border-left:3px solid var(--purple);padding:12px 16px;border-radius:0 8px 8px 0;margin-top:16px;font-size:13.5px;color:#c9d3dd;}
+  .link-box b{color:var(--purple);}
+  footer{color:var(--sub);font-size:12px;text-align:center;margin-top:40px;border-top:1px solid var(--border);padding-top:16px;}
+
+  /* ===== 全屏动态背景（时讯统一视觉） ===== */
+  .dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+  @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+  .dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+  @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+  @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+  @keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+  .dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+  body>*:not(.dynamic-bg){position:relative;z-index:1;}
+</style>
+</head>
+<body>
+<div class="dynamic-bg">
+  <div class="bg-gradient"></div>
+  <div class="bg-glow a"></div>
+  <div class="bg-glow b"></div>
+  <div class="bg-glow c"></div>
+  <canvas id="net"></canvas>
+</div>
+
+<div class="wrap">
+
+<header>
+  <h1>⚡ 时讯 · 全球科技简报 <span>第8期 · 午后收盘版</span></h1>
+  <div class="meta">2026年7月29日（周三）14:58 生成 ｜ 覆盖窗口：上期（14:12）以来增量 + 过去24小时要点 ｜ 已总结事件不再重复，仅追踪新进展</div>
+</header>
+
+<!-- ============ 今日速览 ============ -->
+<section>
+  <h2>今日速览<span class="en">KPI DASHBOARD</span></h2>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="lab">KOSPI 收盘定格（Day-2熔断日）</div><div class="val green">-5.99%</div><div class="note">报5663.08，创4月7日以来最低收盘</div></div>
+    <div class="kpi"><div class="lab">SK海力士 收盘</div><div class="val green">-9.6%</div><div class="note">盘中一度-20%创纪录；较高点回撤53%</div></div>
+    <div class="kpi"><div class="lab">A股 V型反转确认</div><div class="val red">沪指 +0.44%</div><div class="note">报3830点；创业板+1.65%；成交超2.1万亿</div></div>
+    <div class="kpi"><div class="lab">WTI原油（停火破裂）</div><div class="val red">+4.6%</div><div class="note">报82.94美元；伊朗首袭美军基地</div></div>
+    <div class="kpi"><div class="lab">FOMC加息概率（今夜2:00决议）</div><div class="val gold">38%</div><div class="note">一周前仅13%；76位经济学家仍押不动</div></div>
+    <div class="kpi"><div class="lab">政策交锋</div><div class="val purple">1286清单</div><div class="note">商务部回应美制裁中国科研机构</div></div>
+  </div>
+</section>
+
+<!-- ============ 焦点一：韩股收盘定格 + A股V反 ============ -->
+<section>
+  <h2>焦点追踪：韩股Day-2收盘定格，A股完成V型反转<span class="en">FOCUS · MARKET CLOSE</span></h2>
+  <div class="card">
+    <h3>🇰🇷 韩股收盘：KOSPI -5.99%报5663.08，惊魂日最终"止血"于尾盘 <span class="tag hot">上期进展·收盘确认</span></h3>
+    <p>上期报道的盘中-12.2%（最低5262.77点）最终收窄，KOSPI <b>收跌5.99%报5663.08点</b>，创<b>4月7日以来最低收盘</b>，较6月高点累计回撤近40%。<b>SK海力士收跌9.6%</b>（盘中一度近-20%，创上市以来最大盘中跌幅，较高点-53%）；<b>三星电子收跌5.23%</b>（较高点-44%）。日经225同步收跌1.49%报61434.19点。</p>
+    <p><b>官方稳市动作落地</b>：韩国财政部确认"正在内部审查稳定股市的措施"，并计划<b>8月发行1500亿韩元个人投资国债</b>；此前财长具润哲已为单只股票杠杆ETF公开道歉。</p>
+    <p><b>卖方视角</b>：Allspring基金经理Gary Tan——"海力士业绩强劲，但在今天的AI市场，强劲已不再足够"；法兴Benzimra指认<b>单只股票杠杆ETF去杠杆</b>是抛售放大器（5-6月爆炸性增长、6月底见顶）。</p>
+    <p class="src">来源：央视新闻 / 中国证券报 / 新浪财经 / 腾讯财经</p>
+  </div>
+  <div class="card">
+    <h3>🇨🇳 A股收盘：沪指+0.44%报3830点，午后V反守住 <span class="tag hot">上期进展·收盘确认</span></h3>
+    <p>早盘受韩股熔断+科创50一度-4.22%拖累、沪指半日跌0.53%后，午后完成V型反转：<b>沪指收涨0.44%报3830.02点、创业板指收涨1.65%报3381.90点</b>（盘中振幅4.85%），两市成交额<b>超2.1万亿元</b>（14:13已破2万亿）。消费股走强（多股涨停），半导体/算力硬件午后企稳但仍是拖累项。</p>
+    <p><b>流动性护盘</b>：央行今日开展2065亿元7天逆回购+<b>6000亿元隔夜逆回购</b>，单日净投放<b>7305亿元</b>——隔夜工具罕见大额动用，被视为对冲外围暴跌的明确信号。</p>
+    <p class="src">来源：每日经济新闻 / 上证报 / 腾讯自选股</p>
+  </div>
+</section>
+
+<!-- ============ 焦点二：中东停火破裂 ============ -->
+<section>
+  <h2>焦点新增：美伊停火破裂，油价急涨搅动今夜FOMC<span class="en">FOCUS · GEOPOLITICS × MACRO</span></h2>
+  <div class="card">
+    <h3>🚀 伊朗首袭驻中东美军：4枚导弹打向约旦基地，全部被拦截 <span class="tag new">本期新增·细节落地</span></h3>
+    <p>北京时间7/29清晨5:45（美东28日17:45），伊朗革命卫队从本土向<b>约旦阿兹拉克空军基地</b>发射4枚弹道导弹，美军中央司令部称全部拦截。这是7/24美伊停火以来<b>首次公开袭击</b>，停火仅维持四天即告破裂。袭击前数小时，特朗普刚在白宫会晤内塔尼亚胡（2月底联合空袭伊朗以来首次面对面）。</p>
+    <p><b>连锁反应</b>：WTI原油亚盘<b>涨4.6%报82.94美元</b>（盘中+5%，收复此前三日14%跌幅一部分）；现货黄金反而跌1.18%至4028美元（美元走强压制）；美股期指小幅下挫。特朗普放话：谈判失败将摧毁伊朗"镐山"地下核设施。美军已在中东部署20+军舰执行对伊封锁，拦截18艘商船；美沙战机同日空袭伊拉克境内亲伊朗武装。</p>
+    <p><b>对科技股的传导</b>：油价反弹→通胀担忧→FOMC加息概率飙升至38%（一周前13%）→高估值AI硬件股风险偏好进一步受压——韩股今日暴跌的"第二推手"正是该链条。</p>
+    <p class="src">来源：参考消息 / 财联社 / 新华社 / 券商中国</p>
+  </div>
+</section>
+
+<!-- ============ 政策与监管 ============ -->
+<section>
+  <h2>政策与监管<span class="en">POLICY & REGULATION</span></h2>
+  <div class="card">
+    <h3>🇨🇳 商务部回应美国防部"1286清单"：强烈不满、坚决反对 <span class="tag new">本期新增</span></h3>
+    <p>针对美国防部7/23更新"从事问题活动的外国科研机构清单"（1286清单）制裁中国部分科研机构，商务部发言人7/29回应：美方<b>将科研合作"政治化、武器化、工具化"</b>，中方将采取必要措施维护科研机构合法权益。这是继7/27回应"蒸馏"指控之后，商务部一周内第二次就科技议题对美交涉。</p>
+    <p class="src">来源：央广网 / 新华社</p>
+  </div>
+  <ul class="compact">
+    <li><b>美拟追加近5亿美元"遏华"项目</b>：其中1.758亿美元用于更换加勒比及中美洲海底光缆、阻止中企参与——科技竞争延伸到海底基础设施层。<span class="tag new">本期新增</span></li>
+    <li><b>国家知识产权局</b>：全国已建成83家国家级知识产权保护中心+54家快速维权中心，"十五五"将继续高质量扩容——为AI/半导体等优势产业创新主体提供快速确权维权通道。<span class="tag new">本期新增</span></li>
+    <li><b>今夜悬念清单</b>：①凌晨2:00 FOMC决议（沃什第二次主持，无点阵图，鹰派洛根/哈马克有投票权，"家庭式争论"预告）；②微软/Meta盘后财报（微软CapEx预期同比+74%，Meta或再上调全年指引）；③8/1白宫AI监管框架截止进入最后72小时。<span class="tag hot">倒计时</span></li>
+  </ul>
+</section>
+
+<!-- ============ 模型与AI动态 ============ -->
+<section>
+  <h2>大模型与AI动态<span class="en">AI & MODELS</span></h2>
+  <ul class="compact">
+    <li><b>Kimi K3舆论热度持续加码</b>：继人民日报、央视财经后，21世纪经济报道今日刊文称K3为"第二个DeepSeek时刻"——叙事重心从性价比转向<b>Agent嵌入工作流</b>（生成一个行业研究网站历经120轮递归改进、2800次网页抓取、1100次终端调用、处理1.1万页内容）。瑞银、高盛先后背书，官方媒体矩阵三连发实属罕见。<span class="tag">舆论追踪</span></li>
+    <li><b>「把控前沿」联署余波</b>：环球网等中文媒体今日大规模跟进1100人联署报道，确认奥特曼立场"明显转变"（从反对简单暂停到支持统筹调控节奏）；三角治理格局（联署控速派 vs 扎克伯格开放派 vs 白宫监管派）成为8/1框架落地前的最大变量。<span class="tag">上期进展</span></li>
+  </ul>
+</section>
+
+<!-- ============ 企业与融资 ============ -->
+<section>
+  <h2>企业与融资<span class="en">COMPANIES & FUNDING</span></h2>
+  <ul class="compact">
+    <li><b>OceanBase启动成立以来首次外部融资</b>：彭博披露其正洽谈A轮20-30亿元人民币，2026年化收入超14亿元（同比+70%），从分布式数据库向<b>AI数据平台</b>演进（对标Databricks）；与蚂蚁国际A轮相呼应，蚂蚁系AI资产密集走向独立市场化。<span class="tag new">本期新增</span></li>
+    <li><b>德塔智能官宣近5亿元天使++轮</b>（第2期传闻落地）：同步发布<b>头戴式全身全景数据采集设备Delta D1</b>（无需机器人本体/动捕棚，全局定位精度2cm内），向行业开放共建具身数据基础设施；成立半年六轮融资，投资方含智元、乐聚、星海图、联想创投等。<span class="tag">上期进展·官宣</span></li>
+    <li><b>瓦博科技（非侵入式脑机接口）3个月连融3轮</b>：6月完成天使轮（祥峰投资、洪泰基金等），主打"神经意图模型"路线，已获昇腾技术认证，与复旦/天大脑机团队深度合作——脑机接口纳入"十五五"后资本FOMO显现。<span class="tag new">本期新增</span></li>
+  </ul>
+</section>
+
+<!-- ============ 时间线 ============ -->
+<section>
+  <h2>事件时间线（过去24小时 → 今夜）<span class="en">TIMELINE</span></h2>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-time">7/28 深夜（美东盘中）</div><div class="tl-body">美股存储/光通信再遭抛售：费半-4.49%，闪迪-14%、康宁-12%、SK海力士ADR-9%；道指却涨1.03%——资金从AI硬件轮动至传统行业，<b>为亚洲芯片股次日暴跌埋下引信</b>。</div></div>
+    <div class="tl-item hot"><div class="tl-time">7/29 05:45</div><div class="tl-body"><b>伊朗4枚弹道导弹袭约旦美军基地</b>（全部被拦截），7/24以来停火破裂；WTI原油应声涨超5%至83美元附近，<b>通胀担忧直接推高今夜FOMC加息定价</b>。</div></div>
+    <div class="tl-item"><div class="tl-time">7/29 09:00</div><div class="tl-body">韩股高开1.09%——SK海力士电话会安抚失败后，多头最后一搏。</div></div>
+    <div class="tl-item hot"><div class="tl-time">7/29 12:19 / 12:32</div><div class="tl-body">KOSDAQ、KOSPI相继触发熔断各停20分钟，<b>史上首次连续两日熔断</b>（年内第9次）；KOSPI最低下探5262.77点（-12.2%）。</div></div>
+    <div class="tl-item"><div class="tl-time">7/29 13:00-15:00</div><div class="tl-body">两边分化：韩股尾盘收窄至<b>收跌5.99%</b>（财政部表态研究稳市+8月发个人投资国债）；A股在央行<b>单日净投放7305亿</b>护航下完成V反，沪指收涨0.44%、创业板+1.65%，成交超2.1万亿。</div></div>
+    <div class="tl-item"><div class="tl-time">7/29 午后</div><div class="tl-body">商务部就"1286清单"制裁中国科研机构表态强烈不满；OceanBase被曝启动20-30亿元A轮；德塔智能官宣近5亿融资+发布Delta D1数采设备。</div></div>
+    <div class="tl-item future"><div class="tl-time">7/30 02:00（今夜）</div><div class="tl-body"><b>FOMC利率决议+沃什记者会</b>：维持3.50-3.75%是基准（76位经济学家一致），但加息25bp概率已飙至38%；无点阵图，措辞与反对票数量是唯一线索。</div></div>
+    <div class="tl-item future"><div class="tl-time">7/30 凌晨（美股盘后）</div><div class="tl-body"><b>微软/Meta财报</b>：微软CapEx预期+74%、Azure指引39-40%关口；Meta或再上调全年CapEx、广告收入能否首超谷歌搜索。谷歌"财报不错但FCF转负→一周跌8%"的剧本悬在头顶，<b>韩股熔断后市场对超预期开支的容忍度接近零</b>。</div></div>
+    <div class="tl-item future"><div class="tl-time">7/31 - 8/1</div><div class="tl-body">亚马逊/苹果财报（库克谢幕演出）+核心PCE；<b>8/1白宫AI监管框架落地</b>——30天前置审查存废、开源豁免为最后博弈点。</div></div>
+  </div>
+  <div class="link-box">
+    <b>逻辑串联</b>：本期是"压力测试日"的收官——SK海力士"史上最佳财报却不够好"戳破AI存储估值 → 杠杆ETF去杠杆放大 → 韩股史上首次背靠背熔断（收盘-5.99%勉强止血）；与此同时伊朗打破停火 → 油价+5% → 加息概率38% → 给今夜FOMC和微软/Meta财报叠加了"双重宏观紧箍咒"。A股靠央行7305亿净投放走出独立V反、恒科逆势，"东稳西荡"格局强化。未来36小时（FOMC→微软/Meta→亚马逊/苹果→PCE→白宫框架）将决定这轮全球AI资产重定价是"急跌换仓"还是"叙事转折"。
+  </div>
+</section>
+
+<footer>
+  时讯 · 第8期 ｜ 生成时间 2026-07-29 14:58 ｜ 数据来源：央视新闻、新华社、中国证券报、财联社、券商中国、上证报、每经、21财经、环球网、钛媒体、彭博等公开报道<br>
+  已去重：韩股Day-2盘中过程、扎克伯格长文、HAWK攻破、Kimi K3发布详情等见第1-7期，本期仅收录新进展
+</footer>
+
+</div>
+
+  <script>
+  (function(){
+    var c=document.getElementById('net'); if(!c) return;
+    var ctx=c.getContext('2d'); var w,h,pts;
+    function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}
+    function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}
+    function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}
+    addEventListener('resize',resize);resize();tick();
+  })();
+  </script>
+</body>
+</html>
