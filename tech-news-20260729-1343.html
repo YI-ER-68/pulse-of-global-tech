@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球科技时讯 · 第6期 | 2026-07-29 13:43</title>
+<style>
+  :root{
+    --bg:#0d1117; --card:#161b22; --card2:#1c2230; --border:#30363d;
+    --text:#e6edf3; --muted:#8b949e; --accent:#58a6ff; --up:#f85149; --down:#3fb950;
+    --gold:#e3b341; --purple:#bc8cff; --teal:#39c5cf;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:"PingFang SC","Microsoft YaHei",-apple-system,sans-serif;line-height:1.7;padding:24px 16px;}
+  .wrap{max-width:960px;margin:0 auto;}
+  header{text-align:center;margin-bottom:28px;padding:28px 20px;background:linear-gradient(135deg,#161b22 0%,#1a2233 60%,#20263a 100%);border:1px solid var(--border);border-radius:14px;}
+  header h1{font-size:26px;letter-spacing:2px;}
+  header .sub{color:var(--muted);margin-top:8px;font-size:14px;}
+  .tag{display:inline-block;background:#1f6feb33;color:var(--accent);border:1px solid #1f6feb66;border-radius:20px;padding:2px 12px;font-size:12px;margin:10px 4px 0;}
+  .tag.hot{background:#f8514933;color:var(--up);border-color:#f8514966;}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:28px;}
+  .kpi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;}
+  .kpi .v{font-size:22px;font-weight:700;}
+  .kpi .l{font-size:12px;color:var(--muted);margin-top:4px;}
+  .red{color:var(--up);} .green{color:var(--down);} .gold{color:var(--gold);} .blue{color:var(--accent);} .purple{color:var(--purple);} .teal{color:var(--teal);}
+  section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin-bottom:22px;}
+  section h2{font-size:19px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+  .item{margin-bottom:16px;padding:14px 16px;background:var(--card2);border-radius:10px;border-left:3px solid var(--accent);}
+  .item.hot{border-left-color:var(--up);}
+  .item.policy{border-left-color:var(--gold);}
+  .item.model{border-left-color:var(--purple);}
+  .item.biz{border-left-color:var(--teal);}
+  .item h3{font-size:15.5px;margin-bottom:6px;}
+  .item p{font-size:14px;color:#c9d1d9;}
+  .item .meta{font-size:12px;color:var(--muted);margin-top:6px;}
+  .badge{display:inline-block;font-size:11px;padding:1px 8px;border-radius:10px;margin-right:6px;vertical-align:middle;}
+  .b-new{background:#f8514922;color:var(--up);border:1px solid #f8514955;}
+  .b-inc{background:#e3b34122;color:var(--gold);border:1px solid #e3b34155;}
+  /* timeline */
+  .timeline{position:relative;padding-left:26px;}
+  .timeline::before{content:"";position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:linear-gradient(#1f6feb,#bc8cff,#f85149);}
+  .tl-item{position:relative;margin-bottom:18px;}
+  .tl-item::before{content:"";position:absolute;left:-24px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);}
+  .tl-item.hot::before{background:var(--up);}
+  .tl-item.policy::before{background:var(--gold);}
+  .tl-item .t{font-size:12.5px;color:var(--accent);font-weight:600;}
+  .tl-item.hot .t{color:var(--up);}
+  .tl-item.policy .t{color:var(--gold);}
+  .tl-item .d{font-size:14px;color:#c9d1d9;}
+  .logic{background:#1f6feb14;border:1px dashed #1f6feb55;border-radius:10px;padding:14px 16px;font-size:13.5px;color:#c9d1d9;margin-top:14px;}
+  .logic b{color:var(--accent);}
+  .watch li{font-size:14px;color:#c9d1d9;margin-bottom:8px;margin-left:20px;}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:24px;padding-bottom:20px;}
+  @media (max-width:640px){ section{padding:16px;} header h1{font-size:21px;} }
+
+  /* ===== 全屏动态背景（时讯统一视觉） ===== */
+  .dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+  @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+  .dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+  @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+  @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+  @keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+  .dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+  body>*:not(.dynamic-bg){position:relative;z-index:1;}
+</style>
+</head>
+<body>
+<div class="dynamic-bg">
+  <div class="bg-gradient"></div>
+  <div class="bg-glow a"></div>
+  <div class="bg-glow b"></div>
+  <div class="bg-glow c"></div>
+  <canvas id="net"></canvas>
+</div>
+
+<div class="wrap">
+
+<header>
+  <h1>🌐 全球科技时讯 · 第 6 期</h1>
+  <div class="sub">2026年7月29日 13:43 · 覆盖过去24小时 · 已对前5期去重，只呈现新增与新进展</div>
+  <span class="tag hot">🔴 韩股双指数熔断</span>
+  <span class="tag">A股逆势企稳</span>
+  <span class="tag">AI攻破后量子密码</span>
+  <span class="tag">联署人数破1134</span>
+</header>
+
+<!-- KPI -->
+<div class="kpis">
+  <div class="kpi"><div class="v green">-12%→-8.6%</div><div class="l">KOSPI 盘中暴跌触发熔断后收窄</div></div>
+  <div class="kpi"><div class="v green">-18% / -57%</div><div class="l">SK海力士盘中创纪录跌幅 / 较6月高点</div></div>
+  <div class="kpi"><div class="v red">+0.74%</div><div class="l">上证指数逆势翻红（13:44 报3841点）</div></div>
+  <div class="kpi"><div class="v purple">2⁶⁴</div><div class="l">AI将后量子签名HAWK密钥强度砍半</div></div>
+  <div class="kpi"><div class="v gold">1134人</div><div class="l">「把控前沿」联署签名（今晨最新）</div></div>
+  <div class="kpi"><div class="v blue">今晚→8/1</div><div class="l">微软/Meta财报→FOMC→白宫框架三连</div></div>
+</div>
+
+<!-- 焦点 -->
+<section>
+  <h2>🔥 本期焦点：韩股熔断——AI算力信仰的第一次压力测试</h2>
+  <div class="item hot">
+    <h3><span class="badge b-new">重大升级</span>KOSPI/KOSDAQ 双双熔断，交易暂停20分钟</h3>
+    <p>7/29午后，KOSPI盘中一度暴跌超12%至5357.11点，KOSDAQ跌超10%，两大指数触发熔断、暂停交易20分钟——这是连续第二日暴跌后的进一步失控（昨日-10.84%）。KOSPI较6月历史高点已回撤40%。截至13:00跌幅收窄至-8.56%。</p>
+    <p class="meta">较第5期"盘中-6~7%触发Sidecar"进一步恶化为全面熔断</p>
+  </div>
+  <div class="item hot">
+    <h3><span class="badge b-new">新进展</span>SK海力士盘中-18%创上市最大跌幅，市值破6300亿美元</h3>
+    <p>直接导火索是财报电话会而非财报本身：管理层<b>对股东回报和LTA长协定价机制保持沉默</b>，却把2026年资本开支上调至"40万亿韩元区间高段"——市场解读为"只烧钱、不分红、定价权存疑"。SK海力士较6月高点累跌57%；三星电子盘中跌超13%、市值跌破9000亿美元；港股两倍做多海力士ETF跌超25%。</p>
+  </div>
+  <div class="item hot">
+    <h3><span class="badge b-new">官方表态</span>韩国副总理具润哲：两只股票占了半个市场</h3>
+    <p>韩国经济副总理兼企划财政部长官具润哲将波动归因于"市场两极分化严重，三星+SK海力士合计市值占比高达50%"，称政府"高度警惕、密切监控"。结构性风险被官方首次点名：指数命运绑定在两只存储股上，投资者"几乎无处可避"。</p>
+  </div>
+  <div class="item">
+    <h3><span class="badge b-new">分化信号</span>A股逆势企稳：沪指+0.74%，CPO板块大反弹</h3>
+    <p>与韩股形成鲜明对比，A股连跌两日后午后企稳：上证3841.63点(+0.74%)、深成指+1.60%、科创50盘中一度探至1608点(-5%)后收窄至-0.36%。个股催化密集：<b>寒武纪</b>推500万股限制性股票激励（考核2026-28累计营收≥1000亿元）现涨1.4%；<b>中际旭创</b>董事长提议40-80亿元回购，大涨5.4%；<b>长鑫科技</b>获纳入MSCI指数；深交所上线创业板智能驾驶指数。"公司真金白银护盘"成为A股算力链与韩股的最大区别。</p>
+  </div>
+</section>
+
+<!-- 大模型与AI安全 -->
+<section>
+  <h2>🤖 大模型与AI安全</h2>
+  <div class="item model">
+    <h3><span class="badge b-new">新事件</span>AI用60小时攻破后量子签名：密码学"变天"预警</h3>
+    <p>Anthropic的Claude Mythos Preview在约60小时、10万美元成本内，对NIST后量子签名候选方案<b>HAWK</b>开发出有效密钥恢复攻击，将密钥强度从2¹²⁸砍到2⁶⁴——该方案此前已通过两轮人类专家评审。同一模型还把降轮AES的攻击速度提升200-800倍。标志性拐点：AI从"找代码实现漏洞"升级为<b>攻击算法数学基础</b>，后量子密码迁移的紧迫性陡增。</p>
+  </div>
+  <div class="item model">
+    <h3><span class="badge b-inc">增量</span>「把控前沿」联署人数增至1134人，三巨头官方表态</h3>
+    <p>截至今晨联署突破1134人。增量细节：①信件明确"控速≠停训停发"，而是先建国际协调、监测与核验机制；②Anthropic披露内部数据支撑担忧——截至2026年5月，Claude已编写公司超80%的合入代码；③OpenAI官方X回应"未来某个时点世界将需要把控AI进步速度"，谷歌称"致力于安全开发"；④签署要求公司邮箱验证身份。核心难题仍是"AI训练比导弹发射井更容易隐藏"的核验困境。</p>
+    <p class="meta">承接第5期联署信首发报道，本条仅记录新增进展</p>
+  </div>
+  <div class="item model">
+    <h3><span class="badge b-new">新赛道</span>世界模型范式吸金30亿美元：智能是"长"出来的</h3>
+    <p>Odyssey提出的递归对抗训练（PROWL-1）让强化学习智能体主动发现世界模型漏洞并转化为训练数据，形成"模型改进→智能体升级→发现新漏洞"的自进化循环。2026上半年世界模型赛道已吸引超30亿美元投资，被视为Scaling Law边际收益递减后的候选新范式。</p>
+  </div>
+  <div class="item model">
+    <h3><span class="badge b-new">数据荒</span>AI公司大规模收购旧书做"破坏性扫描"</h3>
+    <p>AI生成内容已占互联网内容52%（2025年数据），模型塌缩风险加剧、高质量文本或在2026年内耗尽。AI公司转向2022年前出版的"纯净"纸质书：经ISBNdb等中间商单次采购1000-100万本，扫描后销毁。法院认定此路径为合理使用——与Anthropic因700万本盗版书被判赔15亿美元形成合规对照。</p>
+  </div>
+</section>
+
+<!-- 政策与监管 -->
+<section>
+  <h2>🏛️ 政策与监管</h2>
+  <div class="item policy">
+    <h3><span class="badge b-new">落地</span>大模型IPv6专项行动在雄安正式启动</h3>
+    <p>中央网信办联合北京、上海、浙江、深圳四地网信办，会同5家头部大模型企业在雄安新区启动"人工智能大模型IPv6能力提升专项行动"，推动生成式大模型应用全面支持IPv6；雄安到2030年新建片区全面实现IPv6单栈规模化运行。（第1期曾预告该计划，本次为正式落地）</p>
+  </div>
+  <div class="item policy">
+    <h3><span class="badge b-new">新政</span>八部门启动科技型企业创新政策扶持"一件事"专项行动</h3>
+    <p>工信部、科技部、财政部等八部门联合印发通知，围绕高新技术企业评价认定推进跨部门数据共享、申报信息预填与交叉核验，7月底起分阶段落地。同日工信部还邀请20家媒体担任"汽车行业账期问题监督员"，督促车企兑现60天账期承诺。</p>
+  </div>
+  <div class="item policy">
+    <h3><span class="badge b-inc">舆论战</span>"AI麦卡锡主义"浮出水面：制造恐惧比证据更重要</h3>
+    <p>媒体披露OpenAI战略未来事务主管鲍尔公开建议白宫：不必急于封禁中国AI模型，而应通过监管制造"恐惧、不确定性和怀疑"（FUD）氛围，如发布措辞含糊的"中国模型可能存在后门"公告且"不需要充分论证"。叠加此前Axios披露的商务部/NSA特别许可名单动议，美对华AI打压正从出口管制扩展到<b>认知战层面</b>。8/1白宫框架截止前，"开源保卫战"（黄仁勋DC游说）与"封禁派"的博弈进入最后72小时。</p>
+  </div>
+  <div class="item policy">
+    <h3><span class="badge b-new">数据</span>税务总局：上半年税收超10万亿元，同比+4.9%</h3>
+    <p>上半年税费收入累计16.7万亿元，官方归因包括"新兴领域和重点行业发展势头强劲"——AI等新质生产力已开始体现在财政数据中。另商务部立场文件获官媒接力评论，定调"产能过剩是假、焦虑过剩是真"。</p>
+  </div>
+</section>
+
+<!-- 企业与市场 -->
+<section>
+  <h2>💼 企业与市场</h2>
+  <div class="item biz">
+    <h3><span class="badge b-inc">倒计时</span>今夜至8/1：三大事件密集落地窗口</h3>
+    <p>① <b>今晚美股盘后</b>：微软/Meta财报（Azure增速vs 39-40%指引、Meta广告是否首超谷歌搜索、CapEx是否再上调——韩股熔断后市场对"烧钱叙事"的容忍度已显著降低，不及预期的惩罚恐超Bespoke统计的平均-4.2%）；② <b>明晨2:00</b>：FOMC决议（维持3.50-3.75%为共识，看点在反对票与9月加息暗示）；③ <b>8/1</b>：白宫AI监管框架意见截止。三事件将共同决定本轮全球AI资产回调是"技术性洗盘"还是"叙事转折"。</p>
+  </div>
+  <div class="item biz">
+    <h3><span class="badge b-new">护盘</span>A股算力龙头密集出手：激励+回购组合拳</h3>
+    <p>寒武纪限制性股票激励设定"2026-2028累计营收不低于1000亿元"的高门槛考核（2025年营收约百亿级，意味着三年10倍量级扩张的管理层信心）；中际旭创40-80亿元回购提议为创业板年内最大手笔之一。两家公司用真金白银对冲"AI资本开支见顶"叙事。</p>
+  </div>
+  <div class="item biz">
+    <h3><span class="badge b-inc">增量</span>Kimi K3 获央视财经+人民日报双背书</h3>
+    <p>央视财经今日跟进报道K3全量开源，披露新数据：中国开源模型下载量占全球41%，全球主流调用榜前六全部来自中国团队，过去12个月国产模型有9个月保持全球开源规模上限；中国拥有全球60%的AI专利，2025年AI核心产业规模超1.2万亿元、企业超6200家。官媒连续三天高规格定调，K3已被塑造为"开源国家叙事"的标志物。</p>
+  </div>
+</section>
+
+<!-- 时间线 -->
+<section>
+  <h2>⏱️ 事件时间线（过去24小时 → 未来72小时）</h2>
+  <div class="timeline">
+    <div class="tl-item"><div class="t">7/28 晚（美东）</div><div class="d">美股收盘：道指+1.03%、纳指五连跌；苹果盘中市值破5万亿美元；黄仁勋结束国会山游说，"开放权重保安全"表态落地。</div></div>
+    <div class="tl-item hot"><div class="t">7/29 上午 08:00</div><div class="d">SK海力士财报电话会：营收/营业利润双失预期已被消化，但管理层对股东回报与LTA定价<b>集体沉默</b>+资本开支上调至40万亿韩元高段，点燃抛售引信。</div></div>
+    <div class="tl-item"><div class="t">7/29 上午 09:30</div><div class="d">A股高开：寒武纪股权激励、中际旭创回购提议同步披露，光刻机/存储低开、CRO/网安活跃，逾2300股上涨。</div></div>
+    <div class="tl-item hot"><div class="t">7/29 午后 ~12:30</div><div class="d">韩股崩盘升级：KOSPI盘中-12%至5357点、KOSDAQ -10%，<b>双指数熔断暂停交易20分钟</b>；SK海力士-18%创上市最大跌幅、三星-13%；韩国副总理紧急表态。</div></div>
+    <div class="tl-item"><div class="t">7/29 午后 13:00-13:44</div><div class="d">分化定型：KOSPI跌幅收窄至-8.56%；A股逆势翻红（沪指+0.74%、深成指+1.60%），CPO板块中际旭创+5.4%领涨——"韩股恐慌、A股护盘"的镜像格局形成。</div></div>
+    <div class="tl-item"><div class="t">7/29 全天（舆论场）</div><div class="d">「把控前沿」联署破1134人，OpenAI/Anthropic/谷歌先后表态；央视财经+人民日报接力报道Kimi K3；Claude Mythos攻破HAWK后量子签名的研究引发密码学界震动。</div></div>
+    <div class="tl-item policy"><div class="t">7/29 深夜～7/30 凌晨（未来）</div><div class="d">微软/Meta财报（盘后）→ FOMC决议（北京时间2:00）+ 沃什记者会：韩股熔断后，任何"CapEx再上调+指引含糊"都可能被放大定价。</div></div>
+    <div class="tl-item policy"><div class="t">7/30-7/31（未来）</div><div class="d">奥特曼见财长贝森特/商务部长卢特尼克；周四亚马逊/苹果财报（库克谢幕）+核心PCE数据。</div></div>
+    <div class="tl-item policy"><div class="t">8/1（未来）</div><div class="d">白宫AI监管框架意见截止：30天前置审查存废、开源豁免与否、前沿模型定义三大悬念揭晓。</div></div>
+  </div>
+  <div class="logic">
+    <b>逻辑串联：</b>本期所有事件汇聚成一条主线——<b>"AI信仰的定价权正在被重新谈判"</b>。资本市场维度：SK海力士"沉默的电话会"证明，市场已不再为"AI需求无限"叙事无条件买单，要求看到分红、定价权和回报率，韩股熔断是这场重新谈判的第一次剧烈出清，而A股用"激励+回购"给出了不同的回答；技术维度：AI攻破后量子密码说明能力增长快于安全边界，恰好为1134人联署信"社会需要时间准备"提供了当天的实证；政策维度：白宫框架72小时倒计时下，"开源保卫战"（黄仁勋+央视/人民日报为K3背书）与"AI麦卡锡主义"（FUD策略曝光）短兵相接。今晚微软/Meta财报与明晨FOMC，将决定这场重新谈判的下一个价格锚点。
+  </div>
+</section>
+
+<!-- 待跟踪 -->
+<section>
+  <h2>📌 待跟踪（下期优先）</h2>
+  <ul class="watch">
+    <li>【最优先】微软/Meta财报实际数据（今晚盘后）：Azure实际增速、Meta广告 vs 谷歌搜索、CapEx指引</li>
+    <li>【最优先】FOMC决议（明晨2:00）：反对票数量、9月加息暗示；韩股/美股AI硬件链反应</li>
+    <li>韩股7/30是否第三日暴跌或反弹；韩政府是否出台稳市措施</li>
+    <li>7/30 奥特曼见贝森特/卢特尼克结果；8/1 白宫框架落地细节</li>
+    <li>7/31 亚马逊/苹果财报（库克谢幕）+ 核心PCE</li>
+    <li>HAWK攻击论文的NIST官方回应；后量子密码标准是否调整</li>
+  </ul>
+</section>
+
+<footer>第6期 · 生成于 2026-07-29 13:43 · 每2小时更新 · 已与前5期去重，仅含增量信息<br>信息来源：钛媒体/券商中国/每经/中国基金报/IT之家/网易科技/人民日报/央视财经/彭博 等公开报道</footer>
+
+</div>
+
+  <script>
+  (function(){
+    var c=document.getElementById('net'); if(!c) return;
+    var ctx=c.getContext('2d'); var w,h,pts;
+    function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}
+    function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}
+    function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}
+    addEventListener('resize',resize);resize();tick();
+  })();
+  </script>
+</body>
+</html>
