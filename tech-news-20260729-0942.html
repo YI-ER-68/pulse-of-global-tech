@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>时讯 · 全球科技资讯简报 第4期 | 2026-07-29 09:42</title>
+<style>
+  :root{
+    --bg:#f6f7fb; --card:#ffffff; --ink:#1a2233; --sub:#5a6478; --line:#e6e9f2;
+    --blue:#2563eb; --red:#d92626; --green:#0e9f6e; --amber:#b45309; --purple:#7c3aed;
+    --blue-bg:#eef4ff; --red-bg:#fdeeee; --green-bg:#e9f9f2; --amber-bg:#fdf3e3; --purple-bg:#f3edff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;}
+  .wrap{max-width:960px;margin:0 auto;padding:28px 20px 60px;}
+  header.hero{background:linear-gradient(135deg,#0f1b3d 0%,#1e3a8a 55%,#2563eb 100%);color:#fff;border-radius:16px;padding:30px 32px;margin-bottom:24px;}
+  header.hero h1{font-size:26px;letter-spacing:1px;}
+  header.hero .meta{margin-top:8px;font-size:13px;opacity:.85;}
+  header.hero .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;}
+  header.hero .tags span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:3px 12px;font-size:12px;}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:26px;}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;}
+  .kpi .n{font-size:20px;font-weight:700;}
+  .kpi .t{font-size:12.5px;color:var(--sub);margin-top:4px;}
+  .kpi.red .n{color:var(--red);} .kpi.blue .n{color:var(--blue);} .kpi.green .n{color:var(--green);} .kpi.amber .n{color:var(--amber);}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-bottom:22px;}
+  h2{font-size:19px;margin-bottom:6px;display:flex;align-items:center;gap:10px;}
+  h2 .bar{width:5px;height:20px;border-radius:3px;display:inline-block;}
+  .sec-sub{font-size:13px;color:var(--sub);margin-bottom:16px;}
+  .item{padding:13px 0;border-bottom:1px dashed var(--line);}
+  .item:last-child{border-bottom:none;}
+  .item h3{font-size:15.5px;margin-bottom:5px;}
+  .item p{font-size:14px;color:#3b4358;}
+  .badge{display:inline-block;font-size:11.5px;border-radius:5px;padding:1px 8px;margin-right:8px;vertical-align:2px;font-weight:600;}
+  .b-new{background:var(--red-bg);color:var(--red);}
+  .b-follow{background:var(--blue-bg);color:var(--blue);}
+  .b-policy{background:var(--amber-bg);color:var(--amber);}
+  .b-money{background:var(--green-bg);color:var(--green);}
+  .b-model{background:var(--purple-bg);color:var(--purple);}
+  .up{color:var(--red);font-weight:700;} .down{color:var(--green);font-weight:700;}
+  /* timeline */
+  .timeline{position:relative;margin:10px 0 0 12px;padding-left:26px;border-left:2px solid #c7d4f5;}
+  .tl-item{position:relative;margin-bottom:20px;}
+  .tl-item::before{content:"";position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:3px solid #dbe6ff;}
+  .tl-item.hot::before{background:var(--red);border-color:#ffdede;}
+  .tl-item.future::before{background:#fff;border:3px solid var(--amber);}
+  .tl-time{font-size:12.5px;color:var(--blue);font-weight:700;letter-spacing:.5px;}
+  .tl-item.hot .tl-time{color:var(--red);}
+  .tl-item.future .tl-time{color:var(--amber);}
+  .tl-body{font-size:14px;color:#333c52;}
+  .link-note{background:var(--blue-bg);border-left:4px solid var(--blue);border-radius:8px;padding:14px 16px;font-size:13.5px;color:#26324d;margin-top:16px;}
+  .link-note b{color:var(--blue);}
+  footer{text-align:center;font-size:12px;color:#9aa3b5;margin-top:10px;}
+
+  /* ===== 全屏动态背景（时讯统一视觉） ===== */
+  .dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+  @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+  .dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+  .dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+  @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+  @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+  @keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+  .dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+  body>*:not(.dynamic-bg){position:relative;z-index:1;}
+</style>
+</head>
+<body>
+<div class="dynamic-bg">
+  <div class="bg-gradient"></div>
+  <div class="bg-glow a"></div>
+  <div class="bg-glow b"></div>
+  <div class="bg-glow c"></div>
+  <canvas id="net"></canvas>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <h1>时讯 · 全球科技资讯简报 <span style="font-size:15px;opacity:.8;">第4期</span></h1>
+    <div class="meta">2026年7月29日（周三）09:42 生成 ｜ 覆盖过去24小时增量 ｜ 已刊发内容不重复展开，仅追踪新进展</div>
+    <div class="tags">
+      <span>🔥 黄仁勋华盛顿游说落地</span><span>🏛 FOMC今夜揭晓</span><span>📊 微软/Meta今晚财报大考</span><span>🤖 智元赴港IPO</span><span>💼 企微「大圆」vs 千问办公</span>
+    </div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi red"><div class="n">-10%</div><div class="t">纳指周二盘中较前高回撤，一度进入技术性回调区间（后收窄）</div></div>
+    <div class="kpi blue"><div class="n">3.50–3.75%</div><div class="t">FOMC预期维持利率不变，北京时间7/30凌晨2点揭晓，9月加息已接近充分定价</div></div>
+    <div class="kpi amber"><div class="n">7000亿美元</div><div class="t">四大云巨头2026年合计资本开支，华尔街预测2027年或破1万亿</div></div>
+    <div class="kpi green"><div class="n">1.71亿美元</div><div class="t">过去24小时海外AI融资：Enigma机器人7100万 + Fish Audio语音5000万等</div></div>
+  </div>
+
+  <section>
+    <h2><span class="bar" style="background:var(--amber);"></span>政策与监管：开源保卫战进入白热化</h2>
+    <div class="sec-sub">Kimi K3引发的华盛顿政策震荡持续发酵，产业界游说与监管收口正面相撞</div>
+    <div class="item">
+      <h3><span class="badge b-follow">跟进</span>黄仁勋周二亲赴国会山+商务部，会谈结果落地</h3>
+      <p>彭博7/29报道：黄仁勋已会见民主党参议员<b>沃纳（Warner）、希夫（Schiff）</b>等两党议员及商务部长<b>卢特尼克</b>，核心陈词——"美国产业需要开放权重来保障安全，这对整个行业活力至关重要"。时机极为敏感：<b>商务部正处于前沿AI模型安全审查框架收尾的关键窗口期</b>，游说直接切入政策制定末段。</p>
+    </div>
+    <div class="item">
+      <h3><span class="badge b-new">新增</span>行业集体行动三连击浮出水面</h3>
+      <p>① 上周五：黄仁勋与微软纳德拉等<b>数十家公司联署公开信</b>，警告勿限制开放权重路径（黄以此作为其新开X账号首帖）；② 周一：英伟达联合<b>微软、Palantir、Salesforce</b>发声明，定位开放权重为网络安全关键工具——"一刀切限制将把权力、依赖与脆弱性集中于少数封闭提供商"；③ 周二：黄仁勋亲赴DC面谈。三步递进，是Kimi K3开放下载以来最有组织的行业反击。</p>
+    </div>
+    <div class="item">
+      <h3><span class="badge b-follow">跟进</span>今日待验证：奥特曼明日（7/30）见财长贝森特、商务部长卢特尼克</h3>
+      <p>与黄仁勋"保开源"立场不同，OpenAI关切点在管制豁免与政府订单。加上员工跨公司请愿（暂未正式公开），本周华盛顿已成全球AI政策的唯一焦点。<b>8/1白宫监管框架征求意见截止</b>，"最先进模型发布前30天政府审查"条款存废将见分晓。</p>
+    </div>
+    <div class="item">
+      <h3><span class="badge b-policy">宏观</span>美联储7月议息今夜揭晓：加息阴影笼罩AI行情</h3>
+      <p>FOMC 7/28-29召开（沃什主席任内第二次会议），市场普遍预期<b>维持3.50%–3.75%不变</b>，但美伊冲突推升布油重回90美元、通胀反弹担忧下，<b>交易员已接近充分定价9月加息</b>；本次料现多张反对票（沃勒/洛根/哈马克等偏鹰）。丹斯克银行点出加息三大逻辑之首正是<b>AI资本开支扩张热潮</b>——货币政策首次与AI基建周期直接挂钩。纳指周二盘中一度较前高回落超10%。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="bar" style="background:var(--red);"></span>芯片算力与财报：今晚是本财报季最大考验</h2>
+    <div class="sec-sub">Alphabet"业绩好也挨打"的殷鉴在前，市场只问一句：钱袋子管得住吗</div>
+    <div class="item">
+      <h3><span class="badge b-new">前瞻</span>微软、Meta 今晚盘后放榜（北京时间7/30凌晨）</h3>
+      <p><b>微软</b>：EPS一致预期4.22美元，Azure指引39–40%（大摩预41%），2026年资本开支1900亿美元（其中250亿来自元器件涨价），Copilot付费席位已达2000万；FactSet预测其自由现金流Q4将<b>2001年以来首次转负</b>。<b>Meta</b>：营收预期601.7亿（+26.6%）但EPS微降，资本开支指引（1250–1450亿）<b>大概率再度上调</b>——正是上周打崩Alphabet的同款导火索；大摩预测其广告收入或<b>首次超越谷歌搜索广告</b>，改写数字广告史。</p>
+    </div>
+    <div class="item">
+      <h3><span class="badge b-follow">跟进</span>周四：亚马逊 + 苹果，库克谢幕演出</h3>
+      <p>亚马逊AWS增速有望破30%（2022年以来新高），但长期债务一个季度暴涨81%至1190亿美元；<b>本次是库克最后一次以CEO身份主持财报会，随后由John Ternus接棒</b>。另据Moody's警告：六大科技公司直接债务合计约4600亿美元，重资产转型威胁信用质量，Oracle评级展望已转负面（距垃圾级仅两档）。</p>
+    </div>
+    <div class="item">
+      <h3><span class="badge b-money">市场</span>市场对"不达标"的惩罚创纪录</h3>
+      <p>Bespoke数据：本财报季业绩不及预期者平均下跌<span class="down">4.2%</span>（历史均值2.9%）。多空分界清晰——多头看"约束在供给不在需求"（微软订单积压超6000亿、谷歌云5140亿、AWS超3600亿）；空头看"2027年后资本开支能见度缺失"。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="bar" style="background:var(--purple);"></span>大模型与前沿动态</h2>
+    <div class="sec-sub">Kimi K3余波未平，国内办公智能体赛道贴身肉搏</div>
+    <div class="item">
+      <h3><span class="badge b-model">观点</span>杨植麟公开放话："OpenAI只是现有技术的组合"</h3>
+      <p>月之暗面创始人在公开场合表示OpenAI"没发明什么新东西"，强调中国开源大模型正从"单点亮相"走向"群体突破"。配合人民日报7/29整版解读K3的KDA混合线性注意力+注意力残差架构，官方与创始人罕见同频高调——另有消息称月之暗面拟8月启动Pre-IPO前最后一轮融资，目标投前估值500亿美元。</p>
+    </div>
+    <div class="item">
+      <h3><span class="badge b-new">新增</span>企业微信「大圆」内测 vs 阿里「千问办公」上线，办公智能体开战</h3>
+      <p>企业微信7/27内测<b>「大圆」</b>：侧滑唤起浮窗，总结未读消息、代拟回复、写周报，不打断工作流（与微信内测的「小微」同源交互）。同日阿里推出<b>「千问办公」</b>内测：整合Qoder Work/悟空/MuleRun三款智能体，接入Qwen3.8-Max-Preview，可产出代码/PPT/Excel并支持定时任务，可接入钉钉/飞书/微信消息。腾讯WorkBuddy 6月PC端访问量2097万次（超第二三名总和），成为被围攻的标杆。</p>
+    </div>
+    <div class="item">
+      <h3><span class="badge b-new">人事</span>翁荔（Lilian Weng）因身体透支离职 Thinking Machines Lab</h3>
+      <p>OpenAI前研究与安全副总裁、北大校友翁荔宣布从Thinking Machines Lab联创职位离职，称"过去7个月生病频率超过人生任何时期"。她曾组建OpenAI超80人安全团队，参与GPT-4/4o/o1安全工作。在AI安全议题空前敏感的本周，头部安全人才离场引发关注。</p>
+    </div>
+    <div class="item">
+      <h3><span class="badge b-money">融资</span>24小时融资盘点：机器人AI与语音赛道吸金</h3>
+      <p><b>Enigma</b>（机器人AI软件）7100万美元种子轮，Index/Ribbit领投，DeepMind/Anthropic/OpenAI员工天使参投；<b>Fish Audio</b>（语音合成克隆）5000万美元种子轮；<b>瑞莱智慧</b>（清华系AI安全）7月连完B1/B2两轮合计数亿元；<b>记忆张量</b>（大模型记忆基建）亿级融资，华为哈勃/荣耀战投入局。另：李飞飞World Labs收购机器人仿真公司SceniX，加速AI进入物理世界。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="bar" style="background:var(--green);"></span>企业与市场</h2>
+    <div class="sec-sub">机器人资本化提速，无人物流落地</div>
+    <div class="item">
+      <h3><span class="badge b-new">IPO</span>智元机器人启动赴港上市：全球人形出货第一冲刺资本市场</h3>
+      <p>2025年出货超5100台、占全球人形机器人市场约39%；营收从2023年30万元飙至2025年破10亿元，2026年目标数万台量产。港股机器人热度空前：上半年已有10家上市、16家排队。与长鑫科技A股封王呼应，硬科技IPO成中国资本市场主叙事。</p>
+    </div>
+    <div class="item">
+      <h3><span class="badge b-new">落地</span>Momenta无人货运车业务落地苏州</h3>
+      <p>"物理AI第一股"上市后首个业务动作：Robovan进入快递/夜间配送等城市末端物流，与乘用车共用自研R7世界模型，未来一套基座支撑乘用车/货运/卡车/Robotaxi四线。</p>
+    </div>
+    <div class="item">
+      <h3><span class="badge b-follow">跟进</span>零一万物亦计划Pre-IPO融资</h3>
+      <p>李开复透露将在披露首次年度业绩期间寻求上市前融资。智谱、MiniMax已登港股，"AI六小虎"资本化收官赛开跑（月之暗面、零一万物均在推进）。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="bar" style="background:var(--blue);"></span>事件时间线：一条主线看懂本周</h2>
+    <div class="sec-sub">主线：Kimi K3开源冲击波 → 华盛顿政策博弈 → 货币政策与财报共振</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-time">7/25–7/27</div><div class="tl-body">Claude Opus 5发布 → Kimi K3完整权重（2.8万亿参数，全球首个3T级开源）深夜落地，HF 30分钟4000赞创纪录，性能对标Anthropic/OpenAI而成本仅其几分之一。</div></div>
+      <div class="tl-item hot"><div class="tl-time">7/27–7/28</div><div class="tl-body">冲击波抵达华盛顿：Amodei万字长文主张管制、白宫框架加入"发布前30天审查"、商务部/NSA酝酿中国AI开发商特别许可名单、FCC禁售未上市中国机器人——监管收口全面提速。</div></div>
+      <div class="tl-item hot"><div class="tl-time">7/28（周二）</div><div class="tl-body">产业界正面反击：黄仁勋亲赴DC见沃纳/希夫/卢特尼克，力保开放权重；此前已联署公开信（上周五）+ 四巨头联合声明（周一）。同日FOMC开会，纳指盘中回撤10%，市场在"AI监管+加息"双重阴影下失血。</div></div>
+      <div class="tl-item hot"><div class="tl-time">7/29（今天）</div><div class="tl-body">人民日报整版定调K3、杨植麟隔空喊话OpenAI；国内办公智能体开战（企微「大圆」/千问办公围攻WorkBuddy）；智元启动港股IPO。中美两条线同时加速。</div></div>
+      <div class="tl-item future"><div class="tl-time">7/30 凌晨2:00</div><div class="tl-body">⏳ FOMC决议+沃什记者会：维持利率是基准（约七成概率），关注反对票数量与9月加息暗示 → 直接决定AI硬件股短线方向。</div></div>
+      <div class="tl-item future"><div class="tl-time">7/30 凌晨（美东7/29盘后）</div><div class="tl-body">⏳ 微软、Meta财报：资本开支指引是唯一焦点。若跟随Alphabet上调，警惕"业绩好也挨打"重演；Meta广告若超谷歌搜索，则是行业分水岭。</div></div>
+      <div class="tl-item future"><div class="tl-time">7/30–8/1</div><div class="tl-body">⏳ 奥特曼见贝森特/卢特尼克（7/30）→ 亚马逊/苹果财报、库克谢幕（7/31）→ 白宫AI监管框架意见截止（8/1）。本周五个关键节点全部收敛于"开源存废+资本开支可持续性"两大命题。</div></div>
+    </div>
+    <div class="link-note">
+      <b>逻辑串联：</b>这不是孤立事件，而是一条因果链——<b>中国开源模型（K3）以极低成本逼近闭源前沿</b>，动摇了美国"算力+闭源"护城河叙事，触发监管收口冲动；而英伟达、微软的商业模式恰恰依赖开源带来的算力增量，于是<b>产业界与监管层在本周正面对撞</b>。与此同时，美联储首次把AI资本开支列为加息逻辑，今晚财报的资本开支指引又决定这一逻辑成色——<b>政策、货币、财报三线将在未来72小时内交汇定调</b>，8/1白宫框架落地是本轮的阶段性终点。
+    </div>
+  </section>
+
+  <footer>时讯自动化 · 第4期 · 2026-07-29 09:42 · 每2小时更新 · 已刊发事件不重复，仅追踪增量</footer>
+</div>
+
+  <script>
+  (function(){
+    var c=document.getElementById('net'); if(!c) return;
+    var ctx=c.getContext('2d'); var w,h,pts;
+    function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}
+    function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}
+    function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}
+    addEventListener('resize',resize);resize();tick();
+  })();
+  </script>
+</body>
+</html>
