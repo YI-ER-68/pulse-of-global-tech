@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>退订时讯</title>
+<style>
+body{margin:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+.box{max-width:440px;width:100%;background:#161b22;border:1px solid #2d333b;border-radius:16px;padding:32px;}
+h1{font-size:22px;margin:0 0 8px;}
+p{color:#9da7b3;font-size:14px;line-height:1.6;}
+form{margin:20px 0 8px;display:flex;gap:10px;}
+input{flex:1;background:#0d1117;border:1px solid #2d333b;border-radius:10px;color:#e6edf3;padding:12px 14px;font-size:15px;outline:none;}
+input:focus{border-color:#58a6ff;}
+button{background:#f85149;color:#fff;border:none;border-radius:10px;font-weight:700;padding:12px 24px;font-size:15px;cursor:pointer;}
+button:hover{filter:brightness(1.08);}
+.tip{font-size:12px;margin-top:16px;}
+a{color:#58a6ff;text-decoration:none;}
+</style></head>
+<body>
+<div class="box">
+  <h1>退订「时讯」</h1>
+  <p>填写你的邮箱，点确认会用邮件客户端发退订请求给作者，作者收到即从名单移除。</p>
+  <form id="unsub">
+    <input type="email" id="email" required placeholder="你的邮箱">
+    <button type="submit">确认退订</button>
+  </form>
+  <p class="tip"><a href="https://YI-ER-68.github.io/pulse-of-global-tech/subscribe.html">返回重新订阅</a></p>
+</div>
+<script>
+document.getElementById('unsub').addEventListener('submit', function(e){
+  e.preventDefault();
+  var email=document.getElementById('email').value.trim();
+  if(!email){ return; }
+  var addr="yi_er_m@126.com";
+  var subj=encodeURIComponent("退订 时讯");
+  var body=encodeURIComponent("请退订我的邮箱：" + email);
+  window.location.href="mailto:" + addr + "?subject=" + subj + "&body=" + body;
+});
+</script>
+</body></html>
