@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="favicon.ico">
+<title>时讯 · 晚间版 | 2026-08-02 19:17</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2d333b;
+  --txt:#e6edf3; --sub:#9da7b3; --acc:#58a6ff; --up:#f85149; --down:#3fb950;
+  --gold:#e3b341; --purple:#bc8cff; --teal:#39d2c0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.75;padding:24px 16px 60px;}
+.wrap{max-width:1080px;margin:0 auto;}
+header{border-bottom:2px solid var(--up);padding-bottom:18px;margin-bottom:26px;}
+header h1{font-size:25px;letter-spacing:1px;}
+header h1 span{color:var(--up);}
+header .meta{color:var(--sub);font-size:13px;margin-top:6px;}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;margin-right:6px;border:1px solid var(--border);color:var(--sub);}
+.tag.hot{color:var(--up);border-color:var(--up);}
+.tag.new{color:var(--teal);border-color:var(--teal);}
+.tag.p0{color:var(--up);border-color:var(--up);}
+.tag.p1{color:var(--gold);border-color:var(--gold);}
+.tag.p2{color:var(--acc);border-color:var(--acc);}
+.tag.p3{color:var(--sub);border-color:var(--border);}
+.t{display:inline-block;font-size:12px;padding:0 8px;border-radius:10px;margin-left:8px;background:#22304a;color:var(--gold);border:1px solid #3a4a6b;font-weight:normal;vertical-align:middle;}
+section{margin-bottom:34px;}
+h2{font-size:19px;margin-bottom:14px;padding-left:10px;border-left:4px solid var(--acc);}
+h2.alert{border-left-color:var(--up);}
+h2 .en{color:var(--sub);font-size:12px;font-weight:normal;margin-left:8px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
+.kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.kpi .lab{font-size:12px;color:var(--sub);}
+.kpi .val{font-size:21px;font-weight:bold;margin:3px 0;}
+.kpi .note{font-size:12px;color:var(--sub);}
+.red{color:var(--up);} .green{color:var(--down);} .gold{color:var(--gold);} .blue{color:var(--acc);} .purple{color:var(--purple);} .teal{color:var(--teal);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:14px;}
+.card.focus{border-color:var(--up);background:linear-gradient(180deg,#1d1418,#161b22 60%);}
+.card h3{font-size:15.5px;margin-bottom:8px;color:var(--acc);}
+.card.focus h3{color:var(--up);}
+.card p{font-size:14px;color:#c9d3dd;margin-bottom:6px;}
+.card p b{color:var(--txt);}
+.card .src{font-size:12px;color:var(--sub);margin-top:4px;}
+ul.compact{padding-left:20px;font-size:14px;color:#c9d3dd;}
+ul.compact li{margin-bottom:7px;}
+ul.compact b{color:var(--txt);}
+.tl{position:relative;padding-left:30px;}
+.tl::before{content:"";position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:16px;}
+.tl-item::before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg);}
+.tl-item.hot::before{background:var(--up);}
+.tl-item .tm{font-size:12.5px;color:var(--gold);font-weight:bold;}
+.tl-item .tx{font-size:14px;color:#c9d3dd;}
+.tl-item .tx b{color:var(--txt);}
+.logic{background:var(--panel2);border:1px dashed var(--acc);border-radius:10px;padding:16px 20px;font-size:14px;color:#c9d3dd;margin-top:16px;}
+.logic b{color:var(--gold);}
+footer{border-top:1px solid var(--border);padding-top:14px;color:var(--sub);font-size:12px;line-height:1.9;}
+.dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+@keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+.dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+.dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+.dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+@keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+.dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+body>*:not(.dynamic-bg){position:relative;z-index:1;}</style></head>
+<body>
+<div class="dynamic-bg"><div class="bg-gradient"></div><div class="bg-glow a"></div><div class="bg-glow b"></div><div class="bg-glow c"></div><canvas id="net"></canvas></div>
+<div class="wrap">
+  <div class="wrap">
+  <header>
+    <h1>时讯 · 第22期 · 晚间版 <span>AI 渗透日常的边界讨论升温 → 生成式 AI 冲击图书市场 → 英国司法界首谈"不用 AI 是否构成过失"</span></h1>
+    <div class="meta">时讯 · 第22期 ｜ 生成时间：2026-08-02 19:16 BJT ｜ 覆盖窗口：上期以来增量，重点过去2小时 ｜ 预告：8/4 URXR One 开启 Kickstarter 众筹 · 8/21 比亚迪大汉成都车展亮相 · 9/16 Snap AR 眼镜专场活动</div>
+    <div class="meta" style="margin-top:8px;">
+      <span class="tag hot">🔥 生成式 AI 冲击图书市场</span> <span class="tag hot">🔥 英国司法界首谈"不用 AI 是否构成过失"</span> <span class="tag new">🆕 欧洲 AI 渗透日常报告</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>📊 本期速览 <span class="en">SNAPSHOT · 快照时点 2026-08-02 19:16 BJT</span></h2>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="lab">上海港单日吞吐量（8/1）</div><div class="val red">203,881 标准箱</div><div class="note">创历史新高，上半年累计超 2800 万标箱，同比 +6.2%</div></div>
+      <div class="kpi"><div class="lab">比亚迪 7 月新能源销量</div><div class="val red">419,211 辆</div><div class="note">1-7 月累计 222.77 万辆，同比 -10.54%（去年同期高基数）</div></div>
+      <div class="kpi"><div class="lab">比亚迪王朝 7 月销量</div><div class="val red">161,148 辆</div><div class="note">同比 +20.5%；大唐交付 10,102 辆，宋 Ultra 双车 22,000 辆</div></div>
+      <div class="kpi"><div class="lab">兆易创新回购计划</div><div class="val gold">10-20 亿元</div><div class="note">回购股份全部注销并减少注册资本，董事长拟增持不低于 10 亿元</div></div>
+      <div class="kpi"><div class="lab">特斯拉悬架调查</div><div class="val green">近 120 万辆</div><div class="note">NHTSA 收到 156 起投诉，涉 2018-2020 Model 3 及 2021-2023 Model Y</div></div>
+      <div class="kpi"><div class="lab">ExfilSquad 窃取数据</div><div class="val green">超 74 万笔</div><div class="note">英国教育部 60.7 万 + 警方 13.5 万笔个人资料遭窃</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🤖 AI 伦理与治理边界 <span class="en">AI ETHICS & GOVERNANCE FRONTIER</span></h2>
+    <div class="card"><h3>英国司法界首谈：不用 AI 是否构成过失？ <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 10:48 UTC(时段级)</span></h3>
+      <p>英国上诉法院院长（Master of the Rolls）向专业过失律师协会发表演讲，提出一个前沿命题：<b>在 AI 已能显著降低错误率的场景下，拒绝使用 AI 是否可能构成专业过失</b>。这一讨论标志着司法系统开始认真对待 AI 作为"合理执业标准"组成部分的可能性，对法律、医疗、审计等专业服务行业的责任认定将产生深远影响。</p>
+      <p class="src">来源：judiciary.uk（https://www.judiciary.uk/speech-by-the-master-of-the-rolls-to-the-professional-negligence-bar-association/） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card"><h3>欧洲人即将发现 AI 在日常生活中的渗透程度 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 11:02 UTC(时段级)</span></h3>
+      <p>Wired 刊文指出，<b>欧盟《AI 法案》的落地执行将首次让欧洲民众直面 AI 已深度嵌入日常生活的现实</b>。从招聘筛选、信贷审批到医疗分诊，大量此前"隐形"的 AI 决策将因监管透明度要求而暴露在公众视野中，可能引发新一轮关于算法公平性与公民权利的公共辩论。</p>
+      <p class="src">来源：Wired（https://www.wired.com/story/europeans-are-about-to-find-out-how-entrenched-ai-is-in-their-daily-lives/） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card"><h3>Sam Altman 仍在为"用 ChatGPT 育儿"辩护 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 10:36 UTC(时段级)</span></h3>
+      <p>TechCrunch 报道，OpenAI CEO Sam Altman 持续公开倡导将 ChatGPT 作为育儿辅助工具的理念。这一立场在 AI 伦理讨论升温的当下引发争议——支持者认为 AI 可提供 24/7 的教育支持，<b>反对者则担忧情感依赖与数据隐私问题</b>。该话题与本期"AI 渗透日常"主题形成呼应。</p>
+      <p class="src">来源：TechCrunch（https://techcrunch.com/2026/08/01/sam-altman-is-still-making-the-case-for-parenting-via-chatgpt/） ｜ 关联：本期新增</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📚 生成式 AI 与内容生态 <span class="en">GENERATIVE AI & CONTENT ECOSYSTEM</span></h2>
+    <div class="card"><h3>生成式 AI  flooding 并稀释图书市场 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 11:06 UTC(时段级)</span></h3>
+      <p>arXiv 最新论文（2607.20349）系统分析了生成式 AI 对图书出版市场的冲击：<b>AI 生成内容的大量涌入正在稀释图书市场的整体质量与价值</b>。研究指出，平台推荐算法难以区分 AI 生成与人类创作内容，导致真正优质的原创作品被淹没，作者收入进一步承压，出版行业的商业模式面临结构性挑战。</p>
+      <p class="src">来源：arXiv（https://arxiv.org/abs/2607.20349） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card"><h3>LLM 反默认行为研究上线 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 10:49 UTC(时段级)</span></h3>
+      <p>一个名为 Counter-Defaults 的研究项目上线，<b>系统梳理大语言模型在各类场景下的"反默认"行为模式</b>——即模型在未收到明确指令时，如何偏离训练默认策略做出不同选择。该项目为理解 LLM 的决策机制与潜在偏见提供了新的分析框架，对 AI 安全与对齐研究具有参考价值。</p>
+      <p class="src">来源：counterdefaults.aixdesign.co（https://counterdefaults.aixdesign.co/） ｜ 关联：本期新增</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🛠️ 开发者工具与开源生态 <span class="en">DEV TOOLS & OPEN SOURCE</span></h2>
+    <div class="card"><h3>Show HN：CaLLMar —— 在 LLM 聊天中玩文字冒险游戏 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 10:45 UTC(时段级)</span></h3>
+      <p>开发者发布 CaLLMar 项目，<b>允许用户在 LLM 聊天界面中直接游玩基于文本的冒险游戏</b>。该项目展示了 LLM 作为交互式叙事引擎的潜力，将传统文字冒险游戏与现代大语言模型的动态生成能力相结合，为 AI 原生游戏形态提供了新的探索方向。</p>
+      <p class="src">来源：GitHub（https://github.com/lascauje/callmar） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card"><h3>Show HN：Documan —— AI 驱动的需求管理工作台 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 10:38 UTC(时段级)</span></h3>
+      <p>开发者基于自身需求开发了 Documan，<b>利用 LLM 辅助需求生成与管理，填补 IBM DOORS 等传统工具缺乏 AI 支持的空白</b>。该工具瞄准需求工程这一细分领域，通过 AI 降低需求文档编写门槛，同时避免传统工具高昂的席位授权费用，体现了 AI 正在渗透软件工程上游环节的趋势。</p>
+      <p class="src">来源：GitHub（https://github.com/bbayer/DocuMan） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card"><h3>Lerobit 发布小企业自动发布指南 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 11:11 UTC(时段级)</span></h3>
+      <p>Lerobit 发布面向小企业的自动发布综合指南，<b>系统介绍如何利用自动化工具提升内容发布效率</b>。该指南覆盖从内容生成到多渠道分发的完整流程，反映了 AI 自动化工具正在向小微企业市场加速渗透的趋势。</p>
+      <p class="src">来源：Lerobit（https://www.lerobit.com/blog/unlock-auto-publishing-lerobit-guide） ｜ 关联：本期新增</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📱 消费电子与硬件 <span class="en">CONSUMER TECH & HARDWARE</span></h2>
+    <div class="card"><h3>Xbox 360 模拟器 XeniOS 成功在 iPhone 17 Pro Max 运行《GTA 5》 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 11:03 UTC(时段级)</span></h3>
+      <p>爱好者 mertbaris01 在 Reddit 透露，<b>使用 XeniOS Xbox 360 模拟器成功在 iPhone 17 Pro Max 上运行《GTA 5》</b>。实测数据：1280×720 分辨率下平均帧率约 19-20FPS，复杂场景（如直升机飞行）跌至 12FPS 左右，设备发热明显。这一成果展示了旗舰手机的性能潜力，但距离流畅游玩仍有较大差距。</p>
+      <p class="src">来源：IT之家（https://www.ithome.com/0/984/795.htm） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card"><h3>TCL 华星联合微星发布 27 英寸 4K 120Hz 印刷 OLED 显示器 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 10:48 UTC(时段级)</span></h3>
+      <p>ChinaJoy 2026 上，<b>TCL 华星与微星联合发布首款 27 英寸 4K 印刷 OLED 桌面专业级显示器 PRO MAX OLED 271UPJW12</b>。印刷 OLED 技术相比传统蒸镀工艺具有成本优势，此次落地桌面显示器市场，标志着该技术路线在高端显示领域的商业化进程加速。</p>
+      <p class="src">来源：IT之家（https://www.ithome.com/0/984/794.htm） ｜ 关联：本期新增</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📈 市场与资本动态 <span class="en">MARKET & CAPITAL</span></h2>
+    <div class="card"><h3>中信证券：A 股调整基本结束，8 月修复可期 <span class="t">🕒 2026-08-02 09:58 UTC(时段级)</span></h3>
+      <p>中信证券研报指出，<b>本轮 A 股调整更多是拥挤交易的修正，而非韩国式去杠杆冲击</b>。论据：整体杠杆安全（7 月上涨股票接近全 A 一半）、融资回落幅度不大、科技类 ETF 持续流入提供流动性。局部流动性压力（部分非核心 AI 股）影响已基本消除，8 月普遍修复概率提升，建议增配能化等方向。</p>
+      <p class="src">来源：36氪（https://36kr.com/newsflashes/3922183036694147?f=rss） ｜ 关联：第21期</p>
+    </div>
+    <div class="card"><h3>兆易创新拟 10-20 亿元回购股份用于注销 <span class="t">🕒 2026-08-02 09:45 UTC(时段级)</span></h3>
+      <p>兆易创新公告，<b>拟以集中竞价方式回购 A 股股份，资金总额 10-20 亿元，全部注销并减少注册资本</b>。回购数量 133.33 万-266.67 万股，占总股本 0.19%-0.38%。董事长朱一明此前减持，后续拟增持不低于 10 亿元。该回购计划尚需股东会审议。</p>
+      <p class="src">来源：36氪（https://36kr.com/newsflashes/3922182182841985?f=rss） ｜ 关联：第21期</p>
+    </div>
+    <div class="card"><h3>近 120 万辆特斯拉遭 NHTSA 调查 <span class="t">🕒 2026-08-02 09:30 UTC(时段级)</span></h3>
+      <p>央视财经援引美媒报道，<b>美国国家公路交通安全管理局（NHTSA）对近 120 万辆特斯拉展开初步调查</b>，涉及 2018-2020 款 Model 3 和 2021-2023 款 Model Y。累计收到 156 起悬架故障投诉，表现为前下横向连杆脱落，极端情况可致失控，尚未收到人员伤亡报告。</p>
+      <p class="src">来源：36氪（https://36kr.com/newsflashes/3922152130653828?f=rss） ｜ 关联：第21期</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🔐 安全与数据泄露 <span class="en">SECURITY & DATA BREACH</span></h2>
+    <div class="card"><h3>ExfilSquad 入侵英国教育部及警方数据库，窃取超 74 万笔数据 <span class="t">🕒 2026-08-02 09:19 UTC(时段级)</span></h3>
+      <p>黑客组织 ExfilSquad 在暗网宣称，<b>已入侵英国教育部（DfE）及英国警方数据库，分别窃取 60.7 万笔和 13.5 万笔个人资料</b>。英国教育部向 BBC 确认遭遇网络攻击，正与 NCSC 及 NCA 合作调查。遭入侵的是 DfE 服务台自助网站及支持学生海外学习/工作的门户网站。</p>
+      <p class="src">来源：IT之家（https://www.ithome.com/0/984/772.htm） ｜ 关联：第21期</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>⏳ 事件时间线 <span class="en">TIMELINE · 跨模块因果串联</span></h2>
+    <div class="tl">
+      <div class="tl-item"><div class="tm">09:19 UTC</div><div class="tx">ExfilSquad 宣称入侵英国教育部及警方数据库，<b>窃取超 74 万笔数据</b>，英官方确认调查</div></div>
+      <div class="tl-item"><div class="tm">09:30 UTC</div><div class="tx">NHTSA 对近 120 万辆特斯拉展开悬架故障调查，<b>涉及 156 起投诉</b></div></div>
+      <div class="tl-item"><div class="tm">09:45 UTC</div><div class="tx">兆易创新公告 <b>10-20 亿元回购注销计划</b>，董事长拟增持不低于 10 亿元</div></div>
+      <div class="tl-item"><div class="tm">09:58 UTC</div><div class="tx">中信证券研报：<b>A 股调整基本结束</b>，8 月修复可期，建议增配能化</div></div>
+      <div class="tl-item"><div class="tm">10:36 UTC</div><div class="tx">TechCrunch 报道 Sam Altman <b>持续为"用 ChatGPT 育儿"辩护</b>，争议升温</div></div>
+      <div class="tl-item hot"><div class="tm">10:48 UTC</div><div class="tx">英国上诉法院院长演讲：<b>不用 AI 是否构成专业过失</b>——司法系统首次正面回应</div></div>
+      <div class="tl-item"><div class="tm">11:02 UTC</div><div class="tx">Wired 刊文：<b>欧盟 AI 法案落地将暴露 AI 在日常生活的渗透程度</b></div></div>
+      <div class="tl-item hot"><div class="tm">11:06 UTC</div><div class="tx">arXiv 论文：<b>生成式 AI 正在 flooding 并稀释图书市场</b>，原创作者承压</div></div>
+      <div class="tl-item"><div class="tm">11:11 UTC</div><div class="tx">Lerobit 发布小企业 <b>AI 自动发布指南</b>，自动化工具加速下沉</div></div>
+    </div>
+    <div class="logic"><b>一条线索看本期：</b>英国司法界抛出"不用 AI 是否构成过失"的命题 → 欧盟 AI 法案落地让欧洲民众直面 AI 渗透日常 → 生成式 AI 对图书市场的冲击引发内容生态反思 → 与此同时，AI 自动化工具（Lerobit、Documan、CaLLMar）正加速渗透开发者与小微企业 → 监管、伦理、商业三线并进，AI 从"技术话题"全面转向"社会基础设施"议题。</div>
+  </section>
+
+  <section>
+    <h2>🔖 待跟进标注 <span class="en">WATCHLIST</span></h2>
+    <ul class="compact">
+      <li><span class="tag p0">最优先</span><b>美军对伊朗报复是否兑现</b>：时点/目标、是否含"镐山"核设施；布伦特能否站稳 90；霍尔木兹通行状态</li>
+      <li><span class="tag p0">最优先</span><b>7/30 凌晨微软/Meta 财报</b>：微软 CapEx 预期 +74%、Azure 实际增速 vs 39-40%；Meta 广告是否首超谷歌搜索、CapEx 是否再上调——判断标准="好财报仍下跌即系统性重估"</li>
+      <li><span class="tag p0">最优先</span><b>7/30 凌晨 2 点 FOMC 决议</b>：加息概率 30-38%、反对票、9 月加息暗示、沃什 02:30 记者会 → AI 硬件股/韩股反应</li>
+      <li><span class="tag p1">高</span><b>韩国紧急会议结果后续</b>：7/31 预托金新规生效后强平潮变化、韩股 7/30 第三日走势、平准基金是否被迫启动</li>
+      <li><span class="tag p1">高</span><b>中东局势</b>：美方是否恢复对伊军事行动、油价能否守 82+、"镐山"威胁兑现与否</li>
+      <li><span class="tag p2">中</span><b>英国司法界"不用 AI 是否构成过失"讨论</b>：后续是否有专业机构正式回应，是否影响 AI 责任险定价</li>
+      <li><span class="tag p2">中</span><b>欧盟 AI 法案落地执行</b>：首批透明度披露将暴露哪些"隐形 AI 决策"，公众反应如何</li>
+      <li><span class="tag p2">中</span><b>生成式 AI 冲击图书市场论文</b>：出版平台是否会调整推荐算法以区分 AI 生成内容</li>
+      <li><span class="tag p3">低</span><b>XeniOS 模拟器进展</b>：后续优化能否提升 iPhone 17 Pro Max 运行《GTA 5》帧率</li>
+      <li><span class="tag p3">低</span><b>印刷 OLED 显示器</b>：TCL 华星与微星合作产品的量产时间与定价策略</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><b>时间颗粒度说明：</b>本期资讯均来自公开报道，时间精度为"时段级"——各条目的 UTC 时间戳来自 Hacker News / IT之家 / 36氪 等平台的发布时间，可核验到分钟级（如 11:11 UTC 的 Lerobit 指南、10:48 UTC 的英国司法演讲），但事件本身的发生时点未精确到分钟，故统一标注为"时段级"。行情数据（美股现货）本期获取失败，未纳入。</p>
+    <p><b>数据来源：</b>Hacker News、IT之家、36氪、Wired、TechCrunch、arXiv、judiciary.uk、GitHub、Lerobit、counterdefaults.aixdesign.co 等公开渠道交叉核验。</p>
+    <p><b>免责声明：</b>本简报仅为信息聚合与梳理，不构成任何投资建议。行情数据以交易所官方为准；涨跌颜色遵循中国市场惯例（红涨绿跌）。</p>
+  </footer>
+</div>
+</div>
+<script>(function(){var c=document.getElementById('net');if(!c)return;var ctx=c.getContext('2d'),w,h,pts;function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}addEventListener('resize',resize);resize();tick();})();</script>
+</body></html>
