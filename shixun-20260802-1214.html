@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="favicon.ico">
+<title>时讯 · 午间版 | 2026-08-02 12:14</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2d333b;
+  --txt:#e6edf3; --sub:#9da7b3; --acc:#58a6ff; --up:#f85149; --down:#3fb950;
+  --gold:#e3b341; --purple:#bc8cff; --teal:#39d2c0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.75;padding:24px 16px 60px;}
+.wrap{max-width:1080px;margin:0 auto;}
+header{border-bottom:2px solid var(--up);padding-bottom:18px;margin-bottom:26px;}
+header h1{font-size:25px;letter-spacing:1px;}
+header h1 span{color:var(--up);}
+header .meta{color:var(--sub);font-size:13px;margin-top:6px;}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;margin-right:6px;border:1px solid var(--border);color:var(--sub);}
+.tag.hot{color:var(--up);border-color:var(--up);}
+.tag.new{color:var(--teal);border-color:var(--teal);}
+.tag.p0{color:var(--up);border-color:var(--up);}
+.tag.p1{color:var(--gold);border-color:var(--gold);}
+.tag.p2{color:var(--acc);border-color:var(--acc);}
+.tag.p3{color:var(--sub);border-color:var(--border);}
+.t{display:inline-block;font-size:12px;padding:0 8px;border-radius:10px;margin-left:8px;background:#22304a;color:var(--gold);border:1px solid #3a4a6b;font-weight:normal;vertical-align:middle;}
+section{margin-bottom:34px;}
+h2{font-size:19px;margin-bottom:14px;padding-left:10px;border-left:4px solid var(--acc);}
+h2.alert{border-left-color:var(--up);}
+h2 .en{color:var(--sub);font-size:12px;font-weight:normal;margin-left:8px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
+.kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.kpi .lab{font-size:12px;color:var(--sub);}
+.kpi .val{font-size:21px;font-weight:bold;margin:3px 0;}
+.kpi .note{font-size:12px;color:var(--sub);}
+.red{color:var(--up);} .green{color:var(--down);} .gold{color:var(--gold);} .blue{color:var(--acc);} .purple{color:var(--purple);} .teal{color:var(--teal);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:14px;}
+.card.focus{border-color:var(--up);background:linear-gradient(180deg,#1d1418,#161b22 60%);}
+.card h3{font-size:15.5px;margin-bottom:8px;color:var(--acc);}
+.card.focus h3{color:var(--up);}
+.card p{font-size:14px;color:#c9d3dd;margin-bottom:6px;}
+.card p b{color:var(--txt);}
+.card .src{font-size:12px;color:var(--sub);margin-top:4px;}
+ul.compact{padding-left:20px;font-size:14px;color:#c9d3dd;}
+ul.compact li{margin-bottom:7px;}
+ul.compact b{color:var(--txt);}
+.tl{position:relative;padding-left:30px;}
+.tl::before{content:"";position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:16px;}
+.tl-item::before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg);}
+.tl-item.hot::before{background:var(--up);}
+.tl-item .tm{font-size:12.5px;color:var(--gold);font-weight:bold;}
+.tl-item .tx{font-size:14px;color:#c9d3dd;}
+.tl-item .tx b{color:var(--txt);}
+.logic{background:var(--panel2);border:1px dashed var(--acc);border-radius:10px;padding:16px 20px;font-size:14px;color:#c9d3dd;margin-top:16px;}
+.logic b{color:var(--gold);}
+footer{border-top:1px solid var(--border);padding-top:14px;color:var(--sub);font-size:12px;line-height:1.9;}
+.dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+@keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+.dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+.dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+.dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+@keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+.dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+body>*:not(.dynamic-bg){position:relative;z-index:1;}</style></head>
+<body>
+<div class="dynamic-bg"><div class="bg-gradient"></div><div class="bg-glow a"></div><div class="bg-glow b"></div><div class="bg-glow c"></div><canvas id="net"></canvas></div>
+<div class="wrap">
+  <div class="wrap">
+  <header>
+    <h1>时讯 · 第22期 · 午间版 <span>AI 商品化加速 → 开源生态密集上新 → 山东"一人公司"新政落地</span></h1>
+    <div class="meta">时讯 · 第22期 ｜ 生成时间：2026-08-02 12:13 BJT ｜ 覆盖窗口：上期以来增量，重点过去2小时 ｜ 预告：8/2 OPEC增产决定 · 8/10-20 DeepSeek V4 GA窗口</div>
+    <div class="meta" style="margin-top:8px;">
+      <span class="tag hot">🔥 DeepMind解散AlphaFold团队转投Gemini</span> <span class="tag hot">🔥 AI模型商品化价格战</span> <span class="tag new">🆕 山东AI"一人公司"新政</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>📊 本期速览 <span class="en">SNAPSHOT · 快照时点 2026-08-02 12:13 BJT</span></h2>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="lab">DeepMind AlphaFold团队</div><div class="val red">解散</div><div class="note">团队并入Gemini，结构生物学战略转向</div></div>
+      <div class="kpi"><div class="lab">AI模型定价趋势</div><div class="val gold">商品化</div><div class="note">DeepSeek低价引发行业价格战，Axios专题报道</div></div>
+      <div class="kpi"><div class="lab">山东AI"一人公司"目标</div><div class="val blue">3年万名</div><div class="note">12部门联合印发行动方案，培育OPC新型市场主体</div></div>
+      <div class="kpi"><div class="lab">长三角Token运营中心</div><div class="val teal">100+模型</div><div class="note">嘉兴启动，一次接入调用DeepSeek/Qwen等主流大模型</div></div>
+      <div class="kpi"><div class="lab">上半年二手房交易占比</div><div class="val green">50.4%</div><div class="note">首超新房，房地产市场进入存量时代</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🤖 模型与战略 <span class="en">MODELS & STRATEGY</span></h2>
+    <div class="card">
+      <h3>DeepMind 解散 AlphaFold 团队，全面转向 Gemini <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 02:15 UTC(分钟级可核验)</span></h3>
+      <p>据 Unusual Whales 报道，DeepMind 已正式解散 AlphaFold 团队，核心成员并入 Gemini 项目。这标志着谷歌在 AI 战略上从结构生物学基础研究全面转向通用大模型竞赛。<b>AlphaFold 作为蛋白质结构预测的开创性成果</b>，其团队解散引发学界对基础科研投入的担忧。</p>
+      <p class="src">来源：Unusual Whales（unusualwhales.com） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>AI 模型商品化：价格战重塑行业格局 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 03:51 UTC(时段级)</span></h3>
+      <p>Axios 刊文指出，DeepSeek 的低价策略正将 AI 模型推向商品化。文章认为，<b>模型层利润空间被急剧压缩</b>，行业竞争焦点正从"模型能力"转向"应用层与生态"。这与 Meta 被批"AI 几乎无成果"但数据反驳的争论形成对照——<b>RuntimeWire 用数据说明 Meta 的 AI 投入实际回报可观</b>。</p>
+      <p class="src">来源：Axios（axios.com） ｜ RuntimeWire（runtimewire.com） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>LLM 可预测社会科学实验结果 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 03:28 UTC(日级)</span></h3>
+      <p>Nature 发表研究，证实大型语言模型能够预测社会科学实验的结果。这一发现为 AI 在<b>社会科学研究中的方法论价值</b>提供了顶级期刊背书，但也引发关于"AI 替代实证研究"的伦理讨论。</p>
+      <p class="src">来源：Nature（nature.com） ｜ 关联：本期新增</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🛡️ 安全与对齐 <span class="en">SAFETY & ALIGNMENT</span></h2>
+    <div class="card">
+      <h3>可复制上下文的安全防护无法为 LLM 提供可靠保障 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 04:07 UTC(日级)</span></h3>
+      <p>arXiv 最新论文指出，基于可复制上下文（Copyable Context）的安全防护机制<b>无法为 LLM 提供可靠的安全性</b>。该研究对当前主流安全对齐策略提出根本性质疑，或影响后续 AI 安全框架设计。</p>
+      <p class="src">来源：arXiv（arxiv.org/abs/2607.27951） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>OpenAI 对 Connes 刚性猜想的"证伪"被指无效 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 03:41 UTC(日级)</span></h3>
+      <p>PhilArchive 发布论文，系统论证 OpenAI 此前宣称的 Connes 刚性猜想证伪<b>在数学上不成立</b>。该事件为"AI 辅助数学证明"的可信度蒙上阴影，也凸显 AI 生成结论需经严格人工验证。</p>
+      <p class="src">来源：PhilArchive（philarchive.org） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>不要归功于 LLM：对 AI 贡献归因的反思 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 04:07 UTC(日级)</span></h3>
+      <p>Isaac Su 撰文提出"Don't credit the LLM"观点，认为当前对 LLM 在科研与创作中的贡献存在<b>过度归因</b>。文章呼吁更审慎地评估 AI 在人类成果中的实际作用，与前述 Connes 猜想事件形成呼应。</p>
+      <p class="src">来源：isaacsu.com ｜ 关联：本期新增</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🧩 开源与开发者生态 <span class="en">OPEN SOURCE & DEV TOOLS</span></h2>
+    <div class="card">
+      <h3>三元模型推理与训练框架 Tritium 开源 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 03:40 UTC(日级)</span></h3>
+      <p>GitHub 新项目 Tritium 提供<b>基础三元模型（ternary-model）的推理与训练实现</b>，支持 CUDA、CPU 及 BitNet/TQ 架构。该项目或为低比特量化模型在边缘设备部署提供新路径。</p>
+      <p class="src">来源：GitHub（github.com/Quitetall/tritium） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>CleanSlate：开源编码代理，覆盖 IDE/CLI/SDK <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 03:25 UTC(日级)</span></h3>
+      <p>CleanSlate 是一个开源平台，<b>支持在本地与云端运行编码代理</b>，可理解代码库、修改代码、执行命令、浏览网页并验证结果。当前已支持 IDE、CLI 和 SDK 三种交互方式。</p>
+      <p class="src">来源：GitHub（github.com/TheWariend/CleanSlate） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>Task Hounds：本地优先、可检查的多代理开发工作区 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 03:30 UTC(日级)</span></h3>
+      <p>开源项目 Task Hounds 主打<b>本地优先与可检查性</b>，为多代理协作开发提供可视化工作区。在 AI 代理可靠性受质疑的当下，该项目强调过程透明。</p>
+      <p class="src">来源：GitHub（github.com/catowabisabi/task-hounds） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>Banksia：单提示词驱动 19 代理并行深度研究 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 03:28 UTC(日级)</span></h3>
+      <p>Show HN 项目 Banksia 实现<b>三层工作流、19 个代理并行协作</b>，用户仅需一个提示词即可触发深度研究。未指定主题时，系统可主动建议话题并等待用户确认。</p>
+      <p class="src">来源：GitHub（github.com/ringlochid/banksia） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>卡尔曼滤波中的简单异常检测 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 03:57 UTC(日级)</span></h3>
+      <p>技术博客分享在卡尔曼滤波中实现<b>简洁有效的异常检测方法</b>，对机器人、自动驾驶等依赖状态估计的系统具有实用参考价值。</p>
+      <p class="src">来源：gurevich.ca ｜ 关联：本期新增</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🇨🇳 中国 AI 政策与产业 <span class="en">CHINA AI POLICY & INDUSTRY</span></h2>
+    <div class="card">
+      <h3>山东：3年内集聚万名人工智能 OPC 创新人才 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 04:07 BJT(分钟级可核验)</span></h3>
+      <p>山东省工信厅等12部门联合印发《关于支持人工智能OPC创新发展的行动方案》，培育<b>AI"一人公司"（One Person Company）新型市场主体</b>。目标3年内建成百个特色载体、培育千家创业主体、集聚万名创新人才。支持济南、青岛、烟台等市依托数字经济产业园等打造 AI OPC 特色园区。</p>
+      <p class="src">来源：36氪（36kr.com/newsflashes/3921849987706240） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>长三角（嘉兴）Token 运营中心启动，接入 100+ 主流大模型 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 03:39 BJT(分钟级可核验)</span></h3>
+      <p>长三角（嘉兴）Token 运营中心正式启动，门户网站同步上线。平台定位为<b>"数据模型超市"</b>，企业一次接入即可按需调用 DeepSeek、Qwen 等100余款主流大模型，无需自行配置环境与参数。</p>
+      <p class="src">来源：36氪（36kr.com/newsflashes/3921838043065736） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>微信地震预警小程序上线"震感上报"能力 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 03:50 BJT(分钟级可核验)</span></h3>
+      <p>中国地震台网小程序正式上线"震感上报"功能，用户收到预警并确认安全后可上报位置与震感，经处理形成<b>震感分布图</b>。同时新增"位置更新"能力，地理位置变化时主动提醒更新预警位置。</p>
+      <p class="src">来源：36氪（36kr.com/newsflashes/3921848794164866） ｜ 关联：本期新增</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📈 市场与宏观 <span class="en">MARKET & MACRO</span></h2>
+    <div class="card">
+      <h3>上半年全国二手房交易占比首超新房，达 50.4% <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 03:36 BJT(分钟级可核验)</span></h3>
+      <p>央视财经数据显示，<b>上半年二手房交易占比达50.4%</b>，首次超过新房。传统以新房销售为主的增量格局正加快向新房与二手房并举转变，房地产市场进入<b>存量时代</b>。多城市正通过多种方式盘活存量房源。</p>
+      <p class="src">来源：36氪（36kr.com/newsflashes/3921834901974659） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>吉利汽车集团架构调整，林杰任销售总公司总经理 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 02:34 BJT(分钟级可核验)</span></h3>
+      <p>吉利汽车集团将成立销售总公司，由分管营销的高级副总裁林杰担任总经理并兼任极氪销售公司总经理。新架构下设中国星、银河、领克及极氪销售公司等<b>6个集团一级组织</b>，构建"前台贴近用户、中后台最大化共享"的扁平化作战模式。</p>
+      <p class="src">来源：36氪（36kr.com/newsflashes/3921773406268802） ｜ 关联：本期新增</p>
+    </div>
+    <div class="card">
+      <h3>无锡上半年新签约10亿元以上项目78个，金额1758.38亿元 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-02 02:15 BJT(分钟级可核验)</span></h3>
+      <p>无锡发布数据显示，上半年新签约10亿元以上产业项目78个，<b>签约金额1758.38亿元、同比增长51.8%</b>。其中50亿元以上项目7个、百亿元以上项目3个。全年计划实施亿元以上产业项目760个，较去年增加9.5%。</p>
+      <p class="src">来源：36氪（36kr.com/newsflashes/3921713668566657） ｜ 关联：本期新增</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>⏳ 事件时间线 <span class="en">TIMELINE · 跨模块因果串联</span></h2>
+    <div class="tl">
+      <div class="tl-item"><div class="tm">02:15 UTC</div><div class="tx">DeepMind 解散 AlphaFold 团队，<b>全面转向 Gemini</b>——基础科研让位于大模型竞赛</div></div>
+      <div class="tl-item"><div class="tm">02:15 BJT</div><div class="tx">无锡发布上半年招商数据，<b>10亿+项目签约额同比+51.8%</b>，地方产业投资热度延续</div></div>
+      <div class="tl-item"><div class="tm">02:34 BJT</div><div class="tx">吉利汽车集团架构调整，<b>销售总公司成立</b>，林杰任总经理</div></div>
+      <div class="tl-item"><div class="tm">02:42 UTC</div><div class="tx">全球首个<b>代理式 AI 电台</b>上线 Twitch，AI 内容创作形态再演进</div></div>
+      <div class="tl-item"><div class="tm">03:25-03:40 UTC</div><div class="tx">开源生态密集上新：<b>CleanSlate、Task Hounds、Banksia、Tritium</b> 相继发布</div></div>
+      <div class="tl-item"><div class="tm">03:36 BJT</div><div class="tx">上半年二手房交易占比<b>首超新房达50.4%</b>，楼市进入存量时代</div></div>
+      <div class="tl-item"><div class="tm">03:39 BJT</div><div class="tx">长三角（嘉兴）Token 运营中心启动，<b>100+大模型一站式接入</b></div></div>
+      <div class="tl-item hot"><div class="tm">03:41-04:07 UTC</div><div class="tx">安全与归因争议集中爆发：<b>OpenAI Connes 证伪被指无效</b>、可复制上下文安全防护被质疑、<b>"不要归功于 LLM"</b> 引发讨论</div></div>
+      <div class="tl-item"><div class="tm">03:51 UTC</div><div class="tx">Axios 刊文：<b>AI 模型商品化</b>，DeepSeek 低价引发价格战</div></div>
+      <div class="tl-item"><div class="tm">04:07 BJT</div><div class="tx">山东发布 AI OPC 行动方案，<b>3年集聚万名"一人公司"创新人才</b></div></div>
+    </div>
+    <div class="logic"><b>一条线索看本期：</b>DeepMind 解散 AlphaFold 团队标志<b>大模型竞赛压倒基础科研</b> → 叠加 DeepSeek 低价引发的<b>模型商品化</b>浪潮，行业竞争焦点加速转向应用层 → 开源生态（CleanSlate/Task Hounds/Banksia）密集上新承接这一转向 → 与此同时，<b>AI 安全与归因争议</b>（Connes 证伪无效、可复制上下文防护失效）为狂奔的行业踩下反思刹车 → 中国侧则以<b>山东 OPC 新政与嘉兴 Token 运营中心</b>为"AI+超级个体"提供制度与基础设施土壤，形成"全球重估、中国托举"的对照格局。</div>
+  </section>
+
+  <section>
+    <h2>🔖 待跟进标注 <span class="en">WATCHLIST</span></h2>
+    <ul class="compact">
+      <li><span class="tag p0">最优先</span><b>美军对伊朗报复是否兑现</b>：时点/目标、是否含"镐山"核设施；布伦特能否站稳90；霍尔木兹通行状态</li>
+      <li><span class="tag p0">最优先</span><b>微软/Meta 财报实际数据</b>：微软 CapEx 预期+74%、Azure 实际增速 vs 39-40%；Meta 广告是否首超谷歌搜索、CapEx 是否再上调——判断标准="好财报仍下跌即系统性重估"</li>
+      <li><span class="tag p0">最优先</span><b>FOMC 决议</b>：加息概率30-38%、反对票、9月加息暗示、沃什记者会 → AI 硬件股/韩股反应</li>
+      <li><span class="tag p1">高</span><b>韩国紧急会议结果后续</b>：7/31 预托金新规生效后强平潮变化、韩股第三日走势、平准基金是否被迫启动</li>
+      <li><span class="tag p1">高</span><b>中东局势</b>：美方是否恢复对伊军事行动、油价能否守82+、"镐山"威胁兑现与否</li>
+      <li><span class="tag p1">高</span><b>DeepMind 解散 AlphaFold 团队后续</b>：学界反应、谷歌基础科研战略是否进一步收缩、AlphaFold 相关成果维护责任归属</li>
+      <li><span class="tag p2">中</span><b>扎克伯格檄文后 OpenAI/Anthropic 是否回应</b>；Meta 财报会是否延续开源叙事</li>
+      <li><span class="tag p2">中</span><b>8/1 白宫 AI 监管框架落地</b>：30天前置审查存废、开源豁免、前沿模型定义</li>
+      <li><span class="tag p2">中</span><b>DeepSeek 融资重启 + V4 GA</b>：是否落在8/10-20（Harness 封测进展）；智元港股 IPO；比亚迪8月人形机器人；月之暗面 Pre-IPO</li>
+      <li><span class="tag p3">低</span><b>FCC 机器人禁令后续</b>；Claude Cowork 漏洞修复</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><b>时间颗粒度说明：</b>本期分钟级可核验时点包括——山东 OPC 新政发布（04:07 BJT，官方发布）、嘉兴 Token 运营中心启动（03:39 BJT，官方发布会）、微信地震预警更新（03:50 BJT，官方上线）、无锡招商数据（02:15 BJT，官方发布）、吉利架构调整（02:34 BJT，财联社）、二手房占比数据（03:36 BJT，央视财经）、DeepMind 解散 AlphaFold 团队（02:15 UTC，Unusual Whales 报道）。日级/时段级时点包括——arXiv 安全论文、Nature 社科预测研究、PhilArchive Connes 证伪质疑、Axios 商品化分析、各 GitHub 开源项目发布（均未标注精确时刻，按日级处理）。</p>
+    <p><b>数据来源：</b>Hacker News、arXiv、Nature、PhilArchive、Axios、RuntimeWire、Unusual Whales、GitHub、36氪、央视财经、财联社、浙江发布 等公开渠道交叉核验。</p>
+    <p><b>免责声明：</b>本简报仅为信息聚合与梳理，不构成任何投资建议。行情数据以交易所官方为准；涨跌颜色遵循中国市场惯例（红涨绿跌）。</p>
+  </footer>
+</div>
+</div>
+<script>(function(){var c=document.getElementById('net');if(!c)return;var ctx=c.getContext('2d'),w,h,pts;function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}addEventListener('resize',resize);resize();tick();})();</script>
+</body></html>
