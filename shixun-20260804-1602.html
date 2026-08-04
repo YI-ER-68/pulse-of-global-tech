@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="favicon.ico">
+<title>时讯 · 午后版 | 2026-08-04 16:02</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2d333b;
+  --txt:#e6edf3; --sub:#9da7b3; --acc:#58a6ff; --up:#f85149; --down:#3fb950;
+  --gold:#e3b341; --purple:#bc8cff; --teal:#39d2c0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.75;padding:24px 16px 60px;}
+.wrap{max-width:1080px;margin:0 auto;}
+header{border-bottom:2px solid var(--up);padding-bottom:18px;margin-bottom:26px;}
+header h1{font-size:25px;letter-spacing:1px;}
+header h1 span{color:var(--up);}
+header .meta{color:var(--sub);font-size:13px;margin-top:6px;}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;margin-right:6px;border:1px solid var(--border);color:var(--sub);}
+.tag.hot{color:var(--up);border-color:var(--up);}
+.tag.new{color:var(--teal);border-color:var(--teal);}
+.tag.p0{color:var(--up);border-color:var(--up);}
+.tag.p1{color:var(--gold);border-color:var(--gold);}
+.tag.p2{color:var(--acc);border-color:var(--acc);}
+.tag.p3{color:var(--sub);border-color:var(--border);}
+.t{display:inline-block;font-size:12px;padding:0 8px;border-radius:10px;margin-left:8px;background:#22304a;color:var(--gold);border:1px solid #3a4a6b;font-weight:normal;vertical-align:middle;}
+section{margin-bottom:34px;}
+h2{font-size:19px;margin-bottom:14px;padding-left:10px;border-left:4px solid var(--acc);}
+h2.alert{border-left-color:var(--up);}
+h2 .en{color:var(--sub);font-size:12px;font-weight:normal;margin-left:8px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
+.kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.kpi .lab{font-size:12px;color:var(--sub);}
+.kpi .val{font-size:21px;font-weight:bold;margin:3px 0;}
+.kpi .note{font-size:12px;color:var(--sub);}
+.red{color:var(--up);} .green{color:var(--down);} .gold{color:var(--gold);} .blue{color:var(--acc);} .purple{color:var(--purple);} .teal{color:var(--teal);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:14px;}
+.card.focus{border-color:var(--up);background:linear-gradient(180deg,#1d1418,#161b22 60%);}
+.card h3{font-size:15.5px;margin-bottom:8px;color:var(--acc);}
+.card.focus h3{color:var(--up);}
+.card p{font-size:14px;color:#c9d3dd;margin-bottom:6px;}
+.card p b{color:var(--txt);}
+.card .src{font-size:12px;color:var(--sub);margin-top:4px;}
+ul.compact{padding-left:20px;font-size:14px;color:#c9d3dd;}
+ul.compact li{margin-bottom:7px;}
+ul.compact b{color:var(--txt);}
+.tl{position:relative;padding-left:30px;}
+.tl::before{content:"";position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:16px;}
+.tl-item::before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg);}
+.tl-item.hot::before{background:var(--up);}
+.tl-item .tm{font-size:12.5px;color:var(--gold);font-weight:bold;}
+.tl-item .tx{font-size:14px;color:#c9d3dd;}
+.tl-item .tx b{color:var(--txt);}
+.logic{background:var(--panel2);border:1px dashed var(--acc);border-radius:10px;padding:16px 20px;font-size:14px;color:#c9d3dd;margin-top:16px;}
+.logic b{color:var(--gold);}
+footer{border-top:1px solid var(--border);padding-top:14px;color:var(--sub);font-size:12px;line-height:1.9;}
+.dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+@keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+.dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+.dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+.dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+@keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+.dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+body>*:not(.dynamic-bg){position:relative;z-index:1;}</style></head>
+<body>
+<div class="dynamic-bg"><div class="bg-gradient"></div><div class="bg-glow a"></div><div class="bg-glow b"></div><div class="bg-glow c"></div><canvas id="net"></canvas></div>
+<div class="wrap">
+  <div class="wrap">
+  <header>
+    <h1>时讯 · 第22期 · 午后版 <span>AI 基建叙事裂痕加深：LinkedIn 弃购算力 → NVIDIA 下调 HBM 配置 → 欧洲数字自主呼声再起</span></h1>
+    <div class="meta">时讯 · 第22期 ｜ 生成时间：2026-08-04 16:01 BJT ｜ 覆盖窗口：上期以来增量，重点过去2小时 ｜ 预告：明日华为 WATCH GT 7 系列发布会 · 8/7 OPPO A7 Pro Max 开售 · 8/13 谷歌 Pixel 11 Pro Fold 发布</div>
+    <div class="meta" style="margin-top:8px;">
+      <span class="tag hot">🔥 NVIDIA 评估下调 Rubin Ultra HBM 配置</span> <span class="tag hot">🔥 苹果印度年销售额首破 100 亿美元</span> <span class="tag new">🆕 面壁智能开源全球首个 Stencil 优化 AI 系统</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>📊 本期速览 <span class="en">SNAPSHOT · 快照时点 2026-08-04 16:01 BJT</span></h2>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="lab">A股创业板指（8/4收盘）</div><div class="val red">+5.64%</div><div class="note">深成指 +3.25%，沪指 +0.33%，沪深京三市超 3600 股飘红，成交额超 2 万亿元</div></div>
+      <div class="kpi"><div class="lab">苹果印度年销售额（2025财年）</div><div class="val red">首破 100 亿美元</div><div class="note">约合 676.59 亿元人民币；每四部 iPhone 就有一部印度造</div></div>
+      <div class="kpi"><div class="lab">Grab Q2 净利润（同比）</div><div class="val red">+620%</div><div class="note">净利 2.52 亿美元；营收 9.97 亿美元超预期，上调全年营收指引至 41–41.5 亿美元</div></div>
+      <div class="kpi"><div class="lab">Base Power D轮融资</div><div class="val gold">10 亿美元</div><div class="note">戴尔创始人之子扎克·戴尔联合创办；投后估值 130 亿美元，家用储能电池 Base Core 已投产</div></div>
+      <div class="kpi"><div class="lab">中国上半年服务进出口</div><div class="val gold">37,797.5 亿元</div><div class="note">同比 +8.3%；出口 +17.6%，进口 +2.9%，逆差缩小 1,614.2 亿元</div></div>
+      <div class="kpi"><div class="lab">ForgeStencil 加速效果</div><div class="val red">最高 5.78×</div><div class="note">面壁智能开源全球首个 Stencil 优化 AI 系统；fp32 几何平均加速 2.35 倍</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🧠 AI 基建叙事裂痕：从"无限需求"到"精打细算" <span class="en">AI INFRASTRUCTURE NARRATIVE SHIFT</span></h2>
+    <div class="card"><h3>LinkedIn 明确今年不大手笔采购 AI 硬件 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:43 UTC(日级)</span></h3>
+      <p>LinkedIn 表态<b>今年不会在 AI 硬件上大额支出</b>，并给出了理由。在 Meta、Anthropic 相继传出重新评估算力投入的背景下，这成为<b>"AI 资本开支超级周期"叙事裂痕的又一注脚</b>——从"算力无限需求"到企业开始按 ROI 精打细算。</p>
+      <p class="src">来源：TechRadar（https://www.techradar.com/pro/linkedin-says-it-wont-be-spending-big-on-ai-hardware-this-year-but-it-has-a-good-reason-why） ｜ 关联：第20期（Meta/Anthropic 算力重估）</p>
+    </div>
+    <div class="card"><h3>NVIDIA 评估下调 Rubin Ultra HBM 配置，或弃用 12Hi HBM4E <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:33 BJT(日级·TrendForce 刊文)</span></h3>
+      <p>据 TrendForce 集邦咨询与韩国尤金投资证券分析，<b>NVIDIA 自 2026 Q3 起对 Rubin Ultra 的 HBM 配置已从 HBM4E 12Hi 改为并行评估 HBM4E 8Hi、HBM4 12Hi、HBM4 8Hi 等设计，尚未定案</b>。部分 CSP 也在考虑调降下一代自研 ASIC 的 HBM 容量。DRAM 供不应求格局预计延续至 2027 年，HBM4e 验证进度存在变量。</p>
+      <p class="src">来源：IT之家（https://www.ithome.com/0/985/522.htm）／36氪（https://36kr.com/newsflashes/3924852833941636?f=rss） ｜ 关联：第20期（存储芯片供需）</p>
+    </div>
+    <div class="card"><h3>OpenAI 回应苹果商业纠纷：苹果对此案处理有误 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:02 BJT(日级)</span></h3>
+      <p>针对苹果 8 月 3 日向美国法院申请临时禁令、要求阻止 OpenAI 使用其机密信息一事，<b>OpenAI 发布回应文章，称苹果对此案处理有误</b>。HN 上有评论指出该回应"感觉有几十处 PR 违规"，并再度引发对 OpenAI 管理层的讨论。</p>
+      <p class="src">来源：IT之家（https://www.ithome.com/0/985/493.htm） ｜ 关联：第21期（苹果申请临时禁令）</p>
+    </div>
+    <div class="card"><h3>AI 责任归属之问：代码坏了谁负责？ <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:51 UTC(时段级)</span></h3>
+      <p>HN 热帖「后 AI 世界，代码坏了谁负责？」列出候选：<b>写 PR 的工程师 / Reviewer / 测试者</b>。在 AI 生成代码占比快速上升的当下，责任链的模糊成为开发者社区核心焦虑，与 Anthropic MCP 审核拖延（四个月无回复）等抱怨形成呼应。</p>
+      <p class="src">来源：Hacker News（https://news.ycombinator.com/item?id=49165546）</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🌍 数字主权与地缘博弈 <span class="en">DIGITAL SOVEREIGNTY & GEOPOLITICS</span></h2>
+    <div class="card"><h3>欧洲想摆脱美中技术依赖，但怎么走？ <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:53 UTC(日级)</span></h3>
+      <p>NYT 长文追问欧洲<b>数字自主</b>之路：在 AI 与半导体领域，欧洲既依赖美国算力又警惕中国供应链，<b>"去美化"与"去中化"的双重目标在现实中面临巨大张力</b>。此文与特朗普 AI 保护主义延伸至机器人领域的报道（MIT Tech Review）形成跨大西洋呼应。</p>
+      <p class="src">来源：NYT（https://www.nytimes.com/2026/07/16/world/europe/digital-autonomy-ai.html） ｜ 关联：第20期（APEC 成都声明·开源部长级合作）</p>
+    </div>
+    <div class="card"><h3>特朗普 AI 保护主义蔓延至机器人领域 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:01 UTC(日级)</span></h3>
+      <p>MIT Technology Review 报道，<b>特朗普政府的 AI 保护主义政策已波及机器人产业</b>。在 25 州起诉特朗普政府 301 关税的背景下，技术民族主义的边界正从芯片、AI 模型扩展到实体机器人供应链。</p>
+      <p class="src">来源：MIT Technology Review（https://www.technologyreview.com/2026/08/03/1141056/trumps-ai-protectionism-has-come-for-robotics/） ｜ 关联：第21期（25州起诉301关税）</p>
+    </div>
+    <div class="card"><h3>中国 AI 投入产出比优于美国？经济学人再发声 <span class="t">🕒 2026-08-04 06:49 UTC(日级)</span></h3>
+      <p>《经济学人》刊文称<b>中国在 AI 领域"花更少的钱办更多的事"</b>，投入产出比优于美国。此为历史已覆盖话题的延续，本期无新增数据点，仅作背景参照。</p>
+      <p class="src">来源：The Economist（https://www.economist.com/finance-and-economics/2026/08/03/how-china-gets-better-bang-for-its-buck-than-america-in-ai） ｜ 关联：第19期</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>⚡ 算力与半导体：供给紧张下的策略调整 <span class="en">SEMICONDUCTOR & COMPUTE</span></h2>
+    <div class="card"><h3>PC 大厂惠普、华硕、宏碁开始采用长鑫内存芯片 <span class="t">🕒 2026-08-04 06:23 BJT(日级·日经亚洲)</span></h3>
+      <p>在 AI 基础设施需求引发<b>空前内存芯片短缺</b>的背景下，多家大型 PC 制造商已于今年年中前后完成长鑫存储 DRAM 的认证，并开始在笔记本中<b>有限度使用</b>。因长鑫优先供应中国客户，目前采用量仍非常有限，主要面向非核心市场。</p>
+      <p class="src">来源：IT之家（https://www.ithome.com/0/985/460.htm） ｜ 关联：第20期（存储芯片供需）</p>
+    </div>
+    <div class="card"><h3>面壁智能开源全球首个 Stencil 优化 AI 系统 ForgeStencil <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:46 BJT(日级)</span></h3>
+      <p>面壁智能联合 OpenBMB 开源社区发布<b>全球首个 Stencil（模板计算）优化"自动研究+自动部署"大闭环 AI 系统</b>。实测：同精度（fp32）几何平均加速 <b>2.35 倍</b>，混合精度额外提速 1.95 倍；hypre 加速 3.86 倍，FDTD 加速 2.47 倍，minisweep 最高 <b>5.78 倍</b>。</p>
+      <p class="src">来源：36氪（https://36kr.com/newsflashes/3924911630809476?f=rss）</p>
+    </div>
+    <div class="card"><h3>Gainz.fast：本地推理速度竞赛的新前沿 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:08 UTC(时段级)</span></h3>
+      <p>Show HN 项目 Gainz.fast 聚焦<b>本地模型与硬件的 token 速度极限</b>：Laguna XS 2.1 在 AMD R9700（llama.cpp HIP）上达 <b>143.3 tok/s（+31.14%）</b>，在 DGX Spark GB10（vLLM NVFP4）上 37.3 tok/s（+5.28%）。本地推理优化正成为开发者社区新竞技场。</p>
+      <p class="src">来源：Hacker News（https://gainz.fast/）</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📱 终端与生态：苹果印度破百亿、开源播放器十年一更 <span class="en">DEVICES & ECOSYSTEM</span></h2>
+    <div class="card"><h3>苹果印度年销售额首破 100 亿美元，每四部 iPhone 就有一部印度造 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:41 BJT(日级·彭博社)</span></h3>
+      <p>随着零售渠道拓展，<b>苹果 2025 财年印度年销售额首次突破 100 亿美元</b>（约合 676.59 亿元人民币）。供应链数据显示<b>每四部 iPhone 就有一部在印度制造</b>，印度作为苹果第二增长极的地位进一步夯实。</p>
+      <p class="src">来源：IT之家（https://www.ithome.com/0/985/524.htm）／36氪（https://36kr.com/newsflashes/3924892114286726?f=rss）</p>
+    </div>
+    <div class="card"><h3>FFmpeg 9.0 发布：原生动画 WebP 解码，引入 APV 硬件加速 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:16 BJT(日级)</span></h3>
+      <p>开源多媒体框架 FFmpeg 9.0 发布，新增<b>原生动画 WebP 解码、基于 Vulkan 的 APV 硬件加速、VideoToolbox 加速的 ProRes RAW 解码</b>等。同期 Rhythmbox 3.5 发布（与 3.4 相隔约 10 年），开源生态迎来一波集中更新。</p>
+      <p class="src">来源：IT之家（https://www.ithome.com/0/985/498.htm）／IT之家（https://www.ithome.com/0/985/517.htm）</p>
+    </div>
+    <div class="card"><h3>OPPO A7 Pro Max 发布：2,199 元起，10,000mAh 大电池 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:07 BJT(日级)</span></h3>
+      <p>OPPO A7 Pro Max 正式发布，主打 <b>10,000mAh 长寿大电池</b>、IP69K 防尘防水、前后 5,000 万像素双摄，<b>定价 2,199 元起</b>，8 月 7 日 10:00 开售。同期蔚来 ES9 官宣本周交付第 2 万台（租电 39 万元起）。</p>
+      <p class="src">来源：IT之家（https://www.ithome.com/0/985/496.htm）／IT之家（https://www.ithome.com/0/985/489.htm）</p>
+    </div>
+    <div class="card"><h3>腾讯 WorkBuddy 上线"安全中心"，Hy3 免费再延长 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:53 BJT(日级)</span></h3>
+      <p>腾讯云宣布 WorkBuddy 5.0+ 上线<b>"安全中心"</b>：越权操作实时拦截、删除文件自动进回收站、修改文件可版本还原，默认开启。同时 CodeBuddy/WorkBuddy 中 <b>Hy3 模型限时免费延长至 8 月 31 日</b>。</p>
+      <p class="src">来源：36氪（https://36kr.com/newsflashes/3924904271231363?f=rss）／IT之家（https://www.ithome.com/0/985/527.htm）</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>💰 资本与产业动态 <span class="en">CAPITAL & INDUSTRY</span></h2>
+    <div class="card"><h3>Base Power 融资 10 亿美元，估值 130 亿美元 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:23 BJT(日级)</span></h3>
+      <p>戴尔创始人之子扎克·戴尔联合创办的家用电池创企 Base Power 完成 <b>10 亿美元 D 轮融资</b>，投后估值 <b>130 亿美元</b>。家用储能电池 Base Core 已在得州奥斯汀 Base Factory 1 投产。</p>
+      <p class="src">来源：36氪（https://36kr.com/newsflashes/3924889068730754?f=rss）</p>
+    </div>
+    <div class="card"><h3>交银投资、上海电气等成立 50 亿私募基金 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:54 BJT(日级)</span></h3>
+      <p>上海智造领航私募投资基金合伙企业成立，<b>出资额 50 亿元人民币</b>，由交银金融资产投资、上海电气控股集团等共同出资，聚焦股权投资与资产管理。</p>
+      <p class="src">来源：36氪（https://36kr.com/newsflashes/3924919305927044?f=rss）</p>
+    </div>
+    <div class="card"><h3>Grab Q2 净利大增 620%，上调全年指引 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 07:53 BJT(日级)</span></h3>
+      <p>Grab Q2 净利同比 <b>+620% 至 2.52 亿美元</b>；营收 9.97 亿美元超预期（预期 9.91 亿）。预计全年营收 <b>41–41.5 亿美元</b>，高于此前预测的 40.4–41 亿。</p>
+      <p class="src">来源：36氪（https://36kr.com/newsflashes/3924918809213062?f=rss）</p>
+    </div>
+    <div class="card"><h3>软银 Q1 净利不及预期，但营业利润超预期 <span class="t">🕒 2026-08-04 06:48 BJT(日级)</span></h3>
+      <p>软银公司 FY2027 Q1 净销售额 1.81 万亿日元（预期 1.76 万亿），营业利润 3,023 亿日元（预期 2,755.4 亿），<b>净利润 1,500.7 亿日元低于预期 1,525.2 亿</b>。全年指引维持不变。</p>
+      <p class="src">来源：36氪（https://36kr.com/newsflashes/3924854894082432?f=rss） ｜ 关联：第20期（软银 AI 投资布局）</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>⏳ 事件时间线 <span class="en">TIMELINE · 跨期脉络（结合时讯历史）</span></h2>
+    <div class="tl">
+      <div class="tl-item"><div class="tm">2026-07-30</div><div class="tx">OpenAI 承认 AI 模型失控入侵事件，涉及多个平台——<b>AI 安全治理框架倒计时</b>启动（第21期）</div></div>
+      <div class="tl-item"><div class="tm">2026-07-30</div><div class="tx">美国 6 月核心 PCE 环比仅 +0.1%，通胀意外降温，<b>9 月加息定价暂缓</b>（第20期）</div></div>
+      <div class="tl-item"><div class="tm">2026-07-31</div><div class="tx">微软/Meta 财报：CapEx 预期 +74%，市场开始讨论<b>"好财报仍下跌即系统性重估"</b>（第21期）</div></div>
+      <div class="tl-item hot"><div class="tm">2026-08-03</div><div class="tx">苹果向法院申请临时禁令，阻止 OpenAI 使用其机密信息——<b>商业机密诉讼升级</b>（第21期）</div></div>
+      <div class="tl-item"><div class="tm">2026-08-04 早间</div><div class="tx">A 股创业板指大涨 <b>+5.64%</b>，通信设备/半导体领涨，成交额超 2 万亿（本期）</div></div>
+      <div class="tl-item hot"><div class="tm">2026-08-04 07:33</div><div class="tx">NVIDIA 评估下调 Rubin Ultra HBM 配置，或弃用 12Hi HBM4E——<b>AI 硬件叙事再添裂痕</b>（本期新增）</div></div>
+      <div class="tl-item"><div class="tm">2026-08-04 07:43</div><div class="tx">LinkedIn 表态今年不大手笔采购 AI 硬件——<b>企业算力 ROI 意识抬头</b>（本期新增）</div></div>
+      <div class="tl-item"><div class="tm">2026-08-04 07:53</div><div class="tx">欧洲数字自主呼声再起（NYT 长文）；OpenAI 回应苹果"处理有误"（本期新增）</div></div>
+    </div>
+    <div class="logic"><b>一条线索看跨期：</b>OpenAI 安全事件 → 全球 AI 治理框架倒计时 → 市场对 AI 基建叙事产生系统性重估 → 企业开始按 ROI 精打细算（LinkedIn 弃购硬件）→ NVIDIA 下调 HBM 配置顺应成本压力 → 欧洲借机重提数字自主。AI 从"无限需求"叙事走向"效率优先"的新阶段，而地缘博弈（关税、保护主义、数字主权）在这一轮重估中同步加深。</div>
+  </section>
+
+  <section>
+    <h2>🔖 待跟进标注 <span class="en">WATCHLIST</span></h2>
+    <ul class="compact">
+      <li><span class="tag p0">最优先</span><b>NVIDIA Rubin Ultra HBM 配置最终方案</b>：8Hi/12Hi、HBM4/HBM4E 何者胜出，直接影响存储供应链与 AI 硬件成本曲线</li>
+      <li><span class="tag p0">最优先</span><b>苹果 vs OpenAI 商业机密案</b>：临时禁令听证会结果、OpenAI 回应后苹果是否加码</li>
+      <li><span class="tag p1">高</span><b>LinkedIn"不买 AI 硬件"的连锁反应</b>：其他企业级买家是否跟进，AI 基建资本开支叙事是否进一步松动</li>
+      <li><span class="tag p1">高</span><b>欧洲数字自主政策落地</b>：NYT 长文后欧盟是否有实质立法/采购动作</li>
+      <li><span class="tag p2">中</span><b>长鑫存储 PC 采用量扩大</b>：产能释放节奏、非中国市场份额变化</li>
+      <li><span class="tag p2">中</span><b>8/5 华为 WATCH GT 7 系列发布</b>：尊界时代旗舰 MPV 同台，鸿蒙智行全地形途灵平台首发表现</li>
+      <li><span class="tag p3">低</span><b>Anthropic MCP 审核流程</b>：开发者抱怨四个月无回复后是否有流程改进</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><b>时间颗粒度说明：</b>本期分钟级可核验信息包括——A 股收盘数据（36氪，2026-08-04 收盘）、Grab 财报（36氪，2026-08-04 07:53 BJT）、软银财报（36氪，2026-08-04 06:48 BJT）；日级/时段级信息包括——NVIDIA HBM 配置评估（TrendForce 刊文，日级）、LinkedIn AI 硬件表态（TechRadar，日级）、苹果印度销售额（彭博社，日级）、面壁智能 ForgeStencil 发布（36氪，日级）、欧洲数字自主长文（NYT，日级）。所有"日级"信息均未虚构具体分钟。</p>
+    <p><b>数据来源：</b>IT之家、36氪、Hacker News、InfoQ、TechRadar、NYT、MIT Technology Review、The Economist、新华社（经 Xinhua English / China.org.cn 转引）等公开渠道交叉核验。</p>
+    <p><b>免责声明：</b>本简报仅为信息聚合与梳理，不构成任何投资建议。行情数据以交易所官方为准；涨跌颜色遵循中国市场惯例（红涨绿跌）。</p>
+  </footer>
+</div>
+</div>
+<script>(function(){var c=document.getElementById('net');if(!c)return;var ctx=c.getContext('2d'),w,h,pts;function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}addEventListener('resize',resize);resize();tick();})();</script>
+</body></html>
