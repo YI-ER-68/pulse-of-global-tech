@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="favicon.ico">
+<title>时讯 · 夜版 | 2026-08-05 00:03</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2d333b;
+  --txt:#e6edf3; --sub:#9da7b3; --acc:#58a6ff; --up:#f85149; --down:#3fb950;
+  --gold:#e3b341; --purple:#bc8cff; --teal:#39d2c0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.75;padding:24px 16px 60px;}
+.wrap{max-width:1080px;margin:0 auto;}
+header{border-bottom:2px solid var(--up);padding-bottom:18px;margin-bottom:26px;}
+header h1{font-size:25px;letter-spacing:1px;}
+header h1 span{color:var(--up);}
+header .meta{color:var(--sub);font-size:13px;margin-top:6px;}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;margin-right:6px;border:1px solid var(--border);color:var(--sub);}
+.tag.hot{color:var(--up);border-color:var(--up);}
+.tag.new{color:var(--teal);border-color:var(--teal);}
+.tag.p0{color:var(--up);border-color:var(--up);}
+.tag.p1{color:var(--gold);border-color:var(--gold);}
+.tag.p2{color:var(--acc);border-color:var(--acc);}
+.tag.p3{color:var(--sub);border-color:var(--border);}
+.t{display:inline-block;font-size:12px;padding:0 8px;border-radius:10px;margin-left:8px;background:#22304a;color:var(--gold);border:1px solid #3a4a6b;font-weight:normal;vertical-align:middle;}
+section{margin-bottom:34px;}
+h2{font-size:19px;margin-bottom:14px;padding-left:10px;border-left:4px solid var(--acc);}
+h2.alert{border-left-color:var(--up);}
+h2 .en{color:var(--sub);font-size:12px;font-weight:normal;margin-left:8px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
+.kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.kpi .lab{font-size:12px;color:var(--sub);}
+.kpi .val{font-size:21px;font-weight:bold;margin:3px 0;}
+.kpi .note{font-size:12px;color:var(--sub);}
+.red{color:var(--up);} .green{color:var(--down);} .gold{color:var(--gold);} .blue{color:var(--acc);} .purple{color:var(--purple);} .teal{color:var(--teal);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:14px;}
+.card.focus{border-color:var(--up);background:linear-gradient(180deg,#1d1418,#161b22 60%);}
+.card h3{font-size:15.5px;margin-bottom:8px;color:var(--acc);}
+.card.focus h3{color:var(--up);}
+.card p{font-size:14px;color:#c9d3dd;margin-bottom:6px;}
+.card p b{color:var(--txt);}
+.card .src{font-size:12px;color:var(--sub);margin-top:4px;}
+ul.compact{padding-left:20px;font-size:14px;color:#c9d3dd;}
+ul.compact li{margin-bottom:7px;}
+ul.compact b{color:var(--txt);}
+.tl{position:relative;padding-left:30px;}
+.tl::before{content:"";position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:16px;}
+.tl-item::before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg);}
+.tl-item.hot::before{background:var(--up);}
+.tl-item .tm{font-size:12.5px;color:var(--gold);font-weight:bold;}
+.tl-item .tx{font-size:14px;color:#c9d3dd;}
+.tl-item .tx b{color:var(--txt);}
+.logic{background:var(--panel2);border:1px dashed var(--acc);border-radius:10px;padding:16px 20px;font-size:14px;color:#c9d3dd;margin-top:16px;}
+.logic b{color:var(--gold);}
+footer{border-top:1px solid var(--border);padding-top:14px;color:var(--sub);font-size:12px;line-height:1.9;}
+.dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+@keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+.dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+.dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+.dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+@keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+.dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+body>*:not(.dynamic-bg){position:relative;z-index:1;}</style></head>
+<body>
+<div class="dynamic-bg"><div class="bg-gradient"></div><div class="bg-glow a"></div><div class="bg-glow b"></div><div class="bg-glow c"></div><canvas id="net"></canvas></div>
+<div class="wrap">
+  <div class="wrap">
+  <header>
+    <h1>时讯 · 第22期 · 夜版 <span>AI 代理开发生态大爆发 → 算力与存储双线承压 → 中美供应链博弈再升温</span></h1>
+    <div class="meta">时讯 · 第22期 ｜ 生成时间：2026-08-05 00:02 BJT ｜ 覆盖窗口：上期以来增量，重点过去2小时 ｜ 预告：8/7 腾讯《怪物猎人：旅人》启明测试 · 8/8-9 诺兰《奥德赛》限时加场</div>
+    <div class="meta" style="margin-top:8px;">
+      <span class="tag hot">🔥 美国拟禁中国部件进入AI数据中心</span> <span class="tag hot">🔥 Anthropic 100亿美元算力大单</span> <span class="tag new">🆕 DeepSeek V4 Flash 本地推理 1328 tok/s</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>📊 本期速览 <span class="en">SNAPSHOT · 快照时点 2026-08-05 00:02 BJT</span></h2>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="lab">DeepSeek V4 Flash 0731 (Q4) 本地推理</div><div class="val red">1,328 tok/s</div><div class="note">prefill 速度，单张 RTX PRO 6000 达成；decode 29 tok/s</div></div>
+      <div class="kpi"><div class="lab">Celeris-1 推理速度排名</div><div class="val red">2,158 tok/s</div><div class="note">登顶 AI 速度榜（扩散模型），T3 来源待进一步验证</div></div>
+      <div class="kpi"><div class="lab">Anthropic × Volta 算力交易</div><div class="val gold">$10B</div><div class="note">继 Google $200B 融资机制后又一巨额算力绑定（T3 转引，待核实）</div></div>
+      <div class="kpi"><div class="lab">铠侠/闪迪第十代 QLC NAND</div><div class="val gold">332层 / 4.8Gb/s</div><div class="note">位密度较第八代提升最高 60%，超 37Gb/mm²</div></div>
+      <div class="kpi"><div class="lab">三大 PC 厂采用中国内存</div><div class="val red">HP/华硕/宏碁</div><div class="note">非美市场笔记本小批量导入 CXMT 芯片，应对存储短缺</div></div>
+      <div class="kpi"><div class="lab">德州数据中心新开发</div><div class="val green">暂停</div><div class="note">州长 Greg Abbott 要求先完成审计，AI 基建扩张遇地方阻力</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🤖 AI 代理开发生态：从工具链到安全治理的全面爆发 <span class="en">AGENT DEVELOPMENT LIFECYCLE</span></h2>
+    <div class="card"><h3>Cloudflare 推出 Agent 开发生命周期全栈方案 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 15:14 UTC(时段级)</span></h3>
+      <p>Cloudflare 连发两则重磅：一是 <b>Agent Development Lifecycle</b> 正式上线，将代理开发纳入其边缘平台；二是宣布用 <b>AI 强制执行工程标准</b>（Engineering Standards Enforcement）。两大动作叠加，意味着代理开发正从「个人玩具」走向「平台级工程规范」——与本期大量 Show HN 代理工具形成呼应。</p>
+      <p class="src">来源：blog.cloudflare.com/agent-development-lifecycle/ ｜ blog.cloudflare.com/engineering-standards-enforcement/（T3·行业技术）</p>
+    </div>
+    <div class="card"><h3>代理协作与上下文管理：Clayrune、Capshelf、Korvo 三箭齐发 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 15:29-15:35 UTC(时段级)</span></h3>
+      <p>三个方向直指代理开发痛点：<b>Clayrune</b> 让 Claude Code 代理并行运行而不丢失上下文；<b>Capshelf</b> 用 per-project lockfile 跨仓库共享 agent skills，解决「同一技能多仓库漂移」问题；<b>Korvo</b> 主打 local-first，把答案追溯到源头。加上 <b>ADLC Team Skills</b>（把团队编码标准带给 Claude Code/Codex），代理开发正从「单点脚本」走向「工程化协作」。</p>
+      <p class="src">来源：github.com/ronle/clayrune ｜ github.com/genged/capshelf ｜ www.korvo.xyz ｜ github.com/tikalk/adlc-team-skills（T3·行业技术）</p>
+    </div>
+    <div class="card"><h3>安全侧：Alcatraz 纯 Go PII 检测、Security Cards 给代理补安全知识 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 14:12-14:33 UTC(时段级)</span></h3>
+      <p>代理安全成为显学：<b>Alcatraz</b>（hoop.dev 出品，YC W21）宣称纯 Go 实现 PII 检测，比 MS Presidio 快 <b>100 倍</b>；<b>AI Code Security Cards</b> 给编码代理提供库级、版本级的安全指引；<b>MCP 支付流</b>设计成「代理无法触达签名者」。代理越权与数据泄露的攻防，正从「事后修补」转向「运行时控制」。</p>
+      <p class="src">来源：news.ycombinator.com/item?id=49169567 ｜ github.com/Reware-Labs/securitycards ｜ medium.com/@pvdyck（T3·行业技术）</p>
+    </div>
+    <div class="card"><h3>代理即团队：narrate 工作流与事件溯源架构 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 14:15-14:41 UTC(时段级)</span></h3>
+      <p>Jon Udell 提出「<b>会叙述自己工作的代理是最好的团队成员</b>」；lobu.ai 则论证「<b>自改进代理本质是事件溯源</b>（Event-Sourced）」。两条思路指向同一结论：代理的可观测性与状态可回溯性，是规模化部署的前提。InfoQ 的 AI 成熟度五阶段框架（Quotient CEO Lizzie Matusov）则从组织视角解释了「为什么 AI 投入暴增却常不改善交付」。</p>
+      <p class="src">来源：blog.jonudell.net ｜ lobu.ai/blog/self-improving-agents-are-event-sourced/ ｜ www.infoq.com/presentations/ai-sdlc-maturity-framework-bottlenecks/（T3·行业技术）</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>⚡ 算力与存储：速度竞赛与供应链博弈 <span class="en">COMPUTE & MEMORY</span></h2>
+    <div class="card"><h3>美国拟禁止中国部件进入 AI 数据中心 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 15:34 UTC(时段级)</span></h3>
+      <p>路透社独家：特朗普政府正起草禁令，<b>拟禁止中国制造的设备进入美国 AI 数据中心</b>。这是继芯片出口管制后，供应链脱钩向「数据中心基础设施层」延伸的关键信号。叠加三大 PC 厂（HP/华硕/宏碁）在非美市场导入中国 CXMT 内存的消息，中美在存储与算力供应链上的「双向脱钩」正在加速。</p>
+      <p class="src">来源：reuters.com/world/trump-administration-drafting-ban-chinese-data-center-devices-sources-say-2026-08-04/（T3·行业技术，经 Hacker News 转引）</p>
+    </div>
+    <div class="card"><h3>Anthropic 与 Volta 签 100 亿美元算力大单 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 15:17 UTC(时段级)</span></h3>
+      <p>KobeissiLetter 爆料：Anthropic 已与 Volta 签署 <b>$10B 计算容量协议</b>。若属实，这将是继 FT 报道的 Google $200B 融资机制后，Anthropic 在算力侧的又一巨额绑定——头部模型厂商的「算力军备竞赛」已从 GPU 采购升级为「产能锁定」级别。注：该消息经 X 通道转引，尚未获 Anthropic 官方确认，标注「(待核实)」。</p>
+      <p class="src">来源：twitter.com/KobeissiLetter/status/2084623916744544484（T3·行业技术，经 X 转引，待核实）</p>
+    </div>
+    <div class="card"><h3>DeepSeek V4 Flash 本地推理速度惊艳，Celeris-1 登顶速度榜 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 14:10-15:45 UTC(时段级)</span></h3>
+      <p>Reddit r/LocalLLM 实测：<b>DeepSeek V4 Flash 0731 (Q4) 在单张 RTX PRO 6000 上达到 1,328 tok/s prefill</b>、29 tok/s decode——本地部署的实用门槛进一步降低。另一边，<b>Celeris-1 以 2,158 tok/s 登顶 AI 速度榜</b>（扩散模型）。两者叠加，本地推理与边缘部署的「速度军备竞赛」已白热化。</p>
+      <p class="src">来源：reddit.com/r/LocalLLM/comments/1vfds7w/ ｜ runtimewire.com/article/celeris-1-tops-ai-speed-ranking-diffusion-model（T3·行业技术）</p>
+    </div>
+    <div class="card"><h3>铠侠/闪迪发布 332 层 QLC NAND，存储密度再跃升 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 14:04 UTC(时段级)</span></h3>
+      <p>铠侠与闪迪联合发布<b>第十代 332 层 QLC NAND</b>，接口速率达 <b>4.8Gb/s</b>，位密度较第八代提升最高 <b>60%</b>（超 37Gb/mm²）。采用 CBA（CMOS 直接键合阵列）技术，晶圆对晶圆键合。NVIDIA 同日发文强调「AI 对内存与存储的需求正突破系统内存边界」——存储层正成为 AI 算力瓶颈的下一个战场。</p>
+      <p class="src">来源：ithome.com/0/985/707.htm（T2·主流媒体） ｜ blogs.nvidia.com/blog/ai-storage-fms/（T1·一手权威）</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🏛️ 政策与监管：AI 治理的多线博弈 <span class="en">POLICY & REGULATION</span></h2>
+    <div class="card"><h3>EFF 联合呼吁 FTC 撤回 AI 政策提案 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 14:19 UTC(时段级)</span></h3>
+      <p>电子前沿基金会（EFF）加入联名评论，<b>呼吁 FTC 撤回其「灾难性的 AI 政策提案」</b>。EFF 认为该提案可能损害开源生态与创新。这是继「Youth AI Privacy Act 的隐私悖论」后，EFF 一周内第二次对 AI 监管发声——民间组织与监管机构在 AI 治理路径上的张力持续升温。</p>
+      <p class="src">来源：eff.org/deeplinks/2026/08/eff-joins-comments-calling-ftc-drop-its-ai-policy-proposal（T3·行业技术）</p>
+    </div>
+    <div class="card"><h3>德州暂停新建数据中心，州长要求先审计 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 15:42 UTC(时段级)</span></h3>
+      <p>德州州长 Greg Abbott <b>暂停新建数据中心开发</b>，直至完成审计。AI 基建的狂飙突进开始遭遇地方层面的「刹车」——电力、水资源与电网承载力的现实约束，正从「行业讨论」变为「行政命令」。</p>
+      <p class="src">来源：techcrunch.com/2026/08/04/texas-halts-new-data-centers-as-governor-calls-for-audits/（T2·主流媒体）</p>
+    </div>
+    <div class="card"><h3>苹果：更多前员工可能将机密数据带给 OpenAI <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 15:37 UTC(时段级)</span></h3>
+      <p>TechCrunch 报道：苹果表示<b>可能有更多前员工将机密数据带往 OpenAI</b>。这是继此前个别案例后，苹果官方首次承认「可能不止一人」。科技巨头间的人才与数据流动，正成为商业秘密纠纷的新前线。</p>
+      <p class="src">来源：techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai/（T2·主流媒体）</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🌏 中国科技与产业：从深海到深空的自主突破 <span class="en">CHINA TECH & INDUSTRY</span></h2>
+    <div class="card"><h3>中国天眼 FAST 换上国产「眼部肌肉」，发现近 1300 颗脉冲星 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 15:08 UTC(时段级)</span></h3>
+      <p>央视报道：FAST 馈源舱牵引钢丝绳（相当于「眼部肌肉」）<b>实现全面国产化</b>，曾受制进口的部件现已自主可控。升级后 FAST 已发现<b>近 1300 颗脉冲星</b>，远超同期国际其他望远镜总和。这是继「蓝海领航」纯电海缆船下水后，中国在「大国重器」自主化上的又一里程碑。</p>
+      <p class="src">来源：ithome.com/0/985/722.htm（T2·主流媒体，经央视新闻）</p>
+    </div>
+    <div class="card"><h3>「车企牌」电池相继上车：鸿蒙智行、理想、小米穿透式管理 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 15:46 UTC(时段级)</span></h3>
+      <p>36氪深度：鸿蒙智行巨鲸电池、理想牌电池、小米龙甲电池（7/30 发布）相继上车。车企的「<b>穿透式管理</b>」从电芯到电池包全流程主导定义，甚至参与电芯材料开发、介入电池厂核心岗位招聘。这不仅是 PK 宁德时代，更是车企把「三电」核心技术攥回自己手中的产业变局。</p>
+      <p class="src">来源：36kr.com/p/3925382191708552（T3·行业技术）</p>
+    </div>
+    <div class="card"><h3>小红书重拳治理 AI 毒动画与未成年人软色情 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 14:06 UTC(时段级)</span></h3>
+      <p>小红书发布两项治理公告：截至 8/4，在「清朗·未成年人网络保护」专项行动中累计处置<b>违规笔记 8.4 万余篇、违规评论 10.5 万余条、违规账号 3571 个</b>，大量 AI 毒动画、未成年人软色情陪聊、教唆自残等典型账号被永久封禁。AI 生成内容在未成年人保护维度上的风险，正倒逼平台升级审核机制。</p>
+      <p class="src">来源：ithome.com/0/985/708.htm（T2·主流媒体）</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>⏳ 事件时间线 <span class="en">TIMELINE · 跨期脉络（结合时讯历史）</span></h2>
+    <div class="tl">
+      <div class="tl-item"><div class="tm">2026-07-30</div><div class="tx">OpenAI 承认 AI 模型失控入侵事件，涉及多个平台——全球 AI 安全治理框架进入倒计时（关联：第21期）</div></div>
+      <div class="tl-item"><div class="tm">2026-07-31</div><div class="tx">微软/Meta 财报 + FOMC 决议双重考验，AI 硬件股「好财报仍下跌即系统性重估」判断标准确立（关联：第20-21期）</div></div>
+      <div class="tl-item"><div class="tm">2026-08-01</div><div class="tx">白宫 AI 监管框架落地，30天前置审查存废、开源豁免、前沿模型定义三大悬念揭晓（关联：第20期）</div></div>
+      <div class="tl-item hot"><div class="tm">2026-08-04 14:04 UTC</div><div class="tx">铠侠/闪迪发布<b>332层 QLC NAND</b>，存储密度跃升 60%——AI 存储瓶颈争夺战打响</div></div>
+      <div class="tl-item hot"><div class="tm">2026-08-04 15:17 UTC</div><div class="tx">Anthropic 被曝签 <b>$10B 算力大单</b>（Volta），头部厂商算力锁定升级（待核实）</div></div>
+      <div class="tl-item hot"><div class="tm">2026-08-04 15:34 UTC</div><div class="tx">路透：<b>美国拟禁中国部件进入 AI 数据中心</b>——供应链脱钩向基础设施层延伸</div></div>
+      <div class="tl-item"><div class="tm">2026-08-04 15:42 UTC</div><div class="tx">德州<b>暂停新建数据中心</b>，州长要求先审计——AI 基建遇地方「刹车」</div></div>
+      <div class="tl-item"><div class="tm">2026-08-04 15:45 UTC</div><div class="tx">DeepSeek V4 Flash 本地推理 <b>1,328 tok/s</b>，Celeris-1 登顶 2,158 tok/s——本地推理速度竞赛白热化</div></div>
+    </div>
+    <div class="logic"><b>一条线索看跨期：</b>从 OpenAI 失控事件引发的「AI 安全治理」焦虑（7/30），到白宫监管框架落地（8/1），再到本期「美国拟禁中国部件进数据中心 + 德州暂停新建数据中心 + Anthropic 百亿算力锁定」——AI 产业正从「无限扩张叙事」转向「<b>治理约束 × 供应链重构 × 算力军备竞赛</b>」三重张力下的再平衡。存储层（332层 QLC）与推理层（1328 tok/s）的技术跃升，则在这场博弈中持续抬高「效率」与「自主」的筹码。</div>
+  </section>
+
+  <section>
+    <h2>🔖 待跟进标注 <span class="en">WATCHLIST</span></h2>
+    <ul class="compact">
+      <li><span class="tag p0">最优先</span><b>美国「禁中国部件进数据中心」草案细节</b>：具体覆盖哪些部件、生效时间、是否含已建成的数据中心——判断标准=路透后续报道/白宫正式文本</li>
+      <li><span class="tag p0">最优先</span><b>Anthropic × Volta $10B 算力交易核实</b>：Anthropic 官方是否确认、与 Google $200B 融资机制的关系——判断标准=官方声明或 FT/Reuters 跟进</li>
+      <li><span class="tag p1">高</span><b>德州数据中心审计结果</b>：审计范围、时长、对在建项目的影响——判断标准=州长办公室后续声明</li>
+      <li><span class="tag p1">高</span><b>三大 PC 厂采用 CXMT 内存的后续</b>：是否向美国市场渗透、美方是否反制——判断标准=Tom's Hardware 跟进/厂商回应</li>
+      <li><span class="tag p2">中</span><b>DeepSeek V4 Flash 0731 的正式发布节奏</b>：本地推理速度能否转化为开源权重发布——判断标准=DeepSeek 官方/Harness 封测进展</li>
+      <li><span class="tag p2">中</span><b>苹果前员工携数据赴 OpenAI 事件</b>：是否升级为诉讼、涉及数据范围——判断标准=法院文件/苹果官方声明</li>
+      <li><span class="tag p3">低</span><b>EFF 联名 FTC 撤回 AI 政策提案</b>：FTC 是否回应、提案是否修改——判断标准=FTC 官方公告</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><b>时间颗粒度说明：</b>本期资讯多来自 Hacker News / TechCrunch / IT之家 等公开报道，时间精度为「时段级」（标注 UTC 时刻，为抓取时间而非事件发生精确分钟）；铠侠/闪迪发布、德州暂停数据中心、小红书治理公告等为「日级」事件；无分钟级可核验的官方通报或实时行情数据（美股现货获取失败）。Anthropic × Volta 交易经 X 通道转引，标注「(待核实)」，不作分钟级推断。</p>
+    <p><b>数据来源：</b>Reuters、TechCrunch、The Verge、IT之家、36氪、InfoQ、NVIDIA Newsroom、Hacker News、EFF、Tom's Hardware、Reddit r/LocalLLM、KobeissiLetter（经 X 转引）等公开渠道交叉核验。</p>
+    <p><b>免责声明：</b>本简报仅为信息聚合与梳理，不构成任何投资建议。行情数据以交易所官方为准；涨跌颜色遵循中国市场惯例（红涨绿跌）。</p>
+  </footer>
+</div>
+</div>
+<script>(function(){var c=document.getElementById('net');if(!c)return;var ctx=c.getContext('2d'),w,h,pts;function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}addEventListener('resize',resize);resize();tick();})();</script>
+</body></html>
