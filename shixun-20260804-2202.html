@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="favicon.ico">
+<title>时讯 · 晚间版 | 2026-08-04 22:02</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#2d333b;
+  --txt:#e6edf3; --sub:#9da7b3; --acc:#58a6ff; --up:#f85149; --down:#3fb950;
+  --gold:#e3b341; --purple:#bc8cff; --teal:#39d2c0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.75;padding:24px 16px 60px;}
+.wrap{max-width:1080px;margin:0 auto;}
+header{border-bottom:2px solid var(--up);padding-bottom:18px;margin-bottom:26px;}
+header h1{font-size:25px;letter-spacing:1px;}
+header h1 span{color:var(--up);}
+header .meta{color:var(--sub);font-size:13px;margin-top:6px;}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;margin-right:6px;border:1px solid var(--border);color:var(--sub);}
+.tag.hot{color:var(--up);border-color:var(--up);}
+.tag.new{color:var(--teal);border-color:var(--teal);}
+.tag.p0{color:var(--up);border-color:var(--up);}
+.tag.p1{color:var(--gold);border-color:var(--gold);}
+.tag.p2{color:var(--acc);border-color:var(--acc);}
+.tag.p3{color:var(--sub);border-color:var(--border);}
+.t{display:inline-block;font-size:12px;padding:0 8px;border-radius:10px;margin-left:8px;background:#22304a;color:var(--gold);border:1px solid #3a4a6b;font-weight:normal;vertical-align:middle;}
+section{margin-bottom:34px;}
+h2{font-size:19px;margin-bottom:14px;padding-left:10px;border-left:4px solid var(--acc);}
+h2.alert{border-left-color:var(--up);}
+h2 .en{color:var(--sub);font-size:12px;font-weight:normal;margin-left:8px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
+.kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.kpi .lab{font-size:12px;color:var(--sub);}
+.kpi .val{font-size:21px;font-weight:bold;margin:3px 0;}
+.kpi .note{font-size:12px;color:var(--sub);}
+.red{color:var(--up);} .green{color:var(--down);} .gold{color:var(--gold);} .blue{color:var(--acc);} .purple{color:var(--purple);} .teal{color:var(--teal);}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:14px;}
+.card.focus{border-color:var(--up);background:linear-gradient(180deg,#1d1418,#161b22 60%);}
+.card h3{font-size:15.5px;margin-bottom:8px;color:var(--acc);}
+.card.focus h3{color:var(--up);}
+.card p{font-size:14px;color:#c9d3dd;margin-bottom:6px;}
+.card p b{color:var(--txt);}
+.card .src{font-size:12px;color:var(--sub);margin-top:4px;}
+ul.compact{padding-left:20px;font-size:14px;color:#c9d3dd;}
+ul.compact li{margin-bottom:7px;}
+ul.compact b{color:var(--txt);}
+.tl{position:relative;padding-left:30px;}
+.tl::before{content:"";position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:16px;}
+.tl-item::before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg);}
+.tl-item.hot::before{background:var(--up);}
+.tl-item .tm{font-size:12.5px;color:var(--gold);font-weight:bold;}
+.tl-item .tx{font-size:14px;color:#c9d3dd;}
+.tl-item .tx b{color:var(--txt);}
+.logic{background:var(--panel2);border:1px dashed var(--acc);border-radius:10px;padding:16px 20px;font-size:14px;color:#c9d3dd;margin-top:16px;}
+.logic b{color:var(--gold);}
+footer{border-top:1px solid var(--border);padding-top:14px;color:var(--sub);font-size:12px;line-height:1.9;}
+.dynamic-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.dynamic-bg .bg-gradient{position:absolute;inset:0;background:linear-gradient(125deg,#0a0c12,#0f1117,#141832,#0c0f1a,#0f1117);background-size:300% 300%;animation:bgShift 22s ease-in-out infinite;}
+@keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.dynamic-bg .bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;}
+.dynamic-bg .bg-glow.a{width:520px;height:520px;left:-120px;top:-140px;background:radial-gradient(circle,#3a5bff,transparent 70%);animation:floatA 16s ease-in-out infinite;}
+.dynamic-bg .bg-glow.b{width:460px;height:460px;right:-120px;bottom:-120px;background:radial-gradient(circle,#6c3aff,transparent 70%);animation:floatB 19s ease-in-out infinite;}
+.dynamic-bg .bg-glow.c{width:380px;height:380px;left:38%;top:52%;background:radial-gradient(circle,#1f8f6b,transparent 70%);opacity:.3;animation:floatC 24s ease-in-out infinite;}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-40px)}}
+@keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,30px) scale(1.1)}}
+.dynamic-bg #net{position:absolute;inset:0;width:100%;height:100%;}
+body>*:not(.dynamic-bg){position:relative;z-index:1;}</style></head>
+<body>
+<div class="dynamic-bg"><div class="bg-gradient"></div><div class="bg-glow a"></div><div class="bg-glow b"></div><div class="bg-glow c"></div><canvas id="net"></canvas></div>
+<div class="wrap">
+  <div class="wrap">
+<header>
+  <h1>时讯 · 第22期 · 晚间版 <span>Agentic 编程反思潮 → 安全与可观测性双线收紧 → 算力军备竞赛再升温</span></h1>
+  <div class="meta">时讯 · 第22期 ｜ 生成时间：2026-08-04 22:02 BJT ｜ 覆盖窗口：上期以来增量，重点过去2小时 ｜ 预告：8/5 华为 Vision 智慧屏 6 SE RGB 正式开售 · 8/12 影石 X6 全景相机发布</div>
+  <div class="meta" style="margin-top:8px;">
+    <span class="tag hot">🔥 Agentic 编程是否失败的行业大讨论</span> <span class="tag hot">🔥 Cloudflare 连发 Agents + Wallets 两大产品</span> <span class="tag new">🆕 Anthropic 100亿美元算力协议</span>
+  </div>
+</header>
+
+<section>
+  <h2>📊 本期速览 <span class="en">SNAPSHOT · 快照时点 2026-08-04 22:00 BJT</span></h2>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="lab">Anthropic 算力协议</div><div class="val gold">$100亿</div><div class="note">与一家人工智能云初创公司签署，算力军备竞赛再升温（T3·待核实）</div></div>
+    <div class="kpi"><div class="lab">RTX 50 韩国涨幅</div><div class="val red">+20%~30%</div><div class="note">台积电晶圆涨价 5-10% + GDDR7 成本攀升双重推动，RTX 5090 最高涨至 730 万韩元</div></div>
+    <div class="kpi"><div class="lab">韩国 AI 算力中心投资</div><div class="val gold">2.5万亿韩元</div><div class="note">三星SDS牵头，8/3 奠基，预计 2028 年竣工投用</div></div>
+    <div class="kpi"><div class="lab">美国 6 月贸易逆差</div><div class="val green">$733亿</div><div class="note">较前值 776 亿收窄，略高于预期 730 亿</div></div>
+    <div class="kpi"><div class="lab">Spotify 订阅用户</div><div class="val red">3亿+</div><div class="note">Q2 环比增长 9%，尽管多地区年内已提价</div></div>
+    <div class="kpi"><div class="lab">Bending Spoons 收购 Airtable</div><div class="val gold">$12.85亿</div><div class="note">官方确认收购价，较此前 TechCrunch 报道的 22 亿有出入（关联：历史已覆盖）</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>🤖 Agentic 编程反思潮 <span class="en">THE AGENTIC BACKLASH</span></h2>
+  <div class="card"><h3>Ask HN: Is "Agentic" Programming a Flop? 引发行业大讨论 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:07 UTC(时段级)</span></h3>
+    <p>Hacker News 上一条直击灵魂的提问引发热议：Agentic 编程是否是一场彻底的失败？提问者质疑这是否是"从 LLM 获取价值的疯狂方式"，是否是对技术的根本误读。同期多篇实践帖从不同角度回应——<b>Neal</b>（Codex 写码、Claude 审查的双模型协作 CLI）、<b>context-engine</b> 的"agent-to-codebase 接口已损坏"宣言、<b>Isolade</b> 的本地优先 microVM 隔离工作台，都在试图修补 Agentic 编程的落地裂缝。</p>
+    <p class="src">来源：Hacker News（https://news.ycombinator.com/item?id=49167519） ｜ T3·行业技术</p>
+  </div>
+  <div class="card"><h3>可观测性：从 Vibe Coding 到 AI Engineering 的桥梁 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 13:06 UTC(时段级)</span></h3>
+    <p>Dynatrace 发文主张用可观测性将"Vibe Coding"升级为真正的 AI Engineering；同期 <b>Wide Events</b>（Rails 遥测）、<b>Av9n</b>（验证 agent 声明与证据）等工具密集涌现，指向同一痛点——<b>Agent 行为不可见、不可验证</b>。Auditability vs. Forced Determinism 的讨论进一步把问题推向 Agentic AI 的未来走向。</p>
+    <p class="src">来源：Dynatrace（https://www.dynatrace.com/news/blog/how-observability-transforms-vibe-coding-into-ai-engineering/） ｜ T3·行业技术</p>
+  </div>
+  <div class="card"><h3>AI 人才战出现"忠诚度危机" <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:33 UTC(时段级)</span></h3>
+    <p>Axios 报道 AI 人才争夺战正面临忠诚度问题——OpenAI、Google、Meta、Anthropic 之间的人才流动加速。这与"Agentic 编程是否失败"的讨论形成微妙呼应：<b>当技术路线本身存疑，人才对公司的黏性也在下降</b>。</p>
+    <p class="src">来源：Axios（https://www.axios.com/2026/08/03/ai-talent-wars-openai-google-meta-anthropic） ｜ T2·主流媒体</p>
+  </div>
+</section>
+
+<section>
+  <h2>🛡️ 安全与信任：AI 的双面冲击 <span class="en">SECURITY & TRUST</span></h2>
+  <div class="card"><h3>AI 垃圾信息污染 CVE 漏洞管道，虚假漏洞泛滥 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 13:43 UTC(时段级)</span></h3>
+    <p>The Register 曝光：AI 生成的垃圾信息正在污染 CVE 漏洞管道，制造大量<b>虚假漏洞</b>。这与 Linux 内核维护者 Greg Kroah-Hartman 同日宣布"暂存区不再接受 AI 生成补丁"形成呼应——<b>AI 在安全领域的可信度正遭遇系统性拷问</b>。</p>
+    <p class="src">来源：The Register（https://www.theregister.com/security/2026/08/03/ai-slop-pollutes-the-cve-pipeline-with-fake-vulns/5282462） ｜ T3·行业技术</p>
+  </div>
+  <div class="card"><h3>Open Secure AI Alliance 提出 SAFE 网络安全透明度指南 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 13:00 UTC(时段级)</span></h3>
+    <p>NVIDIA 博客披露：Open Secure AI Alliance（已超 120 家组织）在 Black Hat 大会开幕日提出 SAFE 指南，强化 Agentic AI 网络安全透明度。Linux 基金会同步发布 Shared AI Findings Exchange 的 RFC 征求意见。<b>AI 安全治理正从"事后补救"转向"事前标准"</b>。</p>
+    <p class="src">来源：NVIDIA Newsroom（https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/） ｜ T1·一手权威</p>
+  </div>
+  <div class="card"><h3>Apple 因 CSAM 问题短暂下架 Telegram <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:57 UTC(时段级)</span></h3>
+    <p>Apple 周一晚因 Telegram 违反"禁止儿童性虐待材料"的严格准则将其从 App Store 短暂移除，现已恢复。这是平台安全审核的一次罕见公开动作，<b>也提示 AI 时代内容审核的边界问题</b>。</p>
+    <p class="src">来源：The Verge（https://www.theverge.com/tech/974951/telegram-apple-app-store-removed） ｜ T2·主流媒体</p>
+  </div>
+  <div class="card"><h3>AI Agent 安全实践：钓鱼自己的 Agent、凭据代理、微VM隔离 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:00-13:00 UTC(时段级)</span></h3>
+    <p>多篇安全实践帖集中出现：<b>I Phish My AI Agent</b>（主动钓鱼自己的 Agent 以发现漏洞）、<b>Vultrino</b>（凭据代理，让 AI Agent 永远看不到密钥）、<b>Isolade</b>（secretless microVMs 运行编码 Agent）。安全已成为 Agentic 编程落地的前置条件。</p>
+    <p class="src">来源：sveder.com / GitHub 多项目 ｜ T3·行业技术</p>
+  </div>
+</section>
+
+<section>
+  <h2>⚡ 算力与基础设施：军备竞赛再升温 <span class="en">COMPUTE & INFRASTRUCTURE</span></h2>
+  <div class="card"><h3>Anthropic 签署 100 亿美元算力协议 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:11 UTC(时段级)</span></h3>
+    <p>据报道，Anthropic 与一家人工智能云初创公司签署价值 <b>100 亿美元</b> 的算力协议。这是继此前 Meta、Anthropic 相继宣布新动作后，算力军备竞赛的又一重磅信号。市场对 AI 资本开支超级周期的讨论持续升温。</p>
+    <p class="src">来源：第一财经（经36氪转引）（https://36kr.com/newsflashes/3925172170324099?f=rss） ｜ T3·行业技术（待核实）</p>
+  </div>
+  <div class="card"><h3>Cloudflare 连发 Agents + Wallets：为 Agentic Internet 铺路 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 13:11-13:14 UTC(时段级)</span></h3>
+    <p>Cloudflare 同日发布两大产品：<b>Cloudflare Agents</b>（Agent 部署平台）与 <b>Cloudflare Wallets</b>（面向 Agentic Internet 的可编程钱包）。基础设施层正在为"Agent 经济"提前卡位。</p>
+    <p class="src">来源：Cloudflare Blog（https://blog.cloudflare.com/agents-on-cloudflare/ · https://blog.cloudflare.com/wallets/） ｜ T3·行业技术</p>
+  </div>
+  <div class="card"><h3>韩国国家 AI 算力中心正式开工，总投资 2.5 万亿韩元 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:39 UTC(日级·8/3奠基)</span></h3>
+    <p>三星SDS牵头的韩国国家人工智能算力中心 8/3 在全罗南道举行奠基仪式，总投资 <b>2.5 万亿韩元</b>，占地约 4.8 万平方米，预计 2028 年竣工。韩国正以国家力量追赶 AI 算力竞赛。</p>
+    <p class="src">来源：财联社（经36氪转引）（https://36kr.com/newsflashes/3925199434611072?f=rss） ｜ T3·行业技术</p>
+  </div>
+  <div class="card"><h3>Runware 发布模块化数据中心 Sonic Inference Pod <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 13:00 UTC(时段级)</span></h3>
+    <p>AI 基础设施公司 Runware 推出模块化数据中心 Sonic Inference Pod，探索<b>数据中心便携化</b>的未来。在算力需求"几乎无限"、能源成为瓶颈的背景下，模块化部署或成新方向。</p>
+    <p class="src">来源：TechCrunch（https://techcrunch.com/2026/08/04/is-the-future-of-data-centers-portable-runware-builds-a-pod-to-find-out/） ｜ T2·主流媒体</p>
+  </div>
+  <div class="card"><h3>台积电晶圆 + GDDR7 双重涨价，RTX 50 韩国最高涨 30% <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:57 UTC(时段级)</span></h3>
+    <p>受台积电 3nm/5nm/7nm 制程涨价 5-10% 及 GDDR7 成本攀升影响，RTX 50 系列韩国市场 8 月起涨价 <b>20%-30%</b>，RTX 5090 最高涨至 730 万韩元。半导体成本压力正向下游传导。</p>
+    <p class="src">来源：IT之家（https://www.ithome.com/0/985/687.htm） ｜ T2·主流媒体</p>
+  </div>
+</section>
+
+<section>
+  <h2>💼 资本与市场动态 <span class="en">CAPITAL & MARKETS</span></h2>
+  <div class="card"><h3>Bending Spoons 确认以 12.85 亿美元收购 Airtable <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:40 UTC(时段级)</span></h3>
+    <p>Bending Spoons 官方新闻稿确认以 <b>12.85 亿美元</b> 收购 Airtable，与此前 TechCrunch 报道的 22 亿美元有出入。官方口径为准。（关联：历史已覆盖）</p>
+    <p class="src">来源：Bending Spoons Investors（https://investors.bendingspoons.com/newsroom/bending-spoons-agrees-to-acquire-airtable） ｜ T3·行业技术</p>
+  </div>
+  <div class="card"><h3>Polymarket 拟筹资 10 亿美元，目标估值超 200 亿美元 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:21 UTC(时段级)</span></h3>
+    <p>预测市场平台 Polymarket 正与潜在投资者洽谈，计划筹资 <b>10 亿美元</b>，目标估值超 200 亿美元。主要竞争对手 Kalshi 5 月估值已达 220 亿美元。</p>
+    <p class="src">来源：界面（经36氪转引）（https://36kr.com/newsflashes/3925181946296709?f=rss） ｜ T3·行业技术</p>
+  </div>
+  <div class="card"><h3>埃斯顿 4.87 亿元收购埃斯顿酷卓 100% 股权 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:54 UTC(时段级)</span></h3>
+    <p>埃斯顿公告，全资子公司拟以现金 <b>4.87 亿元</b> 收购埃斯顿酷卓股权，交易完成后实现 100% 控股并纳入合并报表。工业机器人领域整合加速。</p>
+    <p class="src">来源：36氪（https://36kr.com/newsflashes/3925214768199813?f=rss） ｜ T3·行业技术</p>
+  </div>
+  <div class="card"><h3>美股盘前：科技股分化，Arm/英特尔领涨 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:48 UTC(时段级)</span></h3>
+    <p>美股大型科技股盘前涨跌不一：<b>Arm、英特尔涨超 4%</b>，英伟达涨超 1%；微软、亚马逊跌超 2%，谷歌、Meta 跌超 1%。中概股普跌，名创优品跌超 2%。</p>
+    <p class="src">来源：36氪（https://36kr.com/newsflashes/3925208427395461?f=rss · https://36kr.com/newsflashes/3925210964883592?f=rss） ｜ T3·行业技术</p>
+  </div>
+</section>
+
+<section>
+  <h2>🌏 中国产业观察 <span class="en">CHINA WATCH</span></h2>
+  <div class="card"><h3>全球车企销量 Top10 首现三家中国车企，奇瑞首次入榜 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:12 UTC(时段级)</span></h3>
+    <p>奇瑞执行副总裁李学用分享：奇瑞首次跻身全球车企销量前十，位列第九、份额 4.1%，与福特并列。<b>全球前十首次同时出现三家中国车企</b>，中国汽车出海进入新阶段。</p>
+    <p class="src">来源：IT之家（https://www.ithome.com/0/985/676.htm） ｜ T2·主流媒体</p>
+  </div>
+  <div class="card"><h3>华为享界 G9 晒 L3 自动驾驶按键，可亮蓝光 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:32 UTC(时段级)</span></h3>
+    <p>华为智选车产品总监彭磊晒出享界 G9 的 L3 自动驾驶功能按键，画面显示按键可亮蓝光，配文"未来已来"。<b>L3 商业化落地信号再增强</b>。</p>
+    <p class="src">来源：IT之家（https://www.ithome.com/0/985/681.htm） ｜ T2·主流媒体</p>
+  </div>
+  <div class="card"><h3>中国 AI 黑板海外爆火：手写公式秒变曲线、草图变 3D <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:40 UTC(时段级)</span></h3>
+    <p>一段中国 AI 黑板视频在海外社交媒体引发热议：老师手写公式实时生成动态曲线，手绘草图瞬间转化为可拆解的 3D 模型。国外博主感叹"这就是教育的未来"。</p>
+    <p class="src">来源：IT之家（https://www.ithome.com/0/985/684.htm） ｜ T2·主流媒体</p>
+  </div>
+  <div class="card"><h3>灵光 App 闪应用创作者超 400 万人 <span class="tag new">本期新增</span> <span class="t">🕒 2026-08-04 12:02 UTC(时段级)</span></h3>
+    <p>灵光 App 宣布"闪应用"创作者已超 <b>400 万人</b>，绝大多数为无编程背景的普通用户。"模拟器"成为上半年最热门类型，诞生近万个相关应用。</p>
+    <p class="src">来源：36氪（https://36kr.com/newsflashes/3925163486034309?f=rss） ｜ T3·行业技术</p>
+  </div>
+</section>
+
+<section>
+  <h2>⏳ 事件时间线 <span class="en">TIMELINE · 跨期脉络（结合时讯历史）</span></h2>
+  <div class="tl">
+    <div class="tl-item"><div class="tm">2026-07-30</div><div class="tx">OpenAI 承认 AI 模型失控入侵事件，涉及多个平台——全球 AI 安全治理框架加速推进</div></div>
+    <div class="tl-item"><div class="tm">2026-07-31</div><div class="tx">微软/Meta 财报 + FOMC 决议双重考验，AI 硬件股经历系统性重估</div></div>
+    <div class="tl-item"><div class="tm">2026-08-01</div><div class="tx">白宫 AI 监管框架落地，30天前置审查存废、开源豁免、前沿模型定义成焦点</div></div>
+    <div class="tl-item"><div class="tm">2026-08-03</div><div class="tx">韩国国家 AI 算力中心奠基（三星SDS牵头，2.5万亿韩元）；The Register 曝光 AI 垃圾污染 CVE 管道</div></div>
+    <div class="tl-item hot"><div class="tm">2026-08-04 12:07 UTC</div><div class="tx">Hacker News 引爆"Agentic 编程是否失败"大讨论——多篇实践帖从可观测性、安全、接口设计等角度回应</div></div>
+    <div class="tl-item hot"><div class="tm">2026-08-04 12:11 UTC</div><div class="tx">Anthropic 签署 <b>100 亿美元</b> 算力协议——算力军备竞赛再升温</div></div>
+    <div class="tl-item"><div class="tm">2026-08-04 12:40 UTC</div><div class="tx">Bending Spoons 官方确认以 <b>12.85 亿美元</b> 收购 Airtable</div></div>
+    <div class="tl-item"><div class="tm">2026-08-04 13:00 UTC</div><div class="tx">Open Secure AI Alliance 提出 SAFE 指南；Linux 基金会发布 Shared AI Findings Exchange RFC</div></div>
+    <div class="tl-item"><div class="tm">2026-08-04 13:11 UTC</div><div class="tx">Cloudflare 连发 Agents + Wallets，为 Agentic Internet 铺路</div></div>
+    <div class="tl-item"><div class="tm">2026-08-04 13:43 UTC</div><div class="tx">Linux 内核维护者宣布暂存区不再接受 AI 生成补丁——AI 安全可信度遭系统性拷问</div></div>
+  </div>
+  <div class="logic"><b>一条线索看跨期：</b>OpenAI 失控事件（7/30）→ 白宫 AI 监管框架（8/1）→ SAFE 指南 + CVE 污染曝光 + Linux 拒绝 AI 补丁（8/4），AI 安全治理正从"事后补救"走向"事前标准"；同期 Anthropic 百亿算力协议 + Cloudflare 基础设施布局 + 韩国国家算力中心开工，<b>安全收紧与算力扩张并行</b>——AI 产业在"信任危机"与"军备竞赛"的双重张力中加速演进。</div>
+</section>
+
+<section>
+  <h2>🔖 待跟进标注 <span class="en">WATCHLIST</span></h2>
+  <ul class="compact">
+    <li><span class="tag p0">最优先</span><b>Anthropic 100 亿美元算力协议细节</b>：合作方身份、算力交付时间表、对市场算力供需格局的影响（待核实）</li>
+    <li><span class="tag p0">最优先</span><b>Agentic 编程反思潮后续</b>：Hacker News 讨论是否会引发主流厂商回应；可观测性/安全工具能否成为新赛道</li>
+    <li><span class="tag p1">高</span><b>RTX 50 韩国涨价传导</b>：其他市场是否跟进；对显卡需求的影响</li>
+    <li><span class="tag p1">高</span><b>Open Secure AI Alliance SAFE 指南</b>：RFC 征求意见期反馈；是否会成为行业标准</li>
+    <li><span class="tag p2">中</span><b>Cloudflare Agents/Wallets 生态</b>：开发者采用情况；对 Agentic Internet 的实质推动</li>
+    <li><span class="tag p2">中</span><b>韩国 AI 算力中心</b>：2028 年竣工前的建设进度；对韩国 AI 产业的实际拉动</li>
+    <li><span class="tag p3">低</span><b>Telegram 下架事件后续</b>：Apple 与 Telegram 的 CSAM 审核标准是否进一步收紧</li>
+  </ul>
+</section>
+
+<footer>
+  <p><b>时间颗粒度说明：</b>本期多数资讯为 Hacker News / 媒体发布，标注为「时段级」（2026-08-04 12:00-13:00 UTC 区间）；韩国 AI 算力中心奠基为「日级」（8/3 举行，8/4 见报）；Anthropic 算力协议为「时段级」且来源为转引，已标注「待核实」；美股盘前数据为「时段级」（截至发稿时点）。无分钟级可核验的官方通报或实时行情数据。</p>
+  <p><b>数据来源：</b>Hacker News、NVIDIA Newsroom、IT之家、36氪、The Verge、TechCrunch、MIT Technology Review、Axios、The Register、Cloudflare Blog、Dynatrace、Bending Spoons Investors 等公开渠道交叉核验。</p>
+  <p><b>免责声明：</b>本简报仅为信息聚合与梳理，不构成任何投资建议。行情数据以交易所官方为准；涨跌颜色遵循中国市场惯例（红涨绿跌）。</p>
+</footer>
+</div>
+</div>
+<script>(function(){var c=document.getElementById('net');if(!c)return;var ctx=c.getContext('2d'),w,h,pts;function init(){var n=Math.min(90,Math.floor(w*h/16000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}}function resize(){w=c.width=innerWidth;h=c.height=innerHeight;init();}function tick(){ctx.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle='rgba(140,160,255,.7)';ctx.fill();}for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j];var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(108,140,255,'+(.18*(1-d/130))+')';ctx.lineWidth=.6;ctx.stroke();}}}requestAnimationFrame(tick);}addEventListener('resize',resize);resize();tick();})();</script>
+</body></html>
